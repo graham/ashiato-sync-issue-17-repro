@@ -97,8 +97,13 @@ $dll = Join-Path $root "cockpit\addons\ashiato\bin\ashiato_gd.dll"
 $stamp = Join-Path $root "_tools\.issue17-built-from"
 $want = $SyncRevision
 $built = if (Test-Path $stamp) { (Get-Content $stamp -Raw).Trim() } else { "" }
-if ($Force -or -not (Test-Path $dll) -or $built -ne $want) {
-    Note "  building ashiato_gd.dll -- the first build takes ten to twenty minutes"
+# ALWAYS BUILD, because the only cheap way to be sure the library matches the source is to
+# ask the build system, which no-ops in seconds when nothing changed. Skipping on a stamp
+# was wrong and cost a wasted run: the stamp records the ashiato-sync revision, so a change
+# to ashiato-gd's OWN sources -- which is what a `git pull` here usually brings -- left a
+# stale library in place and the game then failed to compile against it.
+if ($true) {
+    Note "  building ashiato_gd.dll -- the first build takes ten to twenty minutes, later ones seconds"
     # -SyncRevision says out loud that the library is not the one upstream.lock names,
     # which is the whole point here: the lock names a HEALTHY revision.
     & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $root "ashiato-gd\tools\build.ps1") `
@@ -110,8 +115,6 @@ if ($Force -or -not (Test-Path $dll) -or $built -ne $want) {
     # request, exactly as the game's own suites are judged by their printed RESULT line.
     if (-not (Test-Path $dll)) { throw "the build did not produce $dll -- see the output above" }
     Set-Content -Path $stamp -Value $want -Encoding ascii
-} else {
-    Note ("  ashiato_gd.dll is already built from {0}" -f $built.Substring(0, 12))
 }
 Note ("  {0}  ({1:N0} bytes)" -f $dll, (Get-Item $dll).Length)
 
@@ -119,9 +122,14 @@ Say "== 4/4  importing the Godot project =="
 # A FRESH CHECKOUT HAS NO IMPORT CACHE, and a scene that asks for an unimported resource
 # does not fail, it HANGS. So the import is a step of its own, with its own deadline,
 # rather than something the first run discovers.
-$imported = Join-Path $root "cockpit\.godot\imported"
-if ($Force -or -not (Test-Path $imported)) {
-    Note "  first import, this takes a few minutes"
+#
+# ALWAYS, NOT ONLY WHEN THE CACHE IS ABSENT. Godot's list of `class_name` types lives in
+# that cache, so a checkout that gains a script -- which a `git pull` here usually does --
+# has types the cache has never heard of, and every script that names one fails to compile.
+# That is what "Identifier "Runabout" not declared in the current scope" means, and it cost
+# a run to work out. An import with nothing to do takes a few seconds.
+if ($true) {
+    Note "  importing (seconds when there is nothing new, minutes on a fresh checkout)"
     $log = Join-Path $env:TEMP ("issue17_import_{0}.log" -f [Guid]::NewGuid().ToString("N"))
     $p = Start-Process -FilePath $godot -ArgumentList '--headless','--import','--path',(Join-Path $root 'cockpit') `
         -RedirectStandardOutput $log -RedirectStandardError "$log.err" -WindowStyle Minimized -PassThru

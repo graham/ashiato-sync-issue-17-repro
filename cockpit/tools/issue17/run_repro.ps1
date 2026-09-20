@@ -63,21 +63,36 @@ for ($i = 1; $i -le $Repeat; $i++) {
     # JUDGED BY THE PRINTED RESULT LINE, NEVER BY THE EXIT CODE. Godot writes to stderr on
     # a healthy run and its exit code carries other meanings.
     $result = ([regex]::Match($text, '(?m)^RESULT=(\w+)')).Groups[1].Value
+    $checks = ([regex]::Match($text, '(?m)^RESULT=\w+ ?(.*)$')).Groups[1].Value
     $summary = ([regex]::Match($text, '(?m)^ISSUE17 near=.*$')).Value
     $verdict = ([regex]::Match($text, '(?m)^\s+VERDICT\s+: (.*)$')).Groups[1].Value
+
+    # A FAILED RUN IS NOT AUTOMATICALLY THE BUG, and saying it is would be the worst thing
+    # this script could do. The two peers not converging, a missing library, a port already
+    # held -- all of those print RESULT=FAIL too, and none of them is the fault being
+    # reported. Only the freshness checks mean what we are here for, so only they count.
+    # Reported once as "BUG REPRODUCED" on a run whose peers never started, 2026-09-20.
+    $isTheBug = ($result -eq "FAIL") -and ($checks -match 'far_craft_stay_fresh|near_craft_stay_fresh')
 
     if ($Repeat -gt 1) { Write-Host ("run {0,3}/{1}: " -f $i, $Repeat) -NoNewline }
     if ($timedOut) {
         Write-Host "TIMED OUT after $TimeoutSeconds s -- not judged" -ForegroundColor Yellow
         Write-Host "  the whole output is at $log"
         $unjudged++
-    } elseif ($result -eq "FAIL") {
+    } elseif ($isTheBug) {
         Write-Host "BUG REPRODUCED" -ForegroundColor Green
         if ($summary) { Write-Host ("  " + $summary) }
         if ($verdict) { Write-Host ("  " + $verdict) }
         $failed++
         Remove-Item "$log*" -ErrorAction SilentlyContinue
         if (-not $All) { break }
+    } elseif ($result -eq "FAIL") {
+        Write-Host "COULD NOT RUN -- this is NOT the bug" -ForegroundColor Red
+        Write-Host ("  the run failed on: " + $checks)
+        if ($verdict) { Write-Host ("  " + $verdict) }
+        Write-Host "  the whole output is at $log"
+        Write-Host "  the usual cause is a stale build or import; try setup.ps1 -Force"
+        $unjudged++
     } elseif ($result -eq "PASS") {
         Write-Host "healthy this run" -ForegroundColor DarkGray
         if ($summary) { Write-Host ("  " + $summary) -ForegroundColor DarkGray }
