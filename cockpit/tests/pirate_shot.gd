@@ -7,6 +7,10 @@ extends Node
 ##   Godot --path cockpit --fixed-fps 120 res://tests/pirate_shot.tscn -- --level=watch --views=waterline --shadows=off
 ##   Godot --path cockpit --fixed-fps 120 res://tests/pirate_shot.tscn -- --level=watch --views=mid_tack,tack_later --finishes=plain
 ##   Godot --path cockpit --fixed-fps 120 res://tests/pirate_shot.tscn -- --level=watch --views=sea_low_evening --finishes=fine --scale=1.4 --shadows=off --ground=off
+##   Godot --path cockpit --fixed-fps 120 res://tests/pirate_shot.tscn -- --level=watch --wind=14 --writing=off --views=heeling_astern,bow_quarter
+##
+## `--wind=` sets the steady wind, `--writing=off` takes the HUD and the observer's boards off a picture meant to be
+## looked at, and `heeling_astern` and `bow_quarter` are the two views the lean actually shows in -- see `HEEL_VIEWS`.
 ##
 ## `--shadows=off` turns every sun's shadow off, to tell a shadow on a sail from anything else. `tack_later` is the
 ## tacking ship six seconds after `mid_tack`'s head to wind, asked for after it in the same launch and on one finish.
@@ -16,13 +20,18 @@ extends Node
 ## each ship is where it was sent, on the point of sail asked for, and the finish the key put on is the finish every
 ## surface wears.
 ##
-## THE SHIPS ARE THE SERVER'S, sailed by their own helmsmen (`hold_course`) in a steady ten-metre wind, far out on the sea's
+## THE SHIPS ARE THE SERVER'S, sailed by their own helmsmen (`hold_course`) in the steady wind `--wind=` sets, far out on the sea's
 ## negative side, where the drawn swell and the simulated swell disagreed before the wrap was fixed -- so a "before" and
 ## an "after" picture at the waterline are of the same water. A ship is followed by the observer's camera every frame
 ## (`_process`), placed off the ship's own drawn pose, so a picture of a moving ship is not a picture of where it was.
 ##
 ## THE FINISH IS CHANGED BY ITS KEY through `Input.parse_input_event`, as `tests/scenery_shot.gd` does, never by a call.
 
+## The wind the ships sail in, in metres a second, and `--wind=` overrides it. THE HEEL IS NOT SET, EVER: the brig leans
+## because each sail's force is applied at that sail's own height and a metacentric torque rights it, so the only honest
+## way to ask for a stiffer lean is to ask for more wind and photograph what the rig then does (`tests/sailing.gd`,
+## `_it_heels_to_leeward_and_further_in_more_wind`). Measured on the beam reach, 2026-09-20: -8.6 degrees of heel and
+## 3.66 m/s of way at 10 m/s of wind, -17.3 degrees and 5.03 m/s at 14. The 14 is the one worth photographing.
 const WIND: float = 10.0
 const FROM: float = 0.0
 ## Where the ships sail: far past the island's square on the negative side of both axes.
@@ -32,6 +41,12 @@ const SAIL_FIRST: float = 70.0
 ## Frames a finish is given to compile its pipelines before a picture.
 const SETTLE: int = 90
 const VIEWS: Array[String] = ["waterline", "beam_reach", "running_astern", "mid_tack", "two_km", "dusk"]
+## HEEL IS INVISIBLE FROM THE BEAM THE SHIP LEANS TOWARDS, and the first 14 m/s set of 2026-09-20 was nearly thrown away
+## over it. `beam_reach` stands 70 m to leeward, which is the side the masts lean at, so they lean at the camera and
+## foreshorten: the report said -17.3 degrees and the drawn mainmast measured about two off vertical. The lean only
+## crosses the frame from a camera on the ship's fore-and-aft line. `heeling_astern` and `bow_quarter` are that camera,
+## and they are the views for "listing a bit".
+const HEEL_VIEWS: Array[String] = ["heeling_astern", "bow_quarter"]
 
 var _out: String = "C:/Users/Graham/godotgames-drafts/2026-09-15/cockpit-pirate"
 var _tag: String = ""
@@ -41,6 +56,8 @@ var _level: FlightLevel = null
 var _failures: PackedStringArray = []
 ## Server entity of each ship, by what it is for.
 var _ships: Dictionary = {}
+## The compass heading each ship was told to hold, by entity, so the picture can say whether it held it.
+var _wanted: Dictionary = {}
 ## The view being followed this frame, and the pose worked out for it off the ship's drawn transform.
 var _following: String = ""
 ## `--shadows=off`: every DirectionalLight3D in the level draws no shadow, to tell a shadow on a sail from anything else.
@@ -57,6 +74,15 @@ const SEA_LOW_AT := Vector3(7670.0, 0.0, 0.0)
 var _scale: float = -1.0
 ## `--ground=off`: every node named Ground or TerrainPatch is hidden, to tell the ground's shadow on the sea from the sea.
 var _ground: bool = true
+## `--wind=`: the steady wind the ships sail in, in metres a second.
+var _wind: float = WIND
+## `--writing=off`: the HUD and the observer's boards come off, for a picture meant to be looked at rather than read.
+## The frame counter and the key legend are how a probe is debugged and are in the way of every shot that leaves here.
+var _writing: bool = true
+## How far off its held course a ship may be at the moment of the picture. A ship under sail is never dead on a compass
+## number -- it yaws with the swell and the helmsman chases it -- but twelve degrees is the difference between a beam
+## reach and a broad reach, and the picture is meant to be of the one it says it is.
+const COURSE_SLOP: float = 12.0
 
 
 func _check(label: String, ok: bool, detail: String) -> void:
@@ -79,6 +105,8 @@ func _ready() -> void:
 			"shadows": _shadows = parts[1] != "off"
 			"scale": _scale = float(parts[1])
 			"ground": _ground = parts[1] != "off"
+			"wind": _wind = float(parts[1])
+			"writing": _writing = parts[1] != "off"
 	if DisplayServer.get_name() == "headless":
 		_check("it_is_rendering", false, "headless has no rendering device; run it windowed")
 		_finish()
@@ -99,19 +127,41 @@ func _ready() -> void:
 		for node in _level.find_children("Ground*", "Node3D", true, false) + _level.find_children("TerrainPatch*", "Node3D", true, false):
 			(node as Node3D).visible = false
 			print("[pirate_shot] ground off: hid %s" % node.get_path())
+	if not _writing:
+		# The same two as `tests/adriatic_reel.gd`'s `_hide_the_writing`: the level's own Ui layer, and every board the
+		# observer camera carries.
+		var words := _level.get_node_or_null("Ui") as CanvasLayer
+		if words != null:
+			words.visible = false
+		for board in _level.observer.find_children("*", "CanvasItem", true, false):
+			(board as CanvasItem).visible = false
+		print("[pirate_shot] writing off: the HUD and the observer's boards are hidden")
 	if not _shadows:
 		for light in _level.find_children("*", "DirectionalLight3D", true, false):
 			(light as DirectionalLight3D).shadow_enabled = false
 		print("[pirate_shot] shadows off on every DirectionalLight3D")
+	# NOT BEFORE THE LEVEL IS READY, and this cost the whole shot set of 2026-09-20. `world/sky.gd:_on_sim_ready` calls
+	# `Sim.set_weather(Terrain.weather())` -- a wind wandering between 5 and 12 m/s, veering 20 degrees either side, from
+	# 244 degrees -- and it fires after this script's first two frames. The probe's steady wind was therefore written and
+	# then thrown away on every run since this file was written, and nothing said so, because nothing read the wind back.
+	# The three ships were then sent to points of sail worked out from `FROM`, a bearing the world did not have: the beam
+	# reach was 26 degrees off a wind it could not sail against, stalled at 0.25 m/s and fell off to a close reach, and
+	# the run was a close reach at 58 degrees apparent. Both pictures were of a ship doing something other than what the
+	# filename said.
+	while not Sim.is_ready:
+		await get_tree().process_frame
+	await get_tree().process_frame
 	for world in [Sim.server, Sim.client]:
 		if world != null:
-			world.set_weather({"from": FROM, "low": WIND, "high": WIND, "veer": 0.0, "seed": 1})
+			world.set_weather({"from": FROM, "low": _wind, "high": _wind, "veer": 0.0, "seed": 1})
+	print("[pirate_shot] wind %.1f m/s from %.0f deg" % [_wind, rad_to_deg(FROM)])
 	# THE SHIPS: a beam reach, a run, and one close-hauled that will be put about, each a kilometre apart.
 	_ships["beam"] = _sail(SEA, FROM - PI * 0.5)
 	_ships["run"] = _sail(SEA + Vector3(1000.0, 0.0, 0.0), FROM - PI)
 	_ships["tack"] = _sail(SEA + Vector3(0.0, 0.0, 1000.0), FROM - deg_to_rad(65.0))
 	for i in range(int(SAIL_FIRST * 120.0)):
 		await get_tree().physics_frame
+	_check_the_wind_is_the_one_it_asked_for()
 	for view in _views:
 		for finish_name in _finishes:
 			await _wear(finish_name)
@@ -125,10 +175,15 @@ func _finish() -> void:
 	get_tree().quit(0 if _failures.is_empty() else 1)
 
 
+## A BRIG SENT OFF ON ONE POINT OF SAIL, and the helmsman's answer is read rather than assumed. `hold_course` returns
+## false for anything the server has no sailing autopilot for, and a shot set of 2026-09-20 found all three ships on the
+## wrong point of sail with nobody having looked at that boolean.
 func _sail(at: Vector3, heading: float) -> int:
 	var nose := Vector3(sin(heading), 0.0, -cos(heading))
 	var ship: int = Sim.spawn_ai_vehicle(Sim.Kind.PIRATE, at, -heading, nose * 3.0)
-	Sim.server.hold_course(ship, heading)
+	var held: bool = Sim.server.hold_course(ship, heading)
+	_check("the_helmsman_took_the_course_%.0f" % rad_to_deg(heading), held, "entity %d" % ship)
+	_wanted[ship] = heading
 	return ship
 
 
@@ -177,6 +232,7 @@ func _photograph(view: String, finish_name: String) -> void:
 	print("[pirate_shot] %s %s: way %.2f m/s, heel %.1f deg, apparent %.0f deg, fill %s" % [view, finish_name,
 		float(report.get("way", 0.0)), rad_to_deg(float(report.get("heel", 0.0))),
 		rad_to_deg(float(report.get("apparent_angle", 0.0))), report.get("fill", [])])
+	_check_it_is_where_it_was_sent(view, ship)
 	# WHERE EVERYTHING IS, beside the picture, so a hull that looks wrong against the water can be told apart from a camera
 	# that is: the ship as drawn, the camera, and both seas' nodes.
 	var drawn_ship: int = _drawn(ship)
@@ -192,6 +248,36 @@ func _photograph(view: String, finish_name: String) -> void:
 	_following = ""
 	if view == "dusk" or view == "sea_low_evening":
 		_level.call("choose_time", DaylightTuning.When.DAY)
+
+
+## THE WIND THE SAILS ACTUALLY FEEL, asked of the authority that used it rather than believed from the constant that
+## requested it (CLAUDE.md rule 4). `sail_report`'s `wind` is where the air GOES, so the bearing it comes from is
+## `atan2(-x, z)`; `Terrain.weather` states the same convention from the other end. Without this, a level that pushes
+## its own weather over the probe's is invisible, which is exactly what happened.
+func _check_the_wind_is_the_one_it_asked_for() -> void:
+	var report: Dictionary = Sim.server.sail_report(int(_ships["beam"]))
+	var goes: Vector3 = report.get("wind", Vector3.ZERO)
+	var bearing: float = atan2(-goes.x, goes.z)
+	var off: float = rad_to_deg(absf(wrapf(bearing - FROM, -PI, PI)))
+	_check("the_ships_sail_in_the_wind_the_probe_set", off <= 2.0 and absf(goes.length() - _wind) <= 1.0,
+		"%.1f m/s from %.0f degrees, asked for %.1f from %.0f" % [goes.length(), rad_to_deg(bearing), _wind,
+			rad_to_deg(FROM)])
+
+
+## IS IT ON THE POINT OF SAIL IT WAS SENT TO? The doc block has claimed since 2026-09-15 that this probe checks it;
+## nothing did, and on 2026-09-20 nothing was. Held courses are exempted for the tack's two views, where the ship is
+## deliberately being put about, and skipped entirely for the fixed sea poses, which photograph water and not a ship.
+func _check_it_is_where_it_was_sent(view: String, ship: int) -> void:
+	if view == "mid_tack" or view == "tack_later" or view.begins_with("sea_low"):
+		return
+	if not _wanted.has(ship):
+		return
+	var basis: Quaternion = (Sim.server.vehicle_state(ship) as Dictionary)["basis"]
+	var nose: Vector3 = basis * Vector3.FORWARD
+	var steered: float = atan2(nose.x, -nose.z)
+	var off: float = rad_to_deg(absf(wrapf(steered - float(_wanted[ship]), -PI, PI)))
+	_check("%s_is_on_the_course_it_was_sent_to" % view, off <= COURSE_SLOP,
+		"%.0f degrees off the %.0f it was told to hold" % [off, rad_to_deg(float(_wanted[ship]))])
 
 
 ## THE CAMERA, every frame, off the ship's drawn transform: the ship moves, and a pose worked out once is a pose of
@@ -224,6 +310,12 @@ func _process(_delta: float) -> void:
 			_place(at + right * 60.0 - aft * 40.0 + Vector3(0.0, 14.0, 0.0), at + Vector3(0.0, 10.0, 0.0))
 		"two_km":
 			_place(at + Vector3(1400.0, 1200.0, 900.0), at)
+		"heeling_astern":
+			# Dead astern and above the taffrail: the heel is broadside to the lens and the wake runs out of frame.
+			_place(at + aft * 62.0 + Vector3(0.0, 17.0, 0.0), at + Vector3(0.0, 12.0, 0.0))
+		"bow_quarter":
+			# Fine on the weather bow and low, where the lean, the bow wave and the whole sail plan are in one frame.
+			_place(at - aft * 58.0 + right * 22.0 + Vector3(0.0, 6.0, 0.0), at + Vector3(0.0, 10.0, 0.0))
 
 
 ## Which ship a view photographs: the one put about for the tack's two views, the run from astern, the beam reach else.

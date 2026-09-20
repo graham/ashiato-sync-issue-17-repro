@@ -155,3 +155,13 @@ KIND(Fireboat, "fireboat", fireboat_shape, Boat)
 // dimensions in metres; the measuring found that the widely published "45 degree leading edge sweep" is the QUARTER
 // CHORD and the leading edge is 51.5. The number is the next free one at merge (lane/phantom, 2026-09-20).
 KIND(Phantom, "phantom", phantom_shape, Airplane)
+
+// A CHRIS-CRAFT 27 FT CUSTOM RUNABOUT, model Custom 309: a varnished mahogany triple-cockpit boat with the helm
+// FORWARD behind a raked windscreen, the middle cockpit abaft it, the engine under a flush hatch and the third
+// cockpit aft of that -- which is the order every source gives and the opposite of the way the type is usually
+// remembered. She is the first pleasure boat here: nothing on her is grey, armed or for work, and what she is for is
+// being looked at on a lake. Drawn by `Runabout`; her length, beam and draught are the only three published figures
+// anywhere for a boat of the type (`cockpit/craft/runabout/sources.md`), and her colours are measured off three
+// CC BY 2.0 photographs by `craft/runabout/measure_photos.py` rather than remembered. The number is the next free one
+// at merge (lane/chriscraft, 2026-09-20).
+KIND(Runabout, "runabout", runabout_shape, Boat)

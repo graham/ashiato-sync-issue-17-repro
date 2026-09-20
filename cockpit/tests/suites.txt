@@ -107,6 +107,7 @@ tank_shape        cockpit   res://tests/tank_shape.tscn
 mount_aim         cockpit   res://tests/mount_aim.tscn   core
 ship_models       cockpit   res://tests/ship_models.tscn
 merchant_models   cockpit   res://tests/merchant_models.tscn
+runabout          cockpit   res://tests/runabout.tscn
 # THE TRAIN'S ROLLING STOCK: the boxcar against what was measured off a broadside, and the rake's length.
 train_models      cockpit   res://tests/train_models.tscn
 # AND DRAWN: every locomotive on the island hauling eight to ten shown cars, each one boxcar behind the last and the
@@ -340,6 +341,13 @@ radar_set         cockpit   res://tests/radar_set.tscn
 # AND ON THE WIRE: a joiner is SENT a picture, it is fewer craft than the world holds, and it is not the host's --
 # two heads, two pictures, which is the property the whole per-peer publish exists for.
 radar_peers       cockpit   res://tests/radar_peers.tscn   260   net
+# AND THE SAME PICTURE AS A BOARD: the controller's diorama -- a miniature of the level sculpted from
+# `Terrain.surface_heights`, with a tiny MODEL of each contact standing on a stalk at its true altitude. The scale both
+# ways at three extents, the board held against the terrain's own surface (including a lopsided point, so an i/j
+# transpose in the grid cannot hide), the board proved to draw only the rows it is handed, and dead reckoning held to
+# carrying a contact along its OWN course and snapping back on a fresh page. `core` because it walks every kind in
+# `Sim.Kind` for a piece, which is the cross-craft property that tier is for, and because it is cheap.
+diorama           cockpit   res://tests/diorama.tscn   core
 # THE DEDICATED SERVER: `--level=server` hosts the island, seats every joiner and flies nothing of its own -- two
 # real processes, and the console's numbers held against SESSION_REPORT's.
 server_peers      cockpit   res://tests/server_peers.tscn   240   net

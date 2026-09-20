@@ -138,7 +138,14 @@ var usual_port: int = DEFAULT_PORT
 ## voicelobby's, and both landed while this lane was building, so the three numbers were taken in the order the
 ## work finished rather than the order it started. The number was settled by grepping every lane's `net.gd` rather
 ## than by reading a message -- the tree said 41 where a message said 42, and the tree was right.
-const PROTOCOL: int = 43
+## 46 since 2026-09-20: the Chris-Craft runabout is a kind of its own (`Sim.Kind.RUNABOUT`), with its own shape, its
+## four seats in three cockpits and its own handling. An older peer would decode the number and have no shape,
+## package or handling for it, and would draw her as whatever its own last kind is.
+## NOT 44, WHICH WAS THIS LANE'S FIRST GUESS. The note above says to settle the number by grepping every lane's
+## `net.gd` rather than by reading a message, and doing it found `lane/subdeck` already on 44 and `lane/voicebuild`
+## on 45 -- both uncommitted, both invisible from main, and neither of them anything this lane had heard about.
+## The rule paid for itself the first time it was followed.
+const PROTOCOL: int = 46
 ## Human-readable public release channel, advertised exactly in lobby metadata.
 const BUILD_CHANNEL: String = "alpha"
 ## Bump for an incompatible gameplay/schema change that does not already bump PROTOCOL.

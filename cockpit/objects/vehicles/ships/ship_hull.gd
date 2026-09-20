@@ -122,6 +122,12 @@ static func models(kind: int, geometry: Dictionary, livery: int = 0) -> Dictiona
 		"container_feeder", "container_large":
 			detail = ContainerShip.build(geometry, helm, livery)
 			far_paint = ContainerShip.FAR
+		# A TRIPLE-COCKPIT MAHOGANY RUNABOUT, drawn from `RunaboutDraft` until the kind is C++ (lane/chriscraft,
+		# 2026-09-20). A Chris-Craft 27 ft Custom Runabout: varnished mahogany, a planked deck with walnut king plank
+		# and white caulked seams, and chrome everywhere. `craft/runabout/sources.md`.
+		"runabout":
+			detail = Runabout.build(geometry, helm)
+			far_paint = Runabout.FAR
 		# FOUR SMALL BOATS, drawn from `SmallCraftDraft` until the kinds are C++ (lane/seaport): a modern cruising sloop,
 		# a classic long-keel cutter, a stern trawler and a flybridge motor yacht -- the boats a marina is made of.
 		"cruising_sloop", "classic_cutter", "stern_trawler", "motor_yacht":

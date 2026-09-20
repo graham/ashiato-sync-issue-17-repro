@@ -45,6 +45,24 @@ class_name ControlStation
 ## roster, on a team, in the chat, on the voice.
 ##
 ## ---------------------------------------------------------------------------------------------------
+## AND THE SAME PICTURE AS A BOARD, ON `B` (lane/diorama, 2026-09-20)
+## ---------------------------------------------------------------------------------------------------
+##
+## The user, 2026-09-20: *"we shouldn't use a camera and have godot just view the map, we should regenerate a view
+## given the data we have ... make a new "diorama" of sorts that shows the state of all the units, almost like a live
+## chessboard with the terrain and planes, boats, flying around."*
+##
+## `B` swaps the flat plot for `world/diorama_view.gd`: a miniature of the level about a metre across, sculpted out of
+## `Terrain.surface_heights` at the level's own extent, with a token standing on a stalk at its true altitude for every
+## contact. It is a second VIEW of one picture, not a second picture -- both are handed the same `rows` on the same
+## beat, a few lines below -- so the two cannot disagree about what the sweep said.
+##
+## **THE `LevelMap` IS UNTOUCHED AND STILL DRAWS THE PLOT.** Other screens depend on it, the plot is what a controller
+## reads bearings off, and the board is worse at exactly the thing the plot is best at: a top-down chart with a grid on
+## it. What the board has is the third dimension -- see `world/diorama_board.gd`, "the stalk is the reason a board beats
+## a plot" -- and altitude is the one fact radar publishes that a flat plot has nowhere to put.
+##
+## ---------------------------------------------------------------------------------------------------
 ## TEAMS AND VOICE ARE NOT REBUILT HERE
 ## ---------------------------------------------------------------------------------------------------
 ##
@@ -77,8 +95,13 @@ var radar: RadarWatch = null
 
 var _since: float = 0.0
 var _canvas: MapCanvas = null
+## THE BOARD, AND WHETHER IT IS THE ONE BEING LOOKED AT. See "AND THE SAME PICTURE AS A BOARD" below.
+var _board: DioramaView = null
+var _on_the_board: bool = false
+var _board_laid: bool = false
 var _heading: Label = null
 var _age: Label = null
+var _reckon_line: Label = null
 var _tally: Label = null
 var _picked_line: Label = null
 var _people: VBoxContainer = null
@@ -107,6 +130,16 @@ func _ready() -> void:
 	_canvas.selected.connect(_pick)
 	add_child(_canvas)
 
+	# AND THE SAME PICTURE AS A BOARD, over the same rect, hidden until `B` is pressed. It is the SAME rows on the same
+	# beat -- see `_show` -- so the two views cannot disagree about what radar said, and the only difference between
+	# them is what a person can read off each.
+	_board = DioramaView.new()
+	_board.name = "Diorama"
+	_board.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_board.offset_right = -PANEL_WIDE
+	_board.visible = false
+	add_child(_board)
+
 	var panel := VBoxContainer.new()
 	panel.set_anchors_preset(Control.PRESET_RIGHT_WIDE)
 	panel.offset_left = -PANEL_WIDE + 16.0
@@ -120,6 +153,11 @@ func _ready() -> void:
 	panel.add_child(_heading)
 	_age = _a_label("", DIM, 14)
 	panel.add_child(_age)
+	# SHOWN ONLY WHEN THE BOARD IS DEAD RECKONING. Amber, beside the age, because both are the same kind of fact:
+	# how far from NOW the thing you are looking at is.
+	_reckon_line = _a_label("", AMBER, 14)
+	_reckon_line.visible = false
+	panel.add_child(_reckon_line)
 	_tally = _a_label("", PALE, 15)
 	panel.add_child(_tally)
 	panel.add_child(_a_label("", DIM, 8))
@@ -131,6 +169,8 @@ func _ready() -> void:
 	panel.add_child(_a_label("PLAYERS", DIM, 13))
 	_people = VBoxContainer.new()
 	panel.add_child(_people)
+	panel.add_child(_a_label("", DIM, 8))
+	panel.add_child(_a_label("B  plot / board\n< > ^ v  turn the board\n, .  closer / further\nR  dead reckon between sweeps", DIM, 12))
 
 	_show()
 
@@ -150,15 +190,53 @@ func _show() -> void:
 	var rows: Array[Dictionary] = []
 	for row in contacts:
 		rows.append(row as Dictionary)
+	# HOW OLD THE PICTURE IS, asked ONCE and used by both the board and the panel. It is read here rather than beside
+	# the label it prints because the board needs it too, and the one thing worse than a display with no age on it is
+	# two displays with two ages on them (rule 4).
+	var old: float = radar.age() if radar != null and is_instance_valid(radar) else -1.0
 	if _canvas != null and level_map != null:
 		_canvas.show_map(level_map, rows)
 		_canvas.selected_contact = _picked
 		_canvas.queue_redraw()
 
+	# THE BOARD IS LAID THE FIRST TIME A MAP ARRIVES, not in `_ready`: `Sky` hands the station its `level_map` and its
+	# `RadarWatch` after the level is built (`world/sky.gd`, "_station is handed the two things it draws"), so a board
+	# sculpted at construction would be sculpted for whatever `LevelMap` defaults to rather than for this level. Lazy
+	# here covers the test harness too, which sets `level_map` directly.
+	#
+	# **AND IT IS FED THE SAME `rows` THE CANVAS GOT, on the same beat, from the same `RadarWatch.contacts()` above.**
+	# Not a second fetch and never `AirPicture` or `Sim.current`: this station is the one screen in the game that shows
+	# the SENSOR's picture, and a board that quietly drew everything would look better and mean nothing
+	# (`world/radar_set.gd`, `docs/crew.md` "RADAR: THE SENSOR THE PLOT NEVER HAD").
+	if _board != null and level_map != null:
+		if not _board_laid:
+			_board_laid = true
+			var cost: Dictionary = _board.lay_the_board(level_map.half_extent, level_map.centre)
+			print("[control] board %d texels, 1:%d, %.0f mm of relief, built in %.1f ms" % [
+				int(cost["texels"]), roundi(float(cost["one_to"])), float(cost["relief_mm"]), float(cost["build_msec"])])
+		if _on_the_board:
+			# THE AGE GOES WITH THE ROWS, and it is the same age the panel prints two lines below. The board uses it
+			# only when it is dead reckoning, and then only to advance a contact along the course that contact itself
+			# reported (`world/diorama_board.gd`, "between sweeps: hold, or dead reckon").
+			_board.show_contacts(rows, maxf(old, 0.0))
+
 	# THE AGE IS ON THE BOARD AND IT IS NOT DECORATION. A radar picture is never NOW, and a plot that does not say
 	# how old it is reads as though it were. Two missed sweeps turns it red: one is ordinary, two means the host has
 	# stopped talking to this machine and every contact on the glass is a guess.
-	var old: float = radar.age() if radar != null and is_instance_valid(radar) else -1.0
+	# WHICH OF THE TWO PICTURES IS ON THE GLASS, said on the board rather than left to be inferred: they show the same
+	# sweep and a controller glancing up should not have to work out which one they are looking at.
+	_heading.text = "CONTROL · BOARD" if _on_the_board else "CONTROL · PLOT"
+
+	# AND IF THE BOARD IS DEAD RECKONING, THE SCREEN SAYS SO. A display that advanced contacts along a guessed course
+	# without admitting it would be telling an operator where an aeroplane is on the authority of its own arithmetic --
+	# which is the whole objection to it, and the whole reason saying it out loud makes it allowable
+	# (`world/diorama_board.gd`, "between sweeps: hold, or dead reckon"). The DISTANCE is named and not just the fact,
+	# because "dead reckoned" reads as a mode and "dead reckoned, up to 280 m" reads as a doubt.
+	var reckoning: bool = _on_the_board and _board != null and _board.board != null and _board.board.reckoning
+	_reckon_line.visible = reckoning
+	if reckoning:
+		_reckon_line.text = "dead reckoned  ·  up to %d m" % roundi(_board.board.reckoned_most_m)
+
 	_age.text = "no picture yet" if old < 0.0 else "swept %.1f s ago" % old
 	_age.add_theme_color_override("font_color", DIM if old >= 0.0 and old < OLD else STALE)
 	var people: int = 0
@@ -233,6 +311,64 @@ func _off_the_plot(rows: Array[Dictionary]) -> int:
 		if at.x < 0.0 or at.y < 0.0 or at.x > float(LevelMap.PIXELS.x) or at.y > float(LevelMap.PIXELS.y):
 			out += 1
 	return out
+
+
+## `B` SWAPS THE PLOT FOR THE BOARD, and the arrows and `,`/`.` walk round it once it is up.
+##
+## `_unhandled_key_input` IS THE FOCUS GATE (CLAUDE.md rule 9), which is the arrangement `world/flat_lobby.gd` already
+## uses and for the same reason: a `Control` with focus consumes its own keys first, so a station that polled the
+## keyboard would steal a letter out of somebody's chat line. Nothing here is polled.
+##
+## BOTH `keycode` AND `physical_keycode` ARE READ. A person's keyboard sends one and a suite's synthesised event sends
+## the other, and a key that only answers a human is a key no robot can prove works.
+func _unhandled_key_input(event: InputEvent) -> void:
+	var key_event := event as InputEventKey
+	if key_event == null or not key_event.pressed or key_event.echo:
+		return
+	var key: int = key_event.keycode if key_event.keycode != 0 else key_event.physical_keycode
+	if key == KEY_B:
+		show_the_board(not _on_the_board)
+		get_viewport().set_input_as_handled()
+		return
+	if key == KEY_R and _board != null and _board.board != null:
+		reckon(not _board.board.reckoning)
+		get_viewport().set_input_as_handled()
+		return
+	if _on_the_board and _board != null and _board.drive(key_event):
+		get_viewport().set_input_as_handled()
+
+
+## SHOW THE BOARD OR THE PLOT. One of the two is up at a time and never both: they cover the same rect, they draw the
+## same contacts, and a controller reading two pictures of one sweep at once is reading neither.
+##
+## THE SIDE PANEL IS UNCHANGED EITHER WAY -- the age, the tally, the selected contact and the roster are about the
+## PICTURE and not about how it is drawn, so swapping the view does not move a word of it.
+func show_the_board(yes: bool) -> void:
+	_on_the_board = yes
+	if _board != null:
+		_board.visible = yes
+	if _canvas != null:
+		_canvas.visible = not yes
+	_show()
+
+
+## ADVANCE CONTACTS ALONG THEIR OWN REPORTED COURSE BETWEEN SWEEPS, or do not. **Off by default**, and the panel says
+## so when it is on, because this is the one setting on this screen that changes what the display CLAIMS rather than
+## how it looks (`world/diorama_board.gd`, "between sweeps: hold, or dead reckon").
+func reckon(yes: bool) -> void:
+	if _board != null and _board.board != null:
+		_board.board.reckoning = yes
+	_show()
+
+
+## WHICH VIEW IS UP, for a suite that wants to say the toggle worked without photographing it.
+func on_the_board() -> bool:
+	return _on_the_board
+
+
+## THE BOARD ITSELF, for a probe that wants to photograph it or a suite that wants to ask where a piece landed.
+func the_board() -> DioramaView:
+	return _board
 
 
 func _pick(contact: int) -> void:

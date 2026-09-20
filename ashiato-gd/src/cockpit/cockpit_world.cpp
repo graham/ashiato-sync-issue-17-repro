@@ -1247,6 +1247,7 @@ inline Shape heli_shape();
 inline Shape uh60_shape();
 inline Shape chinook_shape();
 inline Shape gunboat_shape();
+inline Shape runabout_shape();
 inline Shape cb90_shape();
 inline Shape carrier_shape();
 inline Shape battleship_shape();
@@ -2720,6 +2721,13 @@ inline Bus default_bus(cockpit::KindId kind, bool* fell_to_default = nullptr) {
             bus.channel[static_cast<int>(Channel::Mode)] = Fitted{"anchor", 1};
             bus.channel[static_cast<int>(Channel::Display)] = Fitted{"sounder", 3};
             break;
+        // A RUNABOUT'S PANEL IS A CAR'S. Six gauges, a banjo wheel and a floor-mounted gearshift is what the
+        // sources describe, and none of it is a channel this bus has -- so what she carries is the launch's drive
+        // trim and an anchor, and no sounder, because a 1930s mahogany boat has no echo sounder in it.
+        case kKindRunabout:
+            bus.channel[static_cast<int>(Channel::Trim)] = Fitted{"drive trim", 255};
+            bus.channel[static_cast<int>(Channel::Mode)] = Fitted{"anchor", 1};
+            break;
         // THE POD'S HOVER HOLD, its own case now: the default added a "hover hold" to every kind without one, and the
         // gunboat, the train, the brig and the segway carried a switch that meant nothing (lane/kinds' audit, fixed in
         // lane/boats, 2026-09-18).
@@ -2832,6 +2840,68 @@ inline Shape boat_shape() {
     s.seat[2] = seat_in(part_of(s, Part::Station, 0), 0.0f, 0.40f, 0.0f, Station::Turret);
     // A stern seat facing aft, which is what makes the yaw in a seat pose worth having.
     s.seat[3] = seat_in(part_of(s, Part::Station, 1), 0.0f, 0.40f, 3.14159274f, Station::Turret);
+    return finish_hull(s);
+}
+
+/// A CHRIS-CRAFT 27 FT CUSTOM RUNABOUT, model Custom 309, 1932-1941; sixty-two were built.
+///
+/// THREE PUBLISHED NUMBERS AND THE REST REASONED. 8.230 m long and 2.184 m in the beam [Sierra Boat Company's
+/// listing of a 1934 example: "27' long and 7' 2" wide and has a 28" draft"], and those two are the only dimensions
+/// for a boat of this type that this project could find printed anywhere. `cockpit/craft/runabout/sources.md` tags
+/// every figure and says what could not be found at all -- which includes her weight, so the mass below is an
+/// estimate from her volume to the chine at the published double-planked mahogany-on-white-oak construction.
+///
+/// THE PUBLISHED 28 IN DRAUGHT IS NOT THIS HULL'S. It is far too deep for a hard-chine planing hull 8 m long and is
+/// almost certainly to the bottom of the propeller or the rudder shoe. What says so is a boat neither source set out
+/// to compare with: Wikipedia's Gar Wood Speedster, a contemporary American mahogany runabout by another builder,
+/// publishes 16 ft by 5.4 ft by 1.4 ft of draught -- 0.0875 of its length against this boat's 0.0864, 1.3 per cent
+/// apart, from two references that never saw each other. Both are measured to the running gear. The canoe body below
+/// is 0.34 m, an ESTIMATE, and nothing is checked against it.
+///
+/// THE ENGINE SITS BETWEEN THE MIDDLE AND THE AFT COCKPITS, which is the opposite of how the type is usually
+/// described and is what the sources say. It is also what gives a triple-cockpit runabout her shape: the long
+/// unbroken run of deck is AFT of the two forward cockpits rather than forward of them.
+///
+/// FOUR SEATS IN THREE COCKPITS: the helm and a companion forward behind the windscreen, one in the middle cockpit
+/// and one aft. THE HELM IS TO STARBOARD, which two of the three reference photographs agree on and which is what
+/// every other boat here does.
+inline Shape runabout_shape() {
+    Shape s;
+    s.name = "runabout";
+    // ESTIMATE. No weight is published for any pre-war Chris-Craft runabout that could be read.
+    s.mass = 2050.0f;
+    s.waterline = 0.0f;
+    // The deck edge amidships. ESTIMATE, as is the sheer the model lifts it by at the stem: the part is what floats
+    // and what a fitting stands on, so it wants one height, and `Runabout` carries the curve.
+    const float deck = 0.50f;
+    int n = 0;
+    // THE HULL IN THREE PARTS: a fine entry to full beam at 2.36 m abaft the stem, a parallel middle, and a transom
+    // 0.86 of the beam with its corners taken off. Eight corners each, which is `kMaxPlanCorners`.
+    // THE FORWARD PART REACHES THE FULL BEAM AT ITS AFTER END. Ending it short of the middle part's width left the
+    // drawn hull standing outside the collided one for the metre before they met.
+    s.part[n++] = outline_part(Part::Hull, -0.34f, deck, {
+        {-0.03f, -4.115f}, {0.03f, -4.115f}, {0.40f, -3.495f}, {0.78f, -2.755f},
+        {1.092f, -1.755f}, {-1.092f, -1.755f}, {-0.78f, -2.755f}, {-0.40f, -3.495f}});
+    s.part[n++] = outline_part(Part::Hull, -0.34f, deck, {
+        {-1.092f, -1.755f}, {1.092f, -1.755f}, {1.092f, 2.595f}, {-1.092f, 2.595f}});
+    s.part[n++] = outline_part(Part::Hull, -0.34f, deck, {
+        {1.092f, 2.595f}, {1.092f, 3.595f}, {0.939f, 4.115f}, {-0.939f, 4.115f},
+        {-1.092f, 3.595f}, {-1.092f, 2.595f}});
+    // THE THREE COCKPITS AS WELLS IN THE DECK, not as houses standing on it, and nothing else in this game is shaped
+    // like that: every other boat's helm is a room with walls and a roof, and a runabout's is a hole with a bench in
+    // it. Their soles sit 0.42 m below the deck and their coamings 0.055 m above it. The forward one is the Bridge,
+    // because it is where the wheel is; the other two are Stations, which is what an open position with no controls
+    // is called here.
+    s.part[n++] = box_part(Part::Bridge, 0.0f, -1.176f, 0.469f, 0.576f, deck - 0.42f, deck + 0.055f);
+    s.part[n++] = box_part(Part::Station, 0.0f, 0.119f, 0.721f, 0.576f, deck - 0.42f, deck + 0.055f);
+    s.part[n++] = box_part(Part::Station, 0.0f, 3.190f, 0.617f, 0.523f, deck - 0.42f, deck + 0.055f);
+    s.parts = n;
+    s.seat.resize(4);
+    const HullPart& helm = part_of(s, Part::Bridge);
+    s.seat[0] = seat_in(helm, 0.38f, 0.30f, 0.0f, Station::Pilot);
+    s.seat[1] = seat_in(helm, -0.38f, 0.30f, 0.0f, Station::Copilot);
+    s.seat[2] = seat_in(part_of(s, Part::Station, 0), 0.38f, 0.30f, 0.0f, Station::Operator);
+    s.seat[3] = seat_in(part_of(s, Part::Station, 1), 0.0f, 0.28f, 0.0f, Station::Operator);
     return finish_hull(s);
 }
 
@@ -5823,6 +5893,48 @@ inline Handling default_handling(cockpit::KindId kind, bool* fell_to_default = n
             h.plane_lift = 0.0f;
             h.control_reference = 6.0f;
             h.angular_damping = 1.2f;
+            break;
+        case kKindRunabout:
+            // 2,050 kg of mahogany, twice the launch's mass and half again its length, and the whole of her
+            // character is what she does in a turn -- which is why `lean` and `bow_rise` below are set deliberately
+            // and said out loud rather than scaled with everything else.
+            //
+            // HER TOP SPEED IS DERIVED FROM A PUBLISHED RANGE AND NOT CHOSEN. Soundings gives the type 28 to 45 mph
+            // over eleven models; a 27-footer of 1934 with a six-cylinder engine sits near the bottom of that. Drag
+            // here is `drag_forward * v^2` plus `wave_drag * (v - hull_speed)^2` past the hump, so 3.2 and 130 at a
+            // hump of 11 m/s against 5,500 N of thrust settle her at **16.9 m/s, which is 37.8 mph** -- inside the
+            // published band and near its middle. The launch's numbers were scaled by the mass ratio of 2.28 and
+            // then the thrust was solved for that speed, rather than the speed being read off afterwards.
+            h.thrust = 5500.0f;
+            h.brake = 5700.0f;
+            h.brake_drag = 2.0f;
+            h.drag_forward = 3.2f;
+            h.drag_side = 1.8f;
+            h.drag_vertical = 7.2f;
+            // THE KEEL COMES UP WITH THE RUDDER, which is the launch's note and is a rule rather than a habit: a helm
+            // that turns the boat harder asks the hull to hold more, and a keel that gives up under it turns a tighter
+            // corner into a slide.
+            h.water_drag = 30800.0f;
+            h.keel_limit = 44500.0f;
+            h.rudder_force = 4.3f;
+            // Half her length, as the launch's 2.6 is of its 5.6 m.
+            h.rudder_arm = 3.80f;
+            h.hull_speed = 11.0f;
+            h.wave_drag = 130.0f;
+            h.righting = 41000.0f;
+            // SHE LEANS INTO HER TURNS, AND THIS IS THE NUMBER THE PICTURE IS MADE OF. `plane_the_hull` rolls her by
+            // `lean * turn_g`, and 0.18 is the launch's 0.20 brought down a little because she is heavier, deeper and
+            // hard-chined where a RIB is soft: a runabout heels markedly into a turn but does not lie over like an
+            // inflatable. Her float probes are 1.09 m out -- the narrowest of any boat here -- so the saturation the
+            // gunboat's note warns about (the inside probe reaching its one-metre cap past about 0.15) arrives
+            // differently on her, and the figure is one to MEASURE through `tests/handling.gd` and correct, not to
+            // trust. The bow rise is the launch's: a runabout climbs onto the plane and stands its stem up doing it.
+            h.lean = 0.18f;
+            h.bow_rise = 0.10f;
+            h.plane_speed = 8.0f;
+            h.plane_lift = 0.22f;
+            h.control_reference = 7.0f;
+            h.angular_damping = 1.6f;
             break;
         case kKindBoat:
             // 900 kg. Thrust against hull drag alone would give 67 m/s, which is not a

@@ -3030,3 +3030,218 @@ common -- two heads, two pictures, 34 ms old.
 NOTHING -- precisely what a tower controller is -- gets the middle of the map at mast height. That is a placeholder:
 a controller's radar should stand where their station stands, and the station does not exist until the controller
 seat does.
+
+## THE DIORAMA: THE CONTROLLER'S SECOND VIEW IS A CHESSBOARD (lane/diorama, 2026-09-20)
+
+The user, 2026-09-20: *"after building our command center i have some additions, we shouldn't use a camera and have
+godot just view the map, we should regenerate a view given the data we have (that way it doesn't incur the same 3d
+drawing issues and distance calculations, make a new "diorama" of sorts that shows the state of all the units,
+almost like a live chessboard with the terrain and planes, boats, flying around."*
+
+`B` at the controller's station swaps the flat plot for a miniature of the level about a metre across, built out of
+numbers and rebuilt from the same radar rows four times a second. The plot is untouched and still there.
+
+### The thing to get straight first: a diorama still has a camera
+
+It is easy to read the request as "draw 3D without a camera", which cannot be done. What is being rejected is what
+`world/level_map.gd` does -- point an orthographic `Camera3D` at the REAL world's REAL geometry at REAL scale, eight
+kilometres out and eight kilometres up, render once and freeze the picture because doing it per frame would cost a
+second world view every frame.
+
+**The win is that the miniature is small and near the origin.** `world/diorama_view.gd` sets `own_world_3d` on its
+`SubViewport`, which is the opposite of what `LevelMap` does and for the opposite reason: that file shares the
+level's `World3D` deliberately, because a SubViewport otherwise "owns an empty scenario and its camera sees only the
+background". **Here the empty scenario IS the feature.** The board's world contains one static mesh, one light and
+nothing else; nothing in it is ever further from the origin than 0.6 m. No terrain geometry, no level of detail, no
+shader that asks where the camera is. That is why this one can render every frame where the flat map must be frozen
+after one.
+
+It also means the board cannot accidentally show something radar did not, because there is physically nothing else
+in its world to draw.
+
+### One scale, no vertical exaggeration, and why the second part was the harder call
+
+`world/diorama_scale.gd` is the only place the world is shrunk and everything goes through it. The tempting thing is
+a taller-than-wide board, because a model railway does it and relief looks better stretched. **It is refused, and
+altitude is the reason.** Exaggerate the terrain and you must exaggerate the aircraft identically or a contact at
+300 m appears to fly inside a ridge that is really 600 m and drawn at 2,400; exaggerate both and a contact at ten
+kilometres stands metres clear of a metre-wide board. Either way the board is lying about a number a controller is
+about to say on the radio.
+
+True scale turns out to be perfectly legible, measured: over the island's +/-7,200 m the factor is exactly
+**1:12,000**, and its 653 m of relief stands **54 mm** proud of a 1.2 m board. Two contacts over one spot 2,400 m
+apart draw as **200 mm** of daylight between them, where the flat plot draws one marker on top of the other.
+
+### A piece is a tiny model, and the first answer was overturned
+
+The board first drew a flat silhouette plate per contact, and argued for it: at 1:12,000 an F-4 is **1.4 millimetres
+long**, "almost like a live chessboard" reads as arguing for tokens, and a chess piece is not a scale model of a
+horse. **The user settled it the other way, 2026-09-20:** *"can you make sure you use tiny models for the planes?"*
+A diorama is the thing that has little models in it, and they were right.
+
+**The scale objection was never wrong. It is answered by breaking size away from position, not by refusing models.**
+`world/diorama_miniature.gd` builds the craft at life size and `DioramaBoard._model_scale` shrinks it to a readable
+size, so the rule is unchanged and is still the whole rule:
+
+> **Position goes through `DioramaScale`. Size does not.**
+
+A jumbo comes out a sensible amount bigger than a Cessna rather than 1:12,000 bigger, which would be 5.9 mm against
+0.9 mm and illegible for both.
+
+**THE REAL CRAFT MODELS WERE TRIED AND REFUSED ON A MEASUREMENT.** `VehicleView.setup(0, kind)` builds any kind's
+actual exterior with no simulation running, which is exactly the tool it looks like. `../craft_model_audit.md`
+counts what it costs: a Cessna about 40,000 triangles, an Osprey 118,000, a Hawkeye 164,000. Seventy-five contacts is
+a routine board, so real models would be **three to twelve million triangles on the one screen whose entire
+justification is that it is cheap** — it would have destroyed the thing the user asked for in order to satisfy the
+thing the user asked for.
+
+So a miniature is built from the shape table instead: `Sim.geometry_of(kind)` gives `extents` (the half extents of
+the body) and `span` (the half wingspan), and those two numbers draw a fuselage with a pointed nose, a swept wing, a
+tailplane and a fin — **about forty triangles**, faceted as the house look wants, cached per KIND and shared by every
+contact of it. Helicopters get a pod, a boom and a rotor disc, because at this size the disc is the only thing that
+tells a helicopter from an aeroplane. Ships reuse `ShipHull.far_mesh`, the prism silhouette that file already builds
+for a hull seen from beyond 1,800 m, which is precisely this job and is already measured.
+
+Nothing in it names a kind: `VehicleCatalogue.group` sorts by the movement model the simulation declares, so a kind
+added in the C++ gets a miniature with no edit anywhere.
+
+The convention was checked against published aeroplanes rather than assumed: the jumbo's `extents.z` doubles to
+70.7 m, a 747-400's length to the decimetre, and its `span` doubles to 64.9 m against a published 64.4; the Cessna's
+doubles to 11.0 m, a 172's span exactly. **One kind looks like it is in the other convention** — the Phantom's `span`
+of 11.71 is an F-4's *full* published span of 11.77, where the others hold the half — so `_wing_half` clamps a wing
+to 1.05 of the body's half length. That is a display clamp and not a fix; the figures are the simulation's, and the
+discrepancy is worth somebody's time separately.
+
+**The stalk is the reason a board beats a plot.** Every piece stands on a thin peg from the board's surface to its
+true altitude, with a dot where it lands. It shows height, which `ui/menus/map_canvas.gd` has nowhere to put; it says
+where the contact is on the ground, which a floating model cannot; and it lengthens and shortens as the contact
+climbs and descends. A ship gets none — it is on the water, and a peg of no length is ink saying nothing.
+
+**Contacts stay anonymous grey**, because `world/radar_set.gd` is explicit that radar says whether somebody is
+aboard and never who. `manned` used to read as solid plate against outline and **the models took that channel away**
+— a little aeroplane drawn as a wireframe is a scribble at 20 mm — so it reads in **tone** now, a crewed contact
+bright against an empty one darker. That file names "solid against an outline, or size" as the options and size is
+already spoken for by the kind.
+
+### And each piece says its direction, speed and altitude
+
+The user, in the same breath: *"make sure their direction, speed, altitude is visible with a small text label"*. Two
+billboarded `Label3D` lines per piece — the call sign above, and `bearing / metres / metres per second` below in
+smaller, dimmer type, because the two lines are not equally important and seventy-five of each would otherwise be a
+wall of text. **In the words the side panel already uses**, three-digit bearing and then metres and metres per
+second, so a controller reading the board and then the panel never converts anything in their head.
+
+The altitude on the label is always the **reported** one, never the reckoned one: a row carries no vertical rate, so
+dead reckoning moves a contact across the ground and never up or down, and printing anything else would be the label
+claiming a climb nobody measured.
+
+### It takes the SENSOR's picture, and that was the rule this lane could most easily have broken
+
+`ControlStation` hands the board the same `RadarWatch.contacts()` rows it hands the canvas, on the same beat.
+`DioramaBoard.show_contacts` decides nothing and fetches nothing. **A board that reached for `Sim.current` would
+hand the controller omniscience back and nobody would notice, because it would look better** -- it would simply be a
+fuller board. `tests/diorama.gd` holds it both ways: contacts that exist in no simulation anywhere are still drawn,
+and an empty list draws an empty board with a world of twenty-four aircraft standing right beside it.
+
+**AND IT ANSWERS THE CLIPPING PROBLEM FOR FREE, which was not planned.** `RadarSet.REACH_M` is 60 km and the
+island's map is 7.2 km, so a contact out past the map is projected off the flat canvas and clipped --
+`ControlStation._off_the_plot` exists only to count them and say the number out loud, because a silently dropped
+contact looks exactly like terrain hiding one, and `../../todo/flatcrew--contacts-past-the-edge-of-the-plot.md` asks
+for edge markers. **A board has no canvas edge to clip against.** The piece simply stands where it is, off the rim
+in open space, which is both where it is and what it looks like: measured, a contact 17.3 km out stands 1.44 board
+metres from the middle of a 1.2 m board. That does not close the note -- the plot still clips, and the plot is what
+a controller reads bearings off -- but on the board the problem does not arise.
+
+### Between sweeps: hold, or dead reckon — and the difference is not cosmetic
+
+Radar is published once a second and the station redraws four times a second, so three updates in four have nothing
+new to say. The board can do exactly two honest things with that, and `R` picks between them.
+
+**HOLD**, which is the default. Every piece stays where the last sweep put it, and nothing on the board is ever
+anything but a position the sensor actually reported.
+
+**DEAD RECKON.** Every piece is advanced along **its own reported course** by the age of the picture — `speed` and
+`heading` are columns of the row, so this is arithmetic on what the sensor said and not a position invented for the
+look of it. It is what a real plot extrapolator does and it has a name that can be said out loud, which is the test
+of whether a display is allowed to do something at all. The panel says so when it is on, and it names the
+**distance** rather than just the fact: "dead reckoned · up to 280 m" reads as a doubt where "dead reckoned" reads as
+a mode.
+
+**IT SNAPS, IT DOES NOT EASE, and that falls out of doing it by AGE rather than by tweening.** A piece is drawn at
+`reported + course × age`, so when a new page lands the age drops to nothing and the piece is back on a reported
+position in one frame. Easing it from the guess towards the truth would **hide the size of the guess's error**,
+which is the one thing an operator should be allowed to see. When the reckoning is good the snap is invisible because
+the guess was nearly right; when a contact turns hard it jumps, and it *should* jump.
+
+It is flat, and that is a limitation with a reason: a row carries no vertical rate, so a reckoned contact moves
+across the ground and keeps the height it reported. Differencing two sweeps for a climb rate would be a second claim
+built on the first. (`speed` is the magnitude of the whole velocity, so a climbing contact is reckoned very slightly
+too far across the ground — at a 10° climb that is 1.5% of a second's travel, under two metres, a tenth of a
+millimetre on the board.)
+
+**While reckoning, the board advances its own pieces every frame rather than on the station's beat.** The station
+redraws four times a second, which is plenty for a panel of words and is not plenty for motion — a piece stepping
+four times a second is still visibly stepping. When it is holding this costs nothing at all, which is the right
+shape: the honest default is also the free one and the expensive path had to be asked for.
+
+**The choice was put to the user with a reel of each, not argued from principle.** `tests/diorama_reel.gd` records
+twenty seconds of ninety real AI craft flying, one flag apart, and follows the fastest contact's piece frame by
+frame. Held, it moves on **3.2% of 592 frames**; reckoned, on **99.8%**. That is the whole argument in two numbers:
+holding is a one-hertz slideshow, and the user asked for planes "flying around".
+
+Worth recording for the next person filming anything here: **`ffmpeg mpdecimate` could not tell the two reels
+apart** — both are 601 unique frames — because the camera orbits slowly and every pixel changes regardless. A
+whole-frame uniqueness count measures the camera, not the subject. The measurement has to follow the thing whose
+motion is in question, which is why the probe tracks a contact.
+
+### What looking at it changed, which was most of the tuning
+
+Four things, and every one of them was invisible to the suite:
+
+- **The colour bands were absolute metres** -- 18, 190 and 430 -- and the island's highest rock is 653, so two
+  thirds of every ridge came out rock-grey or snow-white and the board looked like Iceland. They are fractions of
+  the level's own measured relief now, so the snow line is near the tops because it is *defined* as near the tops,
+  on a 14 km island and a 65 km generated world alike.
+- **The tokens were 14 mm and read as scratches** from the opening view while being perfectly fine close in --
+  which is the trap of tuning at whatever distance you happen to be debugging at. 20 mm and up.
+- **The miniatures were drawn at twice the size asked for**, because `extents` are HALF extents and the scale
+  divided by `extents.z` rather than by the full length: the airliner came out 70 mm on a 1,200 mm board and swamped
+  its neighbours. The suite caught it, not the eye, once it was made to report the size off the DRAWN mesh.
+- **And they were too dark.** An empty contact's paint at 0.52 multiplies the miniature's own 0.62 body grey down to
+  about 0.32, which against the black sky behind the high contacts read as a silhouette rather than as a model --
+  the exact thing the models had just been added to stop.
+- **The camera was wrong in both directions.** At 1.45 m the board ran off the edges the moment it was turned; at
+  1.9 it sat in the middle of a lot of black, which only showed up beside a flat plot filling its half.
+- **`PITCH_LOW` at 0.06 rad** put the board edge-on with the contacts stacked into a hedge.
+
+And one that the suite caught only once it was asked properly: the board is a 150 m grid, so `surface_board_y`
+answers with the nearest sample and is up to a texel's worth of slope from a point query -- **32.5 m** at
+(1500, -3750), where the terrain stands at 480.9 m and the board says 448.4. That is resolution, not error, and a
+stalk has to stand on the mesh that is drawn.
+
+### What is checked, and the check worth copying
+
+`tests/diorama.gd` (core) holds the scale in both directions at three different extents, the board against
+`Terrain.surface_height` at 196 texel centres, every one of the 37 traffic kinds getting a piece, the altitude claim
+with two contacts at one place and two heights, and the reckoning with two contacts on courses 90 degrees apart --
+one of anything would prove nothing in all three cases. `tests/diorama_shot.gd` is the stills and
+`tests/diorama_reel.gd` the two reels; both are probes, and neither has a verdict on how it looks.
+
+**Two checks went red when the pieces became models, and both were right to.**
+`a_bigger_kind_gets_a_bigger_piece` read "airliner 0.0016 against cessna 0.0048", because a plate was a unit shape
+scaled UP to its size while a miniature is built life size and scaled DOWN — so a bigger kind has a *smaller* scale
+factor. Both numbers are perfectly plausible on their own and only their order gives the fault away; the check now
+measures off the drawn mesh's own bounds. And the `manned` check went red because solid-against-outline had stopped
+existing, which is the suite noticing a channel had been removed rather than a bug.
+
+**The check worth copying is the transpose.** `heights` is indexed `j * TEXELS + i`, and an i/j swap is invisible on
+anything symmetrical: it draws the island's own reflection, confidently, with every contact in the wrong valley. So
+the suite *searches* for the point where the island is least like its own mirror -- scoring candidates by the
+smaller of "how high this point stands" and "how far its mirror is from it", because a tall point whose mirror
+matches proves nothing and so does a big gap down at sea level -- and asserts the board agrees with the terrain
+there and disagrees with the transpose. Deliberately swapping the index turns it red at 370 m.
+
+Its first two versions were both weaker and both looked fine. The first scored on the gap alone and settled on a
+sea-level spot whose reflection is 481 m of rock: it passed, and would have passed just as happily against a
+`surface_board_y` that returned zero for everything. The second searched arbitrary coordinates rather than texel
+centres and went red by 32.5 m, measuring the board's resolution rather than its index.

@@ -52,6 +52,10 @@ const REFERENCE: Dictionary = {
 	"classic_cutter": {"elevation": 14.0, "around": 42.0, "fov": 22.0, "range": 34.0},
 	"stern_trawler": {"elevation": 16.0, "around": 42.0, "fov": 22.0, "range": 80.0},
 	"motor_yacht": {"elevation": 15.0, "around": 42.0, "fov": 22.0, "range": 56.0},
+	# THE RUNABOUT, from low and close -- 8 degrees up is about the eye of somebody in another boat alongside, which is
+	# the only way anybody ever sees one of these. No reference photograph of a triple-cockpit boat exists under a free
+	# licence (craft/runabout/sources.md), so this is NOT an overlay; `side` and `plan` remain true elevations.
+	"runabout": {"elevation": 9.0, "around": 38.0, "fov": 34.0, "range": 13.5},
 }
 
 var _failures: PackedStringArray = []
@@ -204,6 +208,8 @@ func _geometry_of(ship_name: String) -> Dictionary:
 			return DestroyerDraft.geometry()
 		"container_feeder", "container_large":
 			return ContainerShipDraft.geometry(ship_name)
+		"runabout":
+			return RunaboutDraft.geometry()
 		"cruising_sloop", "classic_cutter", "stern_trawler", "motor_yacht":
 			return SmallCraftDraft.geometry(ship_name)
 		_:
