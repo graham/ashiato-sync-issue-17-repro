@@ -1,0 +1,40 @@
+﻿THE TAKE-OFF ROLL, full power, the tail still down (12 degrees of angle at the disc)
+
+THE CESSNA 172S (180 hp on a 1.93 m propeller: the swing a trainer has)
+  1 propeller(s) of 0.96 m radius, 134 kW each at 251 rad/s, 1000 kg
+   speed   thrust    torque roll   P-factor yaw   swirl yaw   net yaw   full rudder   rudder needed
+      0     3181 N      -533 N m        -191 N m      -886 N m     -1078 N m       3792 N m      28%
+     10     3934 N      -533 N m        -237 N m      -886 N m     -1123 N m       4903 N m      23%
+     20     3364 N      -533 N m        -202 N m      -886 N m     -1089 N m       4865 N m      22%
+     30     2851 N      -533 N m        -172 N m      -886 N m     -1058 N m       5321 N m      20%
+     45     2229 N      -533 N m        -134 N m      -886 N m     -1021 N m       6983 N m      15%
+     60     1783 N      -533 N m        -107 N m      -887 N m      -994 N m       9815 N m      10%
+  torque at a standstill: 533 N m against about 4840 kg m^2 of roll inertia, 0.11 rad/s^2
+
+THE P-51D MUSTANG (1,490 hp on a 3.40 m propeller; fin area, arm and travel ESTIMATE until it has a kind)
+  1 propeller(s) of 1.70 m radius, 1111 kW each at 150 rad/s, 4175 kg
+   speed   thrust    torque roll   P-factor yaw   swirl yaw   net yaw   full rudder   rudder needed
+      0    19020 N     -7383 N m       -2019 N m     -3763 N m     -5782 N m      20758 N m      28%
+     10    24510 N     -7383 N m       -2602 N m     -3765 N m     -6367 N m      27358 N m      23%
+     20    21985 N     -7383 N m       -2334 N m     -3765 N m     -6099 N m      26428 N m      23%
+     30    19585 N     -7383 N m       -2079 N m     -3765 N m     -5844 N m      26851 N m      22%
+     45    16362 N     -7383 N m       -1737 N m     -3766 N m     -5503 N m      30177 N m      18%
+     60    13703 N     -7383 N m       -1455 N m     -3766 N m     -5221 N m      36856 N m      14%
+  torque at a standstill: 7383 N m against about 21271 kg m^2 of roll inertia, 0.35 rad/s^2
+
+THE P-38L LIGHTNING (two 1,600 hp engines turning opposite ways, 2.438 m out (PRINTED_BOOM_OUT))
+  2 propeller(s) of 1.75 m radius, 1193 kW each at 157 rad/s, 7940 kg
+   speed   thrust    torque roll   P-factor yaw   swirl yaw   net yaw   full rudder   rudder needed
+      0    40674 N         0 N m           0 N m         0 N m         0 N m      44316 N m       0%
+     10    52437 N         0 N m           0 N m         0 N m         0 N m      58421 N m       0%
+     20    47060 N         0 N m           0 N m         0 N m         0 N m      56425 N m       0%
+     30    41946 N         0 N m           0 N m         0 N m         0 N m      57293 N m       0%
+     45    35071 N         0 N m           0 N m         0 N m         0 N m      64290 N m       0%
+     60    29389 N         0 N m           0 N m         0 N m         0 N m      78382 N m       0%
+  torque at a standstill: 7595 N m against about 79788 kg m^2 of roll inertia, 0.10 rad/s^2 an engine, and the pair cancels it
+
+THE P-38 WITH ONE ENGINE OUT, at 60 m/s
+  one engine pulling 14695 N at 2.44 m out: 35826 N m of yaw, against 46361 N m of full rudder (77%)
+
+what one propeller costs a tick (median of five runs of a million)
+  a constant-speed propeller with its three moments: 82.5 ns

@@ -1,0 +1,54 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://objects/seats/cockpit_station.gd" id="station"]
+[ext_resource type="Script" path="res://objects/seats/cockpit_shell.gd" id="shell"]
+[ext_resource type="Script" path="res://objects/controls/throttle_lever.gd" id="throttle"]
+[ext_resource type="Script" path="res://objects/controls/flight_stick.gd" id="stick"]
+[ext_resource type="Script" path="res://objects/controls/crew_button.gd" id="button"]
+[ext_resource type="Script" path="res://objects/controls/rudder_indicator.gd" id="rudder"]
+[ext_resource type="Script" path="res://objects/seats/crew_board.gd" id="crew"]
+[ext_resource type="Script" path="res://objects/seats/craft_display.gd" id="display"]
+[ext_resource type="PackedScene" path="res://objects/seats/flight_page.tscn" id="flight"]
+[ext_resource type="Script" path="res://objects/controls/map_screen.gd" id="map"]
+[ext_resource type="Script" path="res://objects/controls/toggle_switch.gd" id="switch"]
+
+[node name="Station" type="Node3D"]
+script = ExtResource("station")
+
+[node name="Shell" type="Node3D" parent="."]
+script = ExtResource("shell")
+width = 0.84
+depth = 0.92
+
+[node name="Throttle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3400, 0.8300, -0.3400)
+script = ExtResource("throttle")
+
+[node name="Stick" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.7200, -0.3400)
+script = ExtResource("stick")
+
+[node name="Button" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3000, 0.8200, 0.0200)
+script = ExtResource("button")
+
+[node name="Rudder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.8100, -0.3600)
+script = ExtResource("rudder")
+
+[node name="Crew" type="Node3D" parent="."]
+script = ExtResource("crew")
+
+[node name="Display" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.7317, 0.6816, 0, -0.6816, 0.7317, -0.1700, 0.7200, -0.4000)
+script = ExtResource("display")
+page = ExtResource("flight")
+
+[node name="MapScreen" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.6216, 0.7833, 0, -0.7833, 0.6216, 0.2200, 0.7400, -0.3000)
+script = ExtResource("map")
+
+[node name="MasterArm" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2000, 0.8600, -0.4600)
+script = ExtResource("switch")
+channel = 13

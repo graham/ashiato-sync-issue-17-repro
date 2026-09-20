@@ -1,0 +1,38 @@
+{
+ "name": "East International, runway 18/36",
+ "summary": "The north-south runway of the test field's crossing airliner airport, laid as Cape International's 18/36 is. Landed on northward (36); both ends take a 10 NM final.",
+ "world": "testfield",
+ "runway": {
+  "centre": [
+   17000.0,
+   0.0,
+   0.0
+  ],
+  "bearing_degrees": 0.0,
+  "length_m": 3500.0,
+  "width_m": 45.72,
+  "protection": {
+   "ofa_half_width": 121.92,
+   "ofa_beyond_end": 304.8,
+   "rpz_from_end": 60.96,
+   "rpz_length": 762.0,
+   "rpz_outer_half": 266.7
+  }
+ },
+ "ends": {
+  "threshold": {
+   "pattern": "right"
+  },
+  "far_end": {
+   "pattern": "left"
+  }
+ },
+ "in_use": "threshold",
+ "sources": {
+  "length_m": "As Cape International's: the 747-400 at its maximum weight on a hot day, Boeing D6-58326-1 rev F 3.3.4, rounded up to 3,500 m.",
+  "width_m": "FAA AC 150/5300-13B change 1, table G-11 (C/D/E-V): 150 ft.",
+  "protection": "The same table as Cape International's, approach visibility below 3/4 mile; the test field's ground also keeps a 34:1 funnel clear 10 NM off each end (Airfield.pads_for).",
+  "place": "The test field's east side, x +17 km; runway 09/27 lies where Cape International's does relative to it (700 m west, 1,100 m north), so the crossing is 2,450 m from 09's threshold and 2,850 m from 36's, as at the cape.",
+  "pattern": "As Cape International's 18/36."
+ }
+}

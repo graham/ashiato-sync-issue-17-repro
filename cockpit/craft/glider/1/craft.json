@@ -1,0 +1,81 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "TrimWheel",
+    "AirbrakeLever",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "glider",
+  "kind": 17,
+  "manifest_hash": "7cbe89dac7999e468f4f40c6015377f3c4b58d94169676cb976bdff23f181e9a",
+  "model": {
+    "native_model": "airplane",
+    "presentation_body": "SAILPLANE"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.949999988079071,
+      0.949999988079071,
+      0.970000028610229,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_glider.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.0,
+        -0.994,
+        -2.81
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    },
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.0,
+        -0.94,
+        -1.81
+      ],
+      "station": "copilot",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "167b8edfc083fc1239b1bb44f05eabc9704f73f61ced8707aeed501ea34ce276",
+  "station_hashes": {
+    "0": "b31dfb46d743cd7377d21949176eafbe9dd0ec5b0daada51812747d45c5e5124",
+    "1": "4dda0eacc83155d2115c54e05589de3a6c39e9b39b7b42e6524437203bc9732e"
+  },
+  "stations": {
+    "0": "stations/seat0.json",
+    "1": "stations/seat1.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1
+}

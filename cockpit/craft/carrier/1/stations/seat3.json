@@ -1,0 +1,219 @@
+{
+  "controls": [
+    {
+      "at": [
+        -0.34,
+        1.1,
+        -0.02
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat3/Button",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "CABIN LIGHT",
+      "name": "Button",
+      "part": "CrewButton",
+      "range": 255,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        0.24,
+        0.8,
+        -0.46
+      ],
+      "binding": {
+        "channel": 10,
+        "id": "bus.10",
+        "range": 5,
+        "type": "bus_channel",
+        "version": 1
+      },
+      "channel": 10,
+      "channel_name": "display",
+      "device_id": "seat3/DisplaySelector",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "KNOB / DISPLAY",
+      "name": "DisplaySelector",
+      "part": "RotaryKnob",
+      "range": 5,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        0.48,
+        0.8,
+        -0.16
+      ],
+      "binding": {
+        "channel": 11,
+        "id": "bus.11",
+        "range": 3,
+        "type": "bus_channel",
+        "version": 1
+      },
+      "channel": 11,
+      "channel_name": "mode",
+      "device_id": "seat3/ModeSelector",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "KNOB / MODE",
+      "name": "ModeSelector",
+      "part": "RotaryKnob",
+      "range": 3,
+      "scope": "craft"
+    }
+  ],
+  "craft": "carrier",
+  "fitted_controls": [
+    {
+      "at": [
+        -0.34,
+        1.1,
+        -0.02
+      ],
+      "channel": -1,
+      "class": "CrewButton",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Button",
+      "range": 255,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        0.24,
+        0.8,
+        -0.46
+      ],
+      "channel": 10,
+      "class": "RotaryKnob",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "DisplaySelector",
+      "range": 5,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        0.48,
+        0.8,
+        -0.16
+      ],
+      "channel": 11,
+      "class": "RotaryKnob",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "ModeSelector",
+      "range": 3,
+      "scope": "craft"
+    }
+  ],
+  "furniture": [
+    {
+      "at": [
+        0.26,
+        0.86,
+        -0.12
+      ],
+      "class": "CrewBoard",
+      "facing": [
+        -60.161,
+        -51.566,
+        0.0
+      ],
+      "name": "Crew"
+    },
+    {
+      "at": [
+        -0.02,
+        1.14,
+        -0.36
+      ],
+      "class": "CraftDisplay",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Display",
+      "page": "res://objects/seats/flight_page.tscn"
+    },
+    {
+      "at": [
+        -0.3,
+        1.0,
+        -0.42
+      ],
+      "class": "CraftDisplay",
+      "facing": [
+        -31.513,
+        20.054,
+        0.0
+      ],
+      "name": "MfdLeft",
+      "page": "res://objects/seats/mfd_page.tscn"
+    },
+    {
+      "at": [
+        0.3,
+        1.0,
+        -0.42
+      ],
+      "class": "CraftDisplay",
+      "facing": [
+        -31.513,
+        -20.054,
+        0.0
+      ],
+      "name": "MfdRight",
+      "page": "res://objects/seats/mfd_page.tscn"
+    }
+  ],
+  "kind": 12,
+  "seat": 3,
+  "shell": {
+    "at": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "depth": 0.92,
+    "facing": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "name": "Shell",
+    "tint": [
+      0.140000000596046,
+      0.150000005960464,
+      0.170000001788139,
+      1.0
+    ],
+    "width": 1.05
+  },
+  "source_scene": "res://objects/seats/seat_wheel.tscn",
+  "units": "metres and degrees, in the seat's own frame; -Z is forward, +Y is up"
+}

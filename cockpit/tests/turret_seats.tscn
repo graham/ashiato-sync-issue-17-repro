@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/turret_seats.gd" id="1_turret_seats"]
+
+[node name="TurretSeats" type="Node"]
+script = ExtResource("1_turret_seats")

@@ -1,0 +1,70 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "FlapsLever",
+    "GearLever",
+    "TrimWheel",
+    "GearHandle",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "p51",
+  "kind": 35,
+  "manifest_hash": "addc4be79c5f880bd6628b0ab3b6bfc683d232ff1c7f6778f5bbcb3b8e23ef19",
+  "model": {
+    "native_model": "airplane",
+    "presentation_body": "WARBIRD"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.699999988079071,
+      0.720000028610229,
+      0.740000009536743,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_p51.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.0,
+        -0.54,
+        -0.569
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "3ee06587b982820f2c46fc53ede5d428d93f1fe7bfb2d0b886edd49f447f7b06",
+  "station_hashes": {
+    "0": "248823242b0c3030d723001748355f4ea9618bedfd8994706b4c6c00bc990f0c"
+  },
+  "stations": {
+    "0": "stations/seat0.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1
+}

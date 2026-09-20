@@ -1,0 +1,6 @@
+{
+	"name": "Bad spacing",
+	"summary": "It stands every arrival in the same place as the last one.",
+	"world": "island",
+	"spawn": {"at": [-21, 30, 0], "yaw_degrees": 0, "apart": 0}
+}

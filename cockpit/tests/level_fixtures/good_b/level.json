@@ -1,0 +1,6 @@
+{
+	"name": "Good B",
+	"summary": "The second good one, spawned somewhere else.",
+	"world": "island",
+	"spawn": {"at": [412, 60, -388], "yaw_degrees": 90}
+}

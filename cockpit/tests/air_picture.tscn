@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/air_picture.gd" id="1_air"]
+
+[node name="AirPictureTest" type="Node"]
+script = ExtResource("1_air")

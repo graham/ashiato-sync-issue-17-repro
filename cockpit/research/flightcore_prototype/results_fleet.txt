@@ -1,0 +1,28 @@
+﻿MH-6M Little Bird: 1 disc(s) of 4.18 m radius, 6 blades of 0.18 m, 1406 kg, tip 215 m/s
+  disc loading 25.7 kg/m^2; MD 530F sheet: 2,070 ft/min, 135 kt cruise, 152 kt never-exceed
+  hover out of ground effect: lever 0.45, blade pitch 7.2 deg, 227 kW a disc of 317 available
+  climb at full collective: 11.4 m/s (2248 ft/min), 319 kW a disc, power limited
+      the book says 10.5 m/s (2067 ft/min): 1.09 of it
+  fastest it holds height: 73.5 m/s (143 kt) at 12 degrees nose down
+      the book's cruise 135 kt and maximum 152 kt: 1.06 of the cruise
+  autorotation, engine at idle: least sink 11.0 m/s (2162 ft/min) at 35 m/s (68 kt) forward
+UH-60M Black Hawk: 1 disc(s) of 8.18 m radius, 4 blades of 0.53 m, 9979 kg, tip 221 m/s
+  disc loading 47.5 kg/m^2; no performance figure in the repo's sources; flat plate an ESTIMATE
+  hover out of ground effect: lever 0.69, blade pitch 11.0 deg, 1822 kW a disc of 2535 available
+  climb at full collective: 13.1 m/s (2573 ft/min), 2540 kW a disc, power limited
+  fastest it holds height: 77.8 m/s (151 kt) at 6 degrees nose down
+  autorotation, engine at idle: least sink 9.7 m/s (1902 ft/min) at 40 m/s (78 kt) forward
+AH-64D Apache: 1 disc(s) of 7.32 m radius, 4 blades of 0.53 m, 7270 kg, tip 221 m/s
+  disc loading 43.2 kg/m^2; [W] through apache_flight.gd: 1,775 ft/min, 143 kt cruise, 158 kt maximum
+  hover out of ground effect: lever 0.61, blade pitch 9.7 deg, 1322 kW a disc of 2100 available
+  climb at full collective: 18.1 m/s (3568 ft/min), 2114 kW a disc, power limited
+      the book says 9.0 m/s (1772 ft/min): 2.01 of it
+  fastest it holds height: 94.1 m/s (183 kt) at 8 degrees nose down
+      the book's cruise 143 kt and maximum 158 kt: 1.28 of the cruise
+  autorotation, engine at idle: least sink 10.4 m/s (2039 ft/min) at 45 m/s (87 kt) forward
+CH-47F Chinook: 2 disc(s) of 9.15 m radius, 3 blades of 0.81 m, 15000 kg, tip 225 m/s
+  disc loading 28.5 kg/m^2; no performance figure in the repo's sources; flat plate and overlap ESTIMATE
+  hover out of ground effect: lever 0.45, blade pitch 7.3 deg, 1389 kW a disc of 2800 available
+  climb at full collective: 28.0 m/s (5503 ft/min), 2815 kW a disc, power limited
+  fastest it holds height: 110.0 m/s (214 kt) at 14 degrees nose down
+  autorotation, engine at idle: least sink 11.5 m/s (2257 ft/min) at 45 m/s (87 kt) forward

@@ -1,0 +1,6 @@
+{
+	"name": "Typo",
+	"summary": "A misspelt spawn.",
+	"world": "island",
+	"spwan": {"at": [0, 30, 0], "yaw_degrees": 0}
+}

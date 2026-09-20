@@ -1,0 +1,303 @@
+{
+  "controls": [
+    {
+      "at": [
+        -0.34,
+        0.83,
+        -0.34
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat2/Throttle",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "THROTTLE",
+      "name": "Throttle",
+      "part": "ThrottleLever",
+      "range": 255,
+      "scope": "seat"
+    },
+    {
+      "at": [
+        0.0,
+        0.72,
+        -0.34
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat2/Stick",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "STICK / PITCH / ROLL",
+      "name": "Stick",
+      "part": "FlightStick",
+      "range": 255,
+      "scope": "seat"
+    },
+    {
+      "at": [
+        -0.34,
+        1.1,
+        -0.02
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat2/Button",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "CABIN LIGHT",
+      "name": "Button",
+      "part": "CrewButton",
+      "range": 255,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        -0.34,
+        0.81,
+        0.22
+      ],
+      "binding": {
+        "channel": 5,
+        "id": "bus.5",
+        "range": 255,
+        "type": "bus_channel",
+        "version": 1
+      },
+      "channel": 5,
+      "channel_name": "tilt",
+      "device_id": "seat2/Extra",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "NACELLES / PLANE / HELI",
+      "name": "Extra",
+      "part": "TiltLever",
+      "range": 255,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        0.16,
+        0.72,
+        -0.2
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat2/MapScreen",
+      "facing": [
+        -51.566,
+        0.0,
+        0.0
+      ],
+      "label": "MAP / CREW",
+      "name": "MapScreen",
+      "part": "MapScreen",
+      "range": 255,
+      "scope": "pilot"
+    }
+  ],
+  "craft": "osprey",
+  "fitted_controls": [
+    {
+      "at": [
+        -0.34,
+        0.83,
+        -0.34
+      ],
+      "channel": -1,
+      "class": "ThrottleLever",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Throttle",
+      "range": 255,
+      "scope": "seat"
+    },
+    {
+      "at": [
+        0.0,
+        0.72,
+        -0.34
+      ],
+      "channel": -1,
+      "class": "FlightStick",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Stick",
+      "range": 255,
+      "scope": "seat"
+    },
+    {
+      "at": [
+        -0.34,
+        1.1,
+        -0.02
+      ],
+      "channel": -1,
+      "class": "CrewButton",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Button",
+      "range": 255,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        -0.34,
+        0.81,
+        0.22
+      ],
+      "channel": 5,
+      "class": "TiltLever",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Extra",
+      "range": 255,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        0.16,
+        0.72,
+        -0.2
+      ],
+      "channel": -1,
+      "class": "MapScreen",
+      "facing": [
+        -51.566,
+        0.0,
+        0.0
+      ],
+      "name": "MapScreen",
+      "range": 255,
+      "scope": "pilot"
+    }
+  ],
+  "furniture": [
+    {
+      "at": [
+        0.0,
+        0.81,
+        -0.36
+      ],
+      "class": "RudderIndicator",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Rudder"
+    },
+    {
+      "at": [
+        0.26,
+        0.86,
+        -0.12
+      ],
+      "class": "CrewBoard",
+      "facing": [
+        -60.161,
+        -51.566,
+        0.0
+      ],
+      "name": "Crew"
+    },
+    {
+      "at": [
+        0.16,
+        0.74,
+        -0.44
+      ],
+      "class": "CraftDisplay",
+      "facing": [
+        -42.97,
+        0.0,
+        0.0
+      ],
+      "name": "Display",
+      "page": "res://objects/seats/flight_page.tscn"
+    },
+    {
+      "at": [
+        -0.3,
+        1.0,
+        -0.42
+      ],
+      "class": "CraftDisplay",
+      "facing": [
+        -31.513,
+        20.054,
+        0.0
+      ],
+      "name": "MfdLeft",
+      "page": "res://objects/seats/mfd_page.tscn"
+    },
+    {
+      "at": [
+        0.3,
+        1.0,
+        -0.42
+      ],
+      "class": "CraftDisplay",
+      "facing": [
+        -31.513,
+        -20.054,
+        0.0
+      ],
+      "name": "MfdRight",
+      "page": "res://objects/seats/mfd_page.tscn"
+    }
+  ],
+  "kind": 7,
+  "seat": 2,
+  "shell": {
+    "at": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "depth": 0.92,
+    "facing": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "name": "Shell",
+    "tint": [
+      0.140000000596046,
+      0.150000005960464,
+      0.170000001788139,
+      1.0
+    ],
+    "width": 1.05
+  },
+  "source_scene": "res://objects/seats/seat_osprey.tscn",
+  "units": "metres and degrees, in the seat's own frame; -Z is forward, +Y is up"
+}

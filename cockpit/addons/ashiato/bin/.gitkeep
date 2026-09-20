@@ -1,0 +1,2 @@
+This directory is where setup.ps1 puts the library it builds.
+It must exist in the checkout: the build copies into it only if it is already there.

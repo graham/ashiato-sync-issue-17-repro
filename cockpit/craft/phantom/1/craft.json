@@ -1,0 +1,83 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "FlapsLever",
+    "GearLever",
+    "TrimWheel",
+    "GearHandle",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "phantom",
+  "kind": 38,
+  "manifest_hash": "e5add78c1ea8506678fcda04c3726e7ac02b1282c80658b1722cf29859cb8182",
+  "model": {
+    "native_model": "airplane",
+    "presentation_body": "PHANTOM"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.360000014305115,
+      0.379999995231628,
+      0.400000005960464,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_plane.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.0,
+        0.32,
+        -4.6
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    },
+    {
+      "flies": false,
+      "gun": false,
+      "position": [
+        0.0,
+        0.3,
+        -2.95
+      ],
+      "station": "operator",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "ed65fb4ec5c516df7e7efa8686d2d9196677eb52c6586321dccbfa09aff373ea",
+  "station_hashes": {
+    "0": "a543b1d34d52bd83b68d83be354692c2b0fb6200149a5c3c01cfb3b72c338542",
+    "1": "14bf2a7ead0370316e64100c5824c6780a4d57496cc86bc6684f69d3a0e3ba69"
+  },
+  "stations": {
+    "0": "stations/seat0.json",
+    "1": "stations/seat1.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1
+}

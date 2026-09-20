@@ -1,0 +1,81 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "TrimWheel",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "DetentDial",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "littlebird",
+  "kind": 28,
+  "manifest_hash": "1cb690e6c27e56df21f979b67bff506f1005d36051260bf77e63563cb3080e90",
+  "model": {
+    "native_model": "helicopter",
+    "presentation_body": "LITTLEBIRD"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.170000001788139,
+      0.180000007152557,
+      0.189999997615814,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_littlebird.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.3,
+        -0.645,
+        -2.421
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    },
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        -0.3,
+        -0.645,
+        -2.421
+      ],
+      "station": "copilot",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "6c44de4412eadb422453030a0d0d269b6b747ef1792a593a7d86308c994617cb",
+  "station_hashes": {
+    "0": "355a15e71acebaa21b4a15bcc75f204b96df19b7f30b1ff8ec47059ca437ffdc",
+    "1": "ea2117d2d189d0d4b569fabf1d92e4435b3e14b5bfe45e283cd280248aa1c3fd"
+  },
+  "stations": {
+    "0": "stations/seat0.json",
+    "1": "stations/seat1.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1
+}

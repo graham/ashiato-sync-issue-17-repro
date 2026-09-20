@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://player/pilot_rig.tscn" id="1_rig"]
+[ext_resource type="Script" path="res://marshalling/hand/marshal_rig.gd" id="2_marshal"]
+
+[node name="MarshalRig" instance=ExtResource("1_rig")]
+script = ExtResource("2_marshal")

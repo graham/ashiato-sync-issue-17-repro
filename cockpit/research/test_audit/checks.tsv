@@ -1,0 +1,292 @@
+name	tiers	lines	secs	assertions	lines_per_assertion	idiom
+lint	core	595	34.1	16	37.2	helper:_check
+transition_curtain	-	60		9	6.7	helper:_check
+long_message	-	229		20	11.4	helper:_check
+radio_clip	-	72		9	8.0	helper:check
+radio_peers	net	101	19.6	8	12.6	helper:check
+stations	core	263	7.2	13	20.2	helper:_check
+fit	core	367	9.5	8	45.9	helper:_check
+shell_room	core	542	6.6	6	90.3	helper:_check
+hull_hidden	core	76	5.5	1	76.0	helper:_check
+screens_face	core	222	6.3	4	55.5	helper:_check
+seat_room	core	300	7.6	1	300.0	helper:_check
+pilot_seat	core	371	8.6	13	28.5	helper:_check
+handling	-	1532	22.5	11	139.3	helper:_level_turn
+cb90	-	464		33	14.1	helper:_check
+fireboat	-	448	4.5	28	16.0	helper:_check
+sense	-	185		12	15.4	helper:_check
+smoke	core	3218	183.9	216	14.9	helper:_check
+trim	core	175	22.3	5	35.0	helper:_check
+altitude_hold	-	81		7	11.6	helper:_check
+trace_log	-	191		24	8.0	helper:_check
+trace_cost	-	63		0		none
+trace_replay	-	242		25	9.7	helper:_check
+latency	net,solo	104	25.4	3	34.7	helper:_check
+link_ms	net,solo	254	31.3	14	18.1	helper:_check
+net_stats	net,solo	318	29.1	25	12.7	helper:_check
+holding_stack	-	191	10.8	15	12.7	helper:_check
+bulk_load	net	156	156.9	12	13.0	flag/list
+bulk_peers	net,solo	190	36.1	8	23.8	helper:_check
+rotor_rates	-	401		4	100.2	helper:_check
+climb	-	266	11.6	7	38.0	helper:_check
+avoid	-	159		4	39.8	helper:_watch_the_leg
+rota	-	525		27	19.4	helper:_check
+marshalling	core	763	7.1	33	23.1	helper:_check
+carrier_shape	-	433	4.7	29	14.9	helper:_check
+tank_shape	-	410		18	22.8	helper:_check
+mount_aim	core	107	4.7	4	26.8	helper:_check
+ship_models	-	378	5.0	14	27.0	helper:_check
+merchant_models	-	774	7.1	30	25.8	helper:_check
+train_models	-	530	5.7	27	19.6	helper:_check
+rakes_drawn	-	176		8	22.0	helper:_check
+track_drawn	-	619		21	29.5	helper:_check
+road_diesel	-	354		24	14.8	helper:_check
+train_runs	-	158	5.4	6	26.3	helper:_check
+boat_seats	-	165		8	20.6	helper:_check
+plot_room	core	295	4.2	24	12.3	helper:_check
+ship_legs	-	336	351.8	11	30.5	helper:_check
+wind_sea	-	265		12	22.1	helper:_check
+fleet_shapes	-	690	5.8	25	27.6	helper:_check
+aircraft_fidelity	core	195	4.5	8	24.4	helper:_check
+named_parts	core	213	5.2	2	106.5	helper:_check
+joined_parts	core	140	4.7	2	70.0	helper:_check
+lights_on_skin	core	220	5.3	7	31.4	helper:_check
+sailplane	-	557	4.5	25	22.3	helper:_check
+jumbo	-	282	5.0	12	23.5	helper:_check
+fighter	-	915		44	20.8	helper:_check
+skyhawk	-	1040	7.1	37	28.1	helper:_check
+twin310	-	461		24	19.2	helper:_check
+craft_model_audit	core	409	13.1	5	81.8	helper:_check
+uh60	-	215		10	21.5	helper:_check
+rotorcraft	-	230		9	25.6	helper:_check
+rotor_hold	-	238		5	47.6	helper:_check
+rotor_turn	-	197		4	49.2	helper:_check
+prowler	-	528		16	33.0	helper:_check
+tomcat	-	834		23	36.3	helper:_check
+phantom	-	768	6.6	26	29.5	helper:_check
+phantom_wear	-	185	7.2	10	18.5	helper:_check
+sheet_cost	-	59	5.8	2	29.5	helper:_check
+sweep_handle	-	123		4	30.8	helper:_check
+falcon	-	561		16	35.1	helper:_check
+falcon_flight	-	331		6	55.2	helper:_check
+lightning	-	831	7.2	27	30.8	helper:_check
+lightning_flight	-	371	6.7	7	53.0	helper:_check
+lightning_bays	-	224	7.1	5	44.8	helper:_check
+exhaust	-	294	7.1	8	36.8	helper:_check
+harrier	-	596	5.2	19	31.4	helper:_check
+warthog	-	1011	8.4	26	38.9	helper:_check
+warthog_seat	-	574	76.9	22	26.1	helper:_check
+warthog_flight	-	143	4.7	7	20.4	helper:_warthog_check
+p51	-	825	6.1	19	43.4	helper:_check
+p47	-	873	6.3	22	39.7	helper:_check
+p38	-	717		21	34.1	helper:_check
+warbird_book	-	371		6	61.8	helper:_check
+taildragger	-	642	5.2	24	26.8	helper:_brake_from
+warbird_circuit	-	238	10.2	9	26.4	helper:_check
+warbird_guns	-	136		6	22.7	helper:_check
+warbird_cockpit	-	221		7	31.6	helper:_check
+osprey	-	891	6.3	27	33.0	helper:_check
+airliners	-	562	5.5	13	43.2	helper:_check
+hercules	-	179	5.4	1	179.0	helper:_the_guns_run_out_of_the_port_side_and_stow_inside_the_skin
+gun_stow	-	183	6.1	4	45.8	helper:_check
+apache	-	1022		29	35.2	helper:_check
+apache_flight	-	273		6	45.5	helper:_check
+helmet_gun	-	401		11	36.5	helper:_check
+helmet_lock	-	391		15	26.1	helper:_check
+littlebird	-	872	6.1	20	43.6	helper:_check
+littlebird_flight	-	276		6	46.0	helper:_check
+littlebird_book	-	158		14	11.3	helper:_check
+littlebird_circuit	-	120		6	20.0	helper:_check
+savoia	-	596		24	24.8	helper:_check
+water_rudder	-	247		15	16.5	helper:_check
+ground_stick	-	311		8	38.9	helper:_check
+surfaces	-	576	5.8	14	41.1	helper:_check
+cessna_book	-	515	5.3	9	57.2	helper:_check
+flight_fingerprint	core	306	6.3	8	38.2	helper:_check
+vehicle_gym	-	984	27.9	20	49.2	helper:_check
+tower	core	166	4.5	4	41.5	helper:_check
+braking_curve	core	202	4.4	6	33.7	helper:_check
+shots	core	928	4.8	64	14.5	helper:_check
+missiles	-	1235	49.3	76	16.2	helper:_check
+missile_cues	-	168		8	21.0	helper:_check
+hulls	-	202	10.1	13	15.5	helper:_check
+crashes	-	404	5.0	19	21.3	helper:_check
+hull_link	-	269	6.3	14	19.2	helper:_check
+respawn	-	114	13.7	11	10.4	helper:_check
+attackers	-	182	229.2	13	14.0	helper:_check
+jet_arms	-	855	137.1	30	28.5	helper:_check
+jet_arms_peers	-	127	27.1	4	31.8	helper:_check
+gun_scatter	core	180	9.9	8	22.5	helper:_check
+gunners	-	267		12	22.2	helper:_check
+gun_link	net	551	8.4	19	29.0	helper:_check
+command_burst	net	219	6.8	10	21.9	helper:_check
+many_devices	-	445		27	16.5	helper:_check
+big_guns	-	451		19	23.7	helper:_check
+shell_prediction	net	568	9.4	21	27.0	helper:_check
+input_window	core,net	355	5.7	27	13.1	helper:_check
+priority_sphere	net	587	31.6	41	14.3	helper:_check
+priority_peers	net	176	26.0	7	25.1	helper:_check
+pose_lod	core,net	432	5.3	30	14.4	helper:_check
+save_bandwidth	-	184	9.2	14	13.1	helper:_check
+station_budget	-	131	10.8	9	14.6	helper:_check
+ranging_sight	-	555		21	26.4	helper:_check
+turret_seats	core	252	8.1	5	50.4	helper:_check
+crew_sync	core,net	478	34.8	19	25.2	helper:_check
+bursts	-	259		23	11.3	helper:_check
+hands	-	307		18	17.1	helper:_check
+shared_controls	-	621	18.5	47	13.2	helper:_check
+pedals	-	443	12.6	25	17.7	helper:_check
+snap	-	864		72	12.0	helper:_check
+pinch	-	637		32	19.9	helper:_check
+director	core	786	5.3	46	17.1	helper:_check
+signal_lamp	-	841	11.8	61	13.8	helper:_check
+lamp_wire	net	489	8.0	21	23.3	helper:_check
+lamp_peers	net,solo	353	24.3	11	32.1	helper:_check
+restage	-	285		13	21.9	helper:_check
+water	core	1660	11.5	86	19.3	helper:_check
+air	-	1019	9.5	66	15.4	helper:_check
+puff_sky	-	339		20	16.9	helper:_check
+daytime	-	151	8.7	5	30.2	helper:_check
+sailing	-	596		36	16.6	helper:_check
+wakes	-	242		12	20.2	helper:_check
+seakeeping	-	406	14.1	12	33.8	helper:_gate
+nobody_aboard	-	159		11	14.5	helper:_check
+mist	-	457	12.4	39	11.7	helper:_check
+pirate_wire	net	150	6.0	6	25.0	helper:_check
+brig	-	114		9	12.7	helper:_check
+pirate_ai	-	435		21	20.7	helper:_check
+clipboard	core	1960	5.8	117	16.8	helper:_check
+build_stamp	-	369	23.4	26	14.2	helper:_check
+build_time	-	237	7.1	13	18.2	helper:_check
+build_export	solo	124	56.7	10	12.4	helper:_check
+builder	core	1440	5.5	92	15.7	helper:_check
+builder_authority	core	100	4.5	11	9.1	helper:_check
+builder_peers	net,solo	224	28.8	8	28.0	helper:_check
+craft_package	-	16	6.3	4	4.0	helper:_check
+device_farm	-	95		6	15.8	helper:_check
+device_yard	-	88		8	11.0	helper:_check
+device_yard_level	-	54		5	10.8	helper:_check
+device_yard_bridge	-	78		9	8.7	helper:_check
+device_yard_interaction	-	113		10	11.3	helper:_check
+device_router	-	39		6	6.5	helper:_check
+session	core,net	317	6.3	17	18.6	helper:_check
+launch_order	-	95	4.2	3	31.7	helper:_check
+two_peers	core,net	143	12.8	6	23.8	helper:_check
+desk_join	net	355	16.7	16	22.2	helper:_check
+segway	-	293		13	22.5	helper:_check
+segway_keys	-	217		11	19.7	helper:_check
+lobby	net	507	14.1	35	14.5	helper:_check
+lobby_peers	net	195	30.3	4	48.8	helper:_check
+names	-	164	5.8	12	13.7	helper:check
+names_peers	net	140	26.4	6	23.3	helper:check
+lobby2d	-	156	7.2	34	4.6	helper:check
+lobby2d_peers	net	314	38.8	10	31.4	helper:_check
+sight_line	-	196		11	17.8	helper:_check
+radar_set	-	215		16	13.4	helper:_check
+radar_peers	net	201	22.5	6	33.5	helper:_check
+server_peers	net	239	28.0	10	23.9	helper:_check
+intercom	-	153	7.6	22	7.0	helper:check
+intercom_peers	net	372	15.8	15	24.8	helper:_check
+no_vr_flight	core,solo	425	17.3	16	26.6	helper:_check
+crew_peers	net,solo	158	16.5	5	31.6	helper:_check
+spotting	-	546		36	15.2	helper:_check
+spotting_peers	-	164	27.4	4	41.0	helper:_check
+sweep_peers	net,solo	242	30.2	5	48.4	helper:_check
+craft_peers	net,solo	142	45.5	5	28.4	helper:check
+join_code	net	140	6.8	11	12.7	helper:_check
+steam_join	net,solo	647	12.1	39	16.6	helper:_check
+code_pad	-	538		33	16.3	helper:_check
+desk_screens	-	690		40	17.2	helper:_check
+levels	core	494	9.5	42	11.8	helper:_check
+level_swap	-	173		8	21.6	helper:_check
+water_surfaces	-	451	66.6	24	18.8	helper:_check
+canyon	-	395		12	32.9	helper:_check
+rock_quality	-	180		9	20.0	helper:_check
+level_hello	core	478	5.8	44	10.9	helper:_check
+level_join	net	222	46.2	9	24.7	helper:_check
+sky_peers	net	390	75.1	25	15.6	helper:_check
+notices	net,solo	363	38.0	19	19.1	helper:_check
+world_edge	-	478	18.3	21	22.8	helper:_check
+seabed	-	344	64.0	14	24.6	helper:_check
+seabed_alpine	-	344	61.6	14	24.6	helper:_check
+feel	-	685	6.5	55	12.5	helper:_check
+headphones	-	380		30	12.7	helper:_check
+voice_thread	solo	176		8	22.0	helper:_check
+record_shelf	solo	52		11	4.7	helper:check
+music_page	-	30		4	7.5	helper:check
+music_peers	net	102	14.9	7	14.6	helper:check
+hitch	solo	635		12	52.9	helper:_check
+docs	core	674	5.3	17	39.6	helper:_check
+fires	-	329	14.8	22	15.0	helper:_check
+towns	-	513	7.1	23	22.3	helper:_check
+town_lights	-	336	6.0	12	28.0	helper:_check
+night_lights	-	828		35	23.7	helper:_check
+scenery	-	1038	22.7	76	13.7	helper:_check
+pavement	-	435	11.1	36	12.1	helper:_check
+forest	-	665	10.8	40	16.6	helper:_check
+world_map	-	206	5.5	11	18.7	helper:_check
+scenery_yard	-	273	5.2	8	34.1	helper:_check
+scenery_rings	-	461		16	28.8	helper:_check
+ground_field	-	371	4.8	26	14.3	helper:_check
+ground_collision	-	639	14.4	26	24.6	helper:_check
+mountains	-	511	11.6	23	22.2	helper:_check
+seethrough	-	65		3	21.7	helper:_check
+ground_view	-	488		20	24.4	helper:_check
+terrain_level	-	1426	28.5	64	22.3	helper:_check
+testfield	-	736	96.0	31	23.7	helper:_check
+testfield_traffic	solo	736		31	23.7	helper:_check
+gliderlevel	-	571		21	27.2	helper:_check
+adriatic	-	239		12	19.9	helper:_check
+gliderlevel_peers	net	241	43.7	7	34.4	helper:_check
+gliderlevel_traffic	-	215		7	30.7	helper:_check
+far_out	-	510	5.0	18	28.3	helper:_check
+authored_chunks	-	269		14	19.2	helper:_check
+airbase	-	577	4.8	15	38.5	helper:_check
+airport	-	711	18.7	42	16.9	helper:_check
+airbase_taxi	solo	358	125.7	7	51.1	helper:_check
+scenery_workers	-	253		6	42.2	helper:_check
+scenery_memory	-	275		8	34.4	helper:_check
+cockpit_loopback	net	3917	20.2	242	16.2	helper:_check
+vr_loopback	net	682	1.0	45	15.2	helper:_check
+driving_loopback	net	212	0.5	19	11.2	helper:_check
+conformance	net	23	0.5	0		none
+physics_rewind	net	131	0.5	4	32.8	helper:_check
+resim_settles	net	88	0.5	4	22.0	helper:_check
+resim_events	net	79	0.5	3	26.3	helper:_check
+two_clients	net	159	0.8	11	14.5	helper:_check
+cue_crowd	net	190	1.3	5	38.0	helper:_check
+crew_cabin	net	585	1.0	26	22.5	helper:_check
+crowd_join	net	233	6.4	8	29.1	helper:_check
+crew_join	net	866	5.2	36	24.1	helper:_check
+issue	net	124	0.5	9	13.8	helper:_check
+crowd_sight	net	306	7.9	6	51.0	helper:_check
+predict_all	net	127	0.5	5	25.4	helper:_check
+input_release	net	112	0.5	5	22.4	helper:_check
+tracing	net	80	0.5	8	10.0	helper:_check
+balance_probe	net	126	0.5	4	31.5	flag/list
+car_collision	net	86	0.5	4	21.5	helper:_check
+correction_smoothness	net	123	0.5	4	30.8	helper:_check
+reverse_wheels	net	77	0.5	2	38.5	helper:_check
+roll_probe	net	58	0.5	0		none
+tire_slip	net	74	0.5	4	18.5	helper:_check
+top_speed	net	68	0.5	2	34.0	flag/list
+handling_probe	net	186	0.5	3	62.0	helper:_check
+room_transport	-	103		17	6.1	helper:check
+room_load_proof	-	254		27	9.4	helper:_check
+level_map	-	47		6	7.8	helper:_check
+map_page	core	31	4.1	3	10.3	helper:_check
+map_screen	-	33		4	8.2	helper:_check
+air_picture	-	399		27	14.8	helper:_check
+hangar	-	489		44	11.1	helper:_check
+cooling_towers	-	665		21	31.7	helper:check
+oil_platform	-	689	6.3	25	27.6	helper:check
+many_kinds	-	467	4.7	35	13.3	helper:_check
+many_seats	-	655	5.0	36	18.2	helper:_check
+craft_page	-	190	6.9	9	21.1	helper:_check
+players	net	215	16.2	7	30.7	helper:_check
+players_peers	net	102	18.0	7	14.6	helper:check
+handshake_peers	net	254	23.2	18	14.1	helper:check
+handshake_log	net	270	29.3	9	30.0	helper:_check
+traffic_pattern	-	717	20.9	45	15.9	helper:_check
+road_vehicles	-	897		42	21.4	helper:_check
+shore_structures	-	245		18	13.6	helper:_check

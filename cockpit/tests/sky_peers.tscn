@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/sky_peers.gd" id="1_sky_peers"]
+
+[node name="SkyPeers" type="Node"]
+script = ExtResource("1_sky_peers")

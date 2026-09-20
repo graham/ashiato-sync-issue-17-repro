@@ -1,0 +1,58 @@
+{
+	"name": "The ridge country",
+	"summary": "Sixteen kilometres of ridges and farmland, a cumulus over every thermal: gliders only.",
+	"world": "alpine",
+	"ground": {"world_half": 16384, "peak_height": 300, "seed": 15, "coast": 96, "sites_within": 5000},
+	"reach": 24000,
+	"haze": 0.5,
+	"fleet": false,
+	"fires": false,
+	"arrive": "glider",
+	"spawn": {"at": [0, 304.8, 0], "yaw_degrees": 0},
+	"craft": {"kinds": ["glider"], "why": "it is for soaring"},
+	"launch": {"height": 304.8, "beside": 100},
+	"cloud_cover": 2.0,
+	"lift": [
+		{"name": "the start", "at": [0, 0], "radius": 650, "strength": 8.0},
+		{"name": "under the north ridge", "at": [-1000, -3700], "radius": 600, "strength": 7.0},
+		{"name": "the gliding club", "at": [-4600, -2000], "radius": 550, "strength": 6.5},
+		{"name": "the west fields", "at": [-5000, 1500], "radius": 550, "strength": 6.5},
+		{"name": "under the lone peak", "at": [-3200, 5200], "radius": 600, "strength": 7.0},
+		{"name": "the south fields", "at": [0, 5000], "radius": 600, "strength": 7.0},
+		{"name": "under the east ridge", "at": [3600, 0], "radius": 600, "strength": 7.5},
+		{"name": "the north-east corner", "at": [3800, -3800], "radius": 550, "strength": 6.5},
+		{"name": "the middle hills", "at": [1600, -1800], "radius": 550, "strength": 7.0},
+		{"name": "over the town", "at": [3000, 2750], "radius": 550, "strength": 6.5}
+	],
+	"mountains": [
+		{
+			"salt": 5200,
+			"peak": 900,
+			"saddle": 260,
+			"points": [
+				[-5000, -5000, 700, 1000],
+				[-2500, -5700, 820, 1150],
+				[0, -5600, 850, 1200],
+				[2800, -5200, 720, 1000]
+			]
+		},
+		{
+			"salt": 5201,
+			"peak": 880,
+			"saddle": 250,
+			"points": [
+				[5200, -3000, 650, 950],
+				[5800, -500, 800, 1100],
+				[5500, 2000, 700, 1000]
+			]
+		},
+		{
+			"salt": 5202,
+			"peak": 900,
+			"saddle": 250,
+			"points": [
+				[-5200, 5000, 1250, 1200]
+			]
+		}
+	]
+}

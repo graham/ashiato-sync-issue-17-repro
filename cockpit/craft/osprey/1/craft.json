@@ -1,0 +1,110 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "FlapsLever",
+    "GearLever",
+    "TiltLever",
+    "DropLever",
+    "GearHandle",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "osprey",
+  "kind": 7,
+  "manifest_hash": "882cf47d1293fc4a55988a434844c35ba52993b2b9ddc5735e7f6c34416524f5",
+  "model": {
+    "native_model": "tiltrotor",
+    "presentation_body": "TILTROTOR"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.340000003576279,
+      0.400000005960464,
+      0.330000013113022,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_osprey.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.55,
+        -0.75,
+        -6.4
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    },
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        -0.55,
+        -0.75,
+        -6.4
+      ],
+      "station": "copilot",
+      "yaw": 0.0
+    },
+    {
+      "flies": false,
+      "gun": false,
+      "position": [
+        -0.55,
+        -1.0,
+        -3.2
+      ],
+      "station": "turret",
+      "yaw": 0.0
+    },
+    {
+      "flies": false,
+      "gun": false,
+      "position": [
+        0.55,
+        -1.0,
+        -3.2
+      ],
+      "station": "turret",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "03d478d319b87367f4dd9697e5e9b18548b6d7a7c2653b79459fbf805468ceb9",
+  "station_hashes": {
+    "0": "9cc5627d057a3556e4c1a08a7fe4d7583af3458df7e0c0d61020ae64e9a4ac92",
+    "1": "d72873edf5fa6088b0d82cb8e86b5357e4a31bd24b40f6a5203a20713ff73a36",
+    "2": "590d0708e17fc5afd95ca179b233070b5ab3b51eafe65274f2ec928217a2f7c5",
+    "3": "97f76d96932ad95b1619e9df8c6dbed42ee675d57550f824fe02fad4e061e95e"
+  },
+  "stations": {
+    "0": "stations/seat0.json",
+    "1": "stations/seat1.json",
+    "2": "stations/seat2.json",
+    "3": "stations/seat3.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1
+}

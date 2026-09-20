@@ -1,0 +1,485 @@
+# EVERY TEST SUITE IN THE PROJECT, IN THE ORDER THEY RUN.
+#
+# Read by BOTH runners -- tests/run_all.sh and tests/run_all.ps1 -- because two lists went
+# out of step. The PowerShell one was missing `water` and `air` for as long as they have
+# existed, so a Windows run reported all-green over two suites it had never heard of. A
+# list kept in two places is a list kept in one place and a copy of it.
+#
+#   name   project   scene   [seconds]   [tiers]
+#
+# THE LAST COLUMN IS THE SUITE'S TIERS, comma-separated, and `run_all.ps1 -Tier <tier>` runs every
+# row that has it (lane/gate, 2026-09-19). A row may have a deadline, tiers, both or neither; a
+# number is a deadline and a word is a tier, and a word that is not one of these three stops the
+# runner, so a typo cannot drop a suite from a gate in silence.
+#
+#   core   optional: the cheap suites that walk EVERY craft and seat at once, plus lint, docs, smoke
+#          and the two-peer basics. 216 s at -Jobs 8 under load, 626 s one at a time. Worth adding to a
+#          lane's own suites when its change is drawn on every craft: the Apache's helmet sights in
+#          pilot_seat and a holstered lamp in front of a gauge in water were both red on main on
+#          2026-09-19 after green targeted gates.
+#   net    the peer and wire suites, and every extension suite: added to core by a lane that touches
+#          C++, the wire, a synchroniser or anything a joiner sees.
+#   solo   runs by itself after everything else, and once more if it fails, because its own checks
+#          time the wall clock or wait for a second engine to start inside a window: under a loaded
+#          machine these went red on load alone (hitch 31 times, bulk_peers 47, notices 27 in the
+#          logs; voice_thread's 35 ms "queued without blocking" beside seven others on 2026-09-19).
+#          A PASS on that second go is printed `PASS on retry (load)`, never hidden.
+#
+#          `builder_peers` JOINED THEM ON 2026-09-19, and it is the one to look at when deciding whether a suite wants
+#          this tier. It had `net` alone while every other peers suite that waits for a second engine had `net,solo`,
+#          so when it went red in a parallel batch -- EIGHT checks at once, admission, relay, refusal and save all
+#          together, on a desk carrying two other lanes' captures -- the runner had no reason to try it again and the
+#          whole gate read as one genuine failure. It passes ALONE in 28.4 s. Eight unrelated checks failing at once is
+#          the signature of the machine and not of the code: a real fault takes out one thing.
+#          THE USER'S RULE (2026-09-19): a suite that fails in the parallel batch and passes run on
+#          its own counts as CLEAN, but it is INVESTIGATED (todo/sweeper--flaky-suites-under-load.md)
+#          and it joins this tier, so it runs one at a time from then on. The sweeper's passes put
+#          craft_peers, sweep_peers, no_vr_flight, crew_peers and record_shelf here on that evidence.
+#
+# A lane gates on its own suites, the ones it wrote, lint and docs. Every row is the sweeper's, on
+# main, after features land: see running_a_team_here.md, section 4, "THE GATE POLICY".
+#
+# `project` is `cockpit` for the suites that test the game and `addon` for the ones that
+# test the extension underneath it.
+#
+# THE FOURTH COLUMN IS THAT SUITE'S OWN DEADLINE IN SECONDS and almost no row needs one: a
+# deadline is a guard against a HANG, not a performance budget, and 180 seconds is plenty for
+# a suite that does one thing. Two rows have one because they are structurally slower than
+# the rest -- `ship_legs` and `level_swap` walk EVERY usable level, so every level anyone adds
+# lengthens those two and nothing else.
+#
+# `world_edge` WAS GIVEN 300 HERE ON 2026-09-19 AND IT WAS TAKEN AWAY AGAIN, which is worth a
+# line because the reasoning was wrong in an instructive way. It timed out at 180 in a parallel
+# batch and at 300 in the next one, and the story wrote itself: it flies every powered wing out
+# and back, so the thirty-seventh kind must have pushed it over. MEASURED ALONE it takes 65.3 s
+# with thirty-seven kinds and 68.7 s with thirty-six -- the new kind costs it nothing, and 180 is
+# already the file's own rule of twice the measurement rounded up. The timeouts were two lanes
+# running full gates on one machine at once. A DEADLINE IS A GUARD AGAINST A HANG: raising one
+# because a loaded desk was slow buys nothing and blinds the guard. Measured on 2026-09-17 when the stress level made a
+# sixth: ship_legs 125.7 s with five levels and 197.9 s with six, past the 180 it had always
+# had. The values here are TWICE the measured time, rounded up to the next whole minute, so a
+# loaded desk does not trip them and a real hang is still caught in about twice the honest
+# runtime. Raising the deadline for EVERY suite instead would have hidden that the gate grows
+# with the game, and left the next lane to find it the same way. Order matters at the top and nowhere else: `lint`
+# compiles every script in the project in one second, so a typo is a red line rather than a
+# three-minute timeout, and `fit` measures every cockpit before anything tries to sit in one.
+
+lint              cockpit   res://tests/lint.tscn   core
+transition_curtain cockpit  res://tests/transition_curtain.tscn
+long_message      cockpit   res://tests/long_message.tscn
+radio_clip        cockpit   res://tests/radio_clip.tscn
+radio_peers       cockpit   res://tests/radio_peers.tscn   net
+stations          cockpit   res://tests/stations.tscn   core
+fit               cockpit   res://tests/fit.tscn   core
+# AND DOES THE STATION FIT THE AIRCRAFT? The station's own meshes against the airframe's drawn vertices, in one frame.
+shell_room        cockpit   res://tests/shell_room.tscn   core
+hull_hidden       cockpit   res://tests/hull_hidden.tscn   core
+screens_face      cockpit   res://tests/screens_face.tscn   core
+# AND IS THERE ROOM FOR A PERSON IN IT? A VR occupant envelope against the drawn craft, every seat. Reports, never gates.
+seat_room         cockpit   res://tests/seat_room.tscn   core
+pilot_seat        cockpit   res://tests/pilot_seat.tscn   core
+# AND HOW DOES EACH ONE FLY? A steady robot flies, drives or sails every kind through the pilot frame. Reports, never gates.
+handling          cockpit   res://tests/handling.tscn   600
+cb90              cockpit   res://tests/cb90.tscn
+fireboat          cockpit   res://tests/fireboat.tscn
+sense             cockpit   res://tests/sense.tscn
+smoke             cockpit   res://tests/smoke.tscn   300   core
+trim              cockpit   res://tests/trim.tscn   core
+altitude_hold     cockpit   res://tests/altitude_hold.tscn
+trace_log         cockpit   res://tests/trace_log.tscn
+trace_cost        cockpit   res://tests/trace_cost.tscn
+trace_replay      cockpit   res://tests/trace_replay.tscn
+latency           cockpit   res://tests/latency.tscn   net,solo
+link_ms           cockpit   res://tests/link_ms.tscn   net,solo
+net_stats         cockpit   res://tests/net_stats.tscn   net,solo
+holding_stack     cockpit   res://tests/holding_stack.tscn
+bulk_load         cockpit   res://tests/bulk_load.tscn   300   net
+bulk_peers        cockpit   res://tests/bulk_peers.tscn   net,solo
+rotor_rates       cockpit   res://tests/rotor_rates.tscn
+climb             cockpit   res://tests/climb.tscn
+avoid             cockpit   res://tests/avoid.tscn
+rota              cockpit   res://tests/rota.tscn
+marshalling       cockpit   res://marshalling/tests/marshalling.tscn   core
+carrier_shape     cockpit   res://tests/carrier_shape.tscn
+# AND HOW MANY ROAD WHEELS HAS THE TANK? Counted by name, because an unnamed mesh is one no check can ask for.
+tank_shape        cockpit   res://tests/tank_shape.tscn
+# AND DOES EACH GUN'S AIM REACH ITS OWN MOUNT? `_turrets` is positional, and the obvious fix for an empty mount breaks it.
+mount_aim         cockpit   res://tests/mount_aim.tscn   core
+ship_models       cockpit   res://tests/ship_models.tscn
+merchant_models   cockpit   res://tests/merchant_models.tscn
+# THE TRAIN'S ROLLING STOCK: the boxcar against what was measured off a broadside, and the rake's length.
+train_models      cockpit   res://tests/train_models.tscn
+# AND DRAWN: every locomotive on the island hauling eight to ten shown cars, each one boxcar behind the last and the
+# first clear of the engine -- the check that would have caught every carriage vanishing on 2026-09-17.
+rakes_drawn       cockpit   res://tests/rakes_drawn.tscn
+# AND THE TRACK UNDER THEM, read off what is drawn: rails from waypoint to waypoint at standard gauge, mainline ties under
+# them, the bank on the ground, no kinked joint, and wheels on the railheads at the sharpest bend (lane/trains, 2026-09-19).
+track_drawn       cockpit   res://tests/track_drawn.tscn
+# THE LOCOMOTIVE ITSELF: the SD40-2 against what EMD publishes, and against the shape of a hood unit -- the cab roof
+# below the long hood, twelve 40 in wheels on the railhead, two trucks at the published centres (lane/trains).
+road_diesel       cockpit   res://tests/road_diesel.tscn
+# AND IT IS DRIVEN, in a world of its own: a train nobody is driving still runs a minute later (it used to coast to a
+# stand in ten), and one that is driven pulls away from a stand and stops on its brake (lane/trains).
+train_runs        cockpit   res://tests/train_runs.tscn
+boat_seats        cockpit   res://tests/boat_seats.tscn
+plot_room         cockpit   res://tests/plot_room.tscn   core
+ship_legs         cockpit   res://tests/ship_legs.tscn   420
+wind_sea          cockpit   res://tests/wind_sea.tscn
+fleet_shapes      cockpit   res://tests/fleet_shapes.tscn
+aircraft_fidelity cockpit  res://tests/aircraft_fidelity.tscn   core
+# AND IS EVERY VISIBLE MESH ON EVERY CRAFT A PART SOMEBODY NAMED? Godot renames a duplicate to
+# @MeshInstance3D@9 without a word, and an anonymous mesh cannot be found, cannot be held to a
+# contract, and does not read in a screenshot review as something somebody put there.
+named_parts       cockpit   res://tests/named_parts.tscn   core
+# AND IS EVERY CRAFT ONE OBJECT? Every drawn part touching the rest, for every kind. It finds OPEN
+# AIR, not missing structure: a rotor on a fuselage with no pylon between them touches, and passes.
+joined_parts      cockpit   res://tests/joined_parts.tscn   core
+# AND DOES EVERY LIGHT STAND ON ITS OWN CRAFT? Each nav light, strobe and beacon of every kind within a few
+# centimetres of a drawn triangle; until 2026-09-17 the gunship's wingtip lights hung 20 m out in the air.
+lights_on_skin    cockpit   res://tests/lights_on_skin.tscn   core
+# AND IS THE GLIDER A DUO DISCUS? The model measured off its own drawn vertices against Schempp-Hirth's published
+# figures: span, length, wing area, named parts, winding, the hinges, the crew and the parked height.
+sailplane         cockpit  res://tests/sailplane.tscn
+jumbo             cockpit   res://tests/jumbo.tscn
+fighter           cockpit   res://tests/fighter.tscn
+skyhawk           cockpit   res://tests/skyhawk.tscn
+twin310           cockpit   res://tests/twin310.tscn
+craft_model_audit cockpit   res://tests/craft_model_audit.tscn   core
+uh60             cockpit   res://tests/uh60.tscn
+rotorcraft       cockpit   res://tests/rotorcraft.tscn
+rotor_hold       cockpit   res://tests/rotor_hold.tscn
+rotor_turn       cockpit   res://tests/rotor_turn.tscn
+prowler           cockpit   res://tests/prowler.tscn
+tomcat            cockpit   res://tests/tomcat.tscn
+phantom           cockpit   res://tests/phantom.tscn
+# AND IS IT WEATHERED: the second set of texture coordinates lands real vertices on dirty texels and leaves the
+# radome clean. `phantom_wear_shot` is the other half and is NOT here -- it needs a renderer, and this runner is
+# headless, so it is run by hand like `phantom_shot`.
+phantom_wear      cockpit   res://tests/phantom_wear.tscn
+# AND WHAT IT COSTS TO BUILD ONE. A weathering sheet baked per airframe made dressing an F-4 take 2,951 ms with
+# every other suite green; it surfaced two suites away as `no_vr_flight` timing out. Nothing else here times an
+# airframe, and the second-build check is what catches a per-instance bake.
+sheet_cost        cockpit   res://tests/sheet_cost.tscn
+sweep_handle      cockpit   res://tests/sweep_handle.tscn
+falcon            cockpit   res://tests/falcon.tscn
+# AND DOES THE F-16 FLY WELL: off a runway, the fighter's speed and no faster, the nimble one against the F/A-18F.
+falcon_flight     cockpit   res://tests/falcon_flight.tscn
+# THE F-35B: its shape against the JSF renders, the nozzle, the gear's door sequence and the weapons bays.
+lightning         cockpit   res://tests/lightning.tscn
+# AND DOES IT DO WHAT A B IS FOR: straight up, a hover held, a transition, a short take-off, and down on the ground and a deck.
+lightning_flight  cockpit   res://tests/lightning_flight.tscn
+# AND ITS BAYS: the doors open before the missile moves, it falls clear before it lights, the doors shut after; and the gun pod.
+lightning_bays    cockpit   res://tests/lightning_bays.tscn
+# THE THRUST EXHAUST, proved on the F-35B: a plume that cannot point where the thrust does not, cold ports that open
+# with the nozzle, and which kinds owe one read off the handling table rather than off a list.
+exhaust           cockpit   res://tests/exhaust.tscn
+# THE AV-8B HARRIER II: its shape against the NAVAIR sheet, the four nozzles through 98.5 degrees, the bicycle
+# undercarriage with its MID-SPAN outriggers held to the published 17 ft, the nose-up stance, and the surfaces.
+harrier           cockpit   res://tests/harrier.tscn
+# THE A-10C: its shape against the three-view, the GAU-8 on the centreline, the gear's door sequence, the decelerons.
+warthog           cockpit   res://tests/warthog.tscn
+# AND FROM ITS SEAT: the GAU-8 at 3,900 a minute from the drawn muzzle, the barrels turning; the surfaces and gear on the keys.
+warthog_seat      cockpit   res://tests/warthog_seat.tscn  300
+# AND DOES IT FLY LIKE ONE: off a runway, 381 kt flat out, its roll, its speed brake, and a landing.
+warthog_flight    cockpit   res://tests/warthog_flight.tscn
+# THE WARBIRDS (lane/warbirds): each airframe measured off its drawing, its gear, surfaces and propeller from drawn vertices.
+p51               cockpit   res://tests/p51.tscn
+p47               cockpit   res://tests/p47.tscn
+p38               cockpit   res://tests/p38.tscn
+# THE WARBIRDS FLOWN (lane/warbirds2): each against its book, and a taildragger on its three wheels from the hands.
+warbird_book      cockpit   res://tests/warbird_book.tscn   300
+taildragger       cockpit   res://tests/taildragger.tscn   300
+warbird_circuit   cockpit   res://tests/warbird_circuit.tscn   900
+warbird_guns      cockpit   res://tests/warbird_guns.tscn
+warbird_cockpit   cockpit   res://tests/warbird_cockpit.tscn
+# THE MV-22B: its shape against the six-view, the nacelles against the simulation's travel, the discs' clearance, the crew's view.
+osprey            cockpit   res://tests/osprey.tscn
+airliners         cockpit   res://tests/airliners.tscn
+hercules          cockpit   res://tests/hercules.tscn
+gun_stow          cockpit   res://tests/gun_stow.tscn
+apache            cockpit   res://tests/apache.tscn
+apache_flight     cockpit   res://tests/apache_flight.tscn
+helmet_gun        cockpit   res://tests/helmet_gun.tscn
+helmet_lock       cockpit   res://tests/helmet_lock.tscn
+littlebird        cockpit   res://tests/littlebird.tscn
+littlebird_flight cockpit   res://tests/littlebird_flight.tscn
+littlebird_book   cockpit   res://tests/littlebird_book.tscn
+littlebird_circuit cockpit   res://tests/littlebird_circuit.tscn  300
+savoia            cockpit   res://tests/savoia.tscn
+water_rudder      cockpit   res://tests/water_rudder.tscn
+# AND DOES THE STICK LEAVE A PARKED AEROPLANE ALONE? Full stick at 0 and 5 m/s on a stage, the slab and the water.
+ground_stick      cockpit   res://tests/ground_stick.tscn
+surfaces          cockpit   res://tests/surfaces.tscn
+# AND THE CESSNA ON THEM AGAINST ITS POH: the turn a bank buys, top speed, climb at Vy, the glide, the take-off, the roll.
+cessna_book       cockpit   res://tests/cessna_book.tscn
+# AND EVERY KIND'S MOTION BIT FOR BIT: each flown twice alike, and against a saved file with -- --expect= (lane/flightcore).
+flight_fingerprint cockpit  res://tests/flight_fingerprint.tscn   core
+# AND HOW WELL EACH ONE IS FLOWN: the same tasks for every kind, scored on overshoot, settling, steady error, control
+# activity and whether the demand was inside the envelope it was measured to have (lane/flightcore). NOT in `core`, on
+# purpose: it holds its scores against `vehicle_gym_baseline.txt`, so any change to a flight model has to record the new
+# numbers deliberately, and that is a bill a lane should get in its own gate rather than in everybody's.
+vehicle_gym       cockpit   res://tests/vehicle_gym.tscn   180
+# AND THE TOWER'S BUTTONS REACH THE AUTOPILOT: pressed by name, the aeroplane flown, the order held (lane/flightcore).
+tower             cockpit   res://tests/tower.tscn   120   core
+# AND WHEN TO BEGIN SLOWING: the braking curve the planner steers on, flown rather than restated (lane/flightcore).
+braking_curve     cockpit   res://tests/braking_curve.tscn   core
+shots             cockpit   res://tests/shots.tscn   core
+missiles          cockpit   res://tests/missiles.tscn
+missile_cues      cockpit   res://tests/missile_cues.tscn
+# HIT POINTS (lane/combat): a CB90 gunner shoots a pod down through the real trigger -- the table's damage per hit on the
+# host, thin then thick smoke on the drawing, a fireball, a frozen wreck, the host's log line.
+hulls             cockpit   res://tests/hulls.tscn
+# AND THE CRASH RULE: landings on wheels, a skid, the sea and a moving deck survive it; a dive, a drop, a wing into the
+# runway and a landplane ditched do not.
+crashes           cockpit   res://tests/crashes.tscn
+# AND ACROSS A LINK: a client's trigger proposes and the host disposes, the client sees what the host decided, and a hit
+# and a kill reach the client's own predicted craft (the smoke row is the one `should_roll_back` answering false turns red).
+hull_link         cockpit   res://tests/hull_link.tscn
+# AND WHEN YOURS IS DESTROYED: the pieces fall, you watch the wreck from a still stand with a line saying what happened, and
+# after the host's wait you are back in a fresh craft of the kind, in your seat, as the same one pilot.
+respawn           cockpit   res://tests/respawn.tscn
+# THE BAD ATTACKERS: two light aeroplanes and an Apache come for a CB90 under way, fire, hit rarely, keep off the ground
+# and the sea and turn no tighter than they may; and a gunner on the boat with a modest aim shoots all three down.
+attackers         cockpit   res://tests/attackers.tscn   600
+# THE THREE JETS' M61s AND MISSILES, from the pilot's keys: rate, muzzle, drum, lock, launch, rails (lane/jetarms).
+jet_arms          cockpit   res://tests/jet_arms.tscn   400
+# AND A SECOND MACHINE IS HANDED EVERY ROUND AND THE MISSILE, AND DRAWS THEM (lane/jetarms).
+jet_arms_peers    cockpit   res://tests/jet_arms_peers.tscn   240
+gun_scatter       cockpit   res://tests/gun_scatter.tscn   240 core
+gunners           cockpit   res://tests/gunners.tscn
+# A HAND-SWUNG GUN HELD ACROSS A LINK WITH A DELAY IN IT: the client-side spin, as a sweep of the delay.
+gun_link          cockpit   res://tests/gun_link.tscn   net
+command_burst     cockpit   res://tests/command_burst.tscn   net
+many_devices      cockpit   res://tests/many_devices.tscn
+# THE BATTLESHIP'S BIG GUNS: a gunner lays a turret with the stick over a link, and the 406 mm shell bursts on the sea.
+big_guns          cockpit   res://tests/big_guns.tscn
+# AND PREDICTED BY THE GUNNER: seen at once, confirmed once, kept across a rollback, taken back when the server refuses,
+# and handed to the server's shell without a visible jump -- over links of 0, 4 and 16 ticks.
+shell_prediction  cockpit   res://tests/shell_prediction.tscn   net
+input_window      cockpit   res://tests/input_window.tscn   core,net
+# THE PRIORITY SPHERE: what is near a client's own craft is sent to it more often than what is far, and nothing is withheld.
+priority_sphere   cockpit   res://tests/priority_sphere.tscn   net
+# AND OVER A REAL SOCKET: a joiner under a 1 km sphere still receives every moving craft, near and far, within a bound.
+priority_peers    cockpit   res://tests/priority_peers.tscn   net
+# THE POSE LOD, off by default: a far player's head and hands are not sent, a near one's are, live, and crew, lights,
+# seats and a lamp in hand are never lost to it.
+pose_lod          cockpit   res://tests/pose_lod.tscn   core,net
+# AND ITS SWITCH, on the host's iPad (TRAFFIC): the beam turns the server's LOD on and off, and a restart keeps it.
+save_bandwidth    cockpit   res://tests/save_bandwidth.tscn
+# A MANNED CRAFT'S STATIONS ARE BUILT OVER FRAMES IN A FLIGHT, this machine's seat first: never a second in one frame.
+station_budget    cockpit   res://tests/station_budget.tscn
+# AND LAID AND SPOTTED FROM A DESK: the ranging sight in front of the camera, its drum, its mils and the fall of shot.
+ranging_sight     cockpit   res://tests/ranging_sight.tscn   240
+# AND SEATED WHERE THEY CAN SEE: each turret gunner over its axis and above its roof, its sight line clear of its own
+# barrel at the stop, and blind on no more of its arc than measured, on the ship as drawn.
+turret_seats      cockpit   res://tests/turret_seats.tscn   core
+
+# WHAT ONE CREW MEMBER DOES, EVERY OTHER SEAT SEES: every craft with two pilots, and a control read
+# at the other seat while a hand is still moving it.
+crew_sync         cockpit   res://tests/crew_sync.tscn   core,net
+bursts            cockpit   res://tests/bursts.tscn
+hands             cockpit   res://tests/hands.tscn
+shared_controls   cockpit   res://tests/shared_controls.tscn
+pedals            cockpit   res://tests/pedals.tscn
+snap              cockpit   res://tests/snap.tscn
+pinch             cockpit   res://tests/pinch.tscn
+director          cockpit   res://tests/director.tscn   core
+signal_lamp       cockpit   res://tests/signal_lamp.tscn
+lamp_wire         cockpit   res://tests/lamp_wire.tscn   net
+lamp_peers        cockpit   res://tests/lamp_peers.tscn   150   net,solo
+restage           cockpit   res://tests/restage.tscn
+water             cockpit   res://tests/water.tscn   core
+air               cockpit   res://tests/air.tscn
+# THE PUFF CLOUDS (a prototype, lane/clouds2): each kind at its own height with clear air between the layers, none in
+# the ground, one seed one sky, and the eye inside a cloud exactly where the cloud is.
+puff_sky          cockpit   res://tests/puff_sky.tscn
+# THE CLOCK (lane/daytime): the sun where DAY and EVENING had it, each preset's look at its own point on the clock, and
+# the look changing a little every minute between them. Pure; no level.
+daytime           cockpit   res://tests/daytime.tscn
+sailing           cockpit   res://tests/sailing.tscn
+wakes             cockpit   res://tests/wakes.tscn
+seakeeping        cockpit   res://tests/seakeeping.tscn
+nobody_aboard     cockpit   res://tests/nobody_aboard.tscn
+mist              cockpit   res://tests/mist.tscn
+pirate_wire       cockpit   res://tests/pirate_wire.tscn   net
+brig              cockpit   res://tests/brig.tscn
+pirate_ai         cockpit   res://tests/pirate_ai.tscn
+clipboard         cockpit   res://tests/clipboard.tscn   core
+build_stamp       cockpit   res://tests/build_stamp.tscn   core
+build_time        cockpit   res://tests/build_time.tscn
+# A real --export-release through tools/release_beta.ps1 -ExportOnly, then the built game run: 38 s of export.
+build_export      cockpit   res://tests/build_export.tscn   240   solo
+builder           cockpit   res://tests/builder.tscn   core
+builder_authority cockpit   res://tests/builder_authority.tscn   core
+builder_peers     cockpit   res://tests/builder_peers.tscn   net,solo
+craft_package     cockpit   res://tests/craft_package.tscn
+device_farm       cockpit   res://tests/device_farm.tscn
+device_yard       cockpit   res://tests/device_yard.tscn
+device_yard_level cockpit   res://tests/device_yard_level.tscn
+device_yard_bridge cockpit  res://tests/device_yard_bridge.tscn
+device_yard_interaction cockpit res://tests/device_yard_interaction.tscn
+device_router     cockpit   res://tests/device_router.tscn
+session           cockpit   res://tests/session.tscn   core,net
+launch_order      cockpit   res://tests/launch_order.tscn
+two_peers         cockpit   res://tests/two_peers.tscn   core,net
+desk_join         cockpit   res://tests/desk_join.tscn   net
+segway            cockpit   res://tests/segway.tscn
+segway_keys       cockpit   res://tests/segway_keys.tscn
+lobby             cockpit   res://tests/lobby.tscn   net
+lobby_peers       cockpit   res://tests/lobby_peers.tscn   net
+names             cockpit   res://tests/names.tscn
+names_peers       cockpit   res://tests/names_peers.tscn   net
+lobby2d           cockpit   res://tests/lobby2d.tscn
+lobby2d_peers     cockpit   res://tests/lobby2d_peers.tscn   120   net
+# THE SIGHT LINE: whether rock blocks a line between two points -- the one question that decides whether flying low
+# through a canyon hides you from radar. Held against the island's own summit, with a no-mountains control.
+sight_line        cockpit   res://tests/sight_line.tscn
+# RADAR: what one head can see -- range and terrain masking against the island's own rock, real craft spawned in a
+# real world, rows that describe themselves and carry no entity id.
+radar_set         cockpit   res://tests/radar_set.tscn
+# AND ON THE WIRE: a joiner is SENT a picture, it is fewer craft than the world holds, and it is not the host's --
+# two heads, two pictures, which is the property the whole per-peer publish exists for.
+radar_peers       cockpit   res://tests/radar_peers.tscn   260   net
+# THE DEDICATED SERVER: `--level=server` hosts the island, seats every joiner and flies nothing of its own -- two
+# real processes, and the console's numbers held against SESSION_REPORT's.
+server_peers      cockpit   res://tests/server_peers.tscn   240   net
+# `server_shot` is NOT here and must not be: it needs a renderer and this runner is headless. Run it by hand,
+# like `phantom_shot`: Godot --path cockpit res://tests/server_shot.tscn
+intercom          cockpit   res://tests/intercom.tscn
+intercom_peers    cockpit   res://tests/intercom_peers.tscn   150   net
+no_vr_flight      cockpit   res://tests/no_vr_flight.tscn   240   core,solo
+crew_peers        cockpit   res://tests/crew_peers.tscn   net,solo
+# AND DOES SPOTTING SIZE DRAW FAR AIRCRAFT BIGGER FOR ONE VIEWER, AND NOTHING ELSE? The curve, the world, the board.
+spotting          cockpit   res://tests/spotting.tscn
+spotting_peers    cockpit   res://tests/spotting_peers.tscn
+sweep_peers       cockpit   res://tests/sweep_peers.tscn   240   net,solo
+craft_peers       cockpit   res://tests/craft_peers.tscn   net,solo
+join_code         cockpit   res://tests/join_code.tscn   net
+steam_join        cockpit   res://tests/steam_join.tscn   net,solo
+code_pad          cockpit   res://tests/code_pad.tscn
+desk_screens      cockpit   res://tests/desk_screens.tscn
+levels            cockpit   res://tests/levels.tscn   core
+level_swap        cockpit   res://tests/level_swap.tscn   400
+water_surfaces    cockpit   res://tests/water_surfaces.tscn   240
+canyon            cockpit   res://tests/canyon.tscn   240
+rock_quality      cockpit   res://tests/rock_quality.tscn   240
+level_hello       cockpit   res://tests/level_hello.tscn   core
+level_join        cockpit   res://tests/level_join.tscn   net
+# THE SKY IS THE SESSION'S AND THE FINISH IS NOT: a host's night and clouds reach a joiner, its finish does not,
+# a late joiner builds under the host's sky, and a joiner's own press is refused in words.
+sky_peers         cockpit   res://tests/sky_peers.tscn   net
+# A LEVEL CHANGE IS ANNOUNCED BEFORE IT HAPPENS, AND WHO JOINED AND WHO LEFT IS SAID: alone a launch is immediate,
+# with a joiner it waits and the joiner draws the warning in the lobby first.
+notices           cockpit   res://tests/notices.tscn   net,solo
+world_edge        cockpit   res://tests/world_edge.tscn
+seabed            cockpit   res://tests/seabed.tscn
+seabed_alpine     cockpit   res://tests/seabed_alpine.tscn
+feel              cockpit   res://tests/feel.tscn
+headphones        cockpit   res://tests/headphones.tscn
+voice_thread      cockpit   res://tests/voice_thread.tscn   solo
+record_shelf      cockpit   res://tests/record_shelf.tscn   solo
+music_page        cockpit   res://tests/music_page.tscn
+music_peers       cockpit   res://tests/music_peers.tscn   net
+hitch             cockpit   res://tests/hitch_probe.tscn   solo
+docs              cockpit   res://tests/docs.tscn   core
+fires             cockpit   res://tests/fires.tscn
+towns             cockpit   res://tests/towns.tscn
+town_lights       cockpit   res://tests/town_lights.tscn
+night_lights      cockpit   res://tests/night_lights.tscn
+scenery           cockpit   res://tests/scenery.tscn
+pavement          cockpit   res://tests/pavement.tscn
+forest            cockpit   res://tests/forest.tscn
+world_map         cockpit   res://tests/world_map.tscn
+scenery_yard      cockpit   res://tests/scenery_yard.tscn
+scenery_rings     cockpit   res://tests/scenery_rings.tscn
+ground_field      cockpit   res://tests/ground_field.tscn
+ground_collision  cockpit   res://tests/ground_collision.tscn
+mountains         cockpit   res://tests/mountains.tscn
+seethrough        cockpit   res://tests/seethrough.tscn
+ground_view       cockpit   res://tests/ground_view.tscn
+terrain_level     cockpit   res://tests/terrain_level.tscn
+testfield         cockpit   res://tests/testfield.tscn   300
+testfield_traffic cockpit   res://tests/testfield_traffic.tscn   1800   solo
+gliderlevel       cockpit   res://tests/gliderlevel.tscn   900
+adriatic          cockpit   res://tests/adriatic.tscn   300
+gliderlevel_peers cockpit   res://tests/gliderlevel_peers.tscn   300   net
+gliderlevel_traffic cockpit res://tests/gliderlevel_traffic.tscn   900
+far_out           cockpit   res://tests/far_out.tscn
+authored_chunks   cockpit   res://tests/authored_chunks.tscn
+airbase           cockpit   res://tests/airbase.tscn
+airport           cockpit   res://tests/airport.tscn
+# AND DRIVEN AND SAT IN, ON THE DESK KEYS A PERSON HAS: all four of the tower's controller seats reached with F,
+# and a fighter taxied out of a revetment bay to the runway's hold bar on Shift, Ctrl and the rudder keys alone.
+airbase_taxi      cockpit   res://tests/airbase_taxi.tscn   240   solo
+scenery_workers   cockpit   res://tests/scenery_workers.tscn
+scenery_memory    cockpit   res://tests/scenery_memory.tscn
+
+# THE EXTENSION'S OWN. `two_clients` is the one that runs a server and two clients in a
+# single process, which is where anything about who receives what belongs.
+cockpit_loopback  addon     res://tests/cockpit_loopback.tscn   net
+vr_loopback       addon     res://tests/vr_loopback.tscn   net
+driving_loopback  addon     res://tests/driving_loopback.tscn   net
+conformance       addon     res://tests/conformance.tscn   net
+physics_rewind    addon     res://tests/physics_rewind.tscn   net
+resim_settles     addon     res://tests/resim_settles.tscn   net
+resim_events      addon     res://tests/resim_events.tscn   net
+two_clients       addon     res://tests/two_clients.tscn   net
+cue_crowd         addon     res://tests/cue_crowd.tscn   net
+# WHAT A CREW SHARES REACHES THE CREW AT ONCE AND NOBODY ELSE: counted on the server's trace per client,
+# over a LAN-length link, a longer one and a lumpy one, and across five boardings and leavings.
+crew_cabin        addon     res://tests/crew_cabin.tscn   net
+crowd_join        addon     res://tests/crowd_join.tscn   net
+# WHO SITS WHERE IS THE SERVER'S: one player to a seat, a same-tick race with one winner, every refusal told,
+# and every machine agreeing on the seats after a join, a leave and a disconnect.
+crew_join         addon     res://tests/crew_join.tscn   net
+issue             addon     res://tests/issue.tscn   net
+crowd_sight       addon     res://tests/crowd_sight.tscn   net
+predict_all       addon     res://tests/predict_all.tscn   net
+input_release     addon     res://tests/input_release.tscn   net
+tracing           addon     res://tests/tracing.tscn   net
+
+# DRIVING, which sat in addon/tests with no runner until 2026-09-12. Each passed on both the
+# double and the stock editor with no engine error before it was listed here.
+balance_probe     addon     res://tests/balance_probe.tscn   net
+car_collision     addon     res://tests/car_collision.tscn   net
+correction_smoothness addon res://tests/correction_smoothness.tscn   net
+reverse_wheels    addon     res://tests/reverse_wheels.tscn   net
+roll_probe        addon     res://tests/roll_probe.tscn   net
+tire_slip         addon     res://tests/tire_slip.tscn   net
+top_speed         addon     res://tests/top_speed.tscn   net
+handling_probe    addon     res://tests/handling_probe.tscn   net
+room_transport     cockpit   res://tests/room_transport.tscn
+room_load_proof    cockpit   res://tests/room_load_proof.tscn
+level_map          cockpit   res://tests/level_map.tscn
+map_page           cockpit   res://tests/map_page.tscn   core
+map_screen         cockpit   res://tests/map_screen.tscn
+# AND WHO ON THE PLOT IS A PERSON. The one thing an operator at the carrier's map is being told, held
+# against the simulation's own seats rather than against the picture that drew it.
+air_picture        cockpit   res://tests/air_picture.tscn
+hangar             cockpit   res://tests/hangar.tscn
+cooling_towers      cockpit   res://tests/cooling_towers.tscn
+# THE OIL PLATFORM: its jacket on the sea floor, its helideck flat and clear, a helicopter resting on it and a fighter
+# stopped by it, all asked of the drawn mesh and a bare simulation.
+oil_platform        cockpit   res://tests/oil_platform.tscn
+# A KIND IS A NUMBER THE GAME GROWS INTO: one past the table, or 300, is refused and counted, never masked or made a pod.
+many_kinds        cockpit   res://tests/many_kinds.tscn
+# A CRAFT HAS AS MANY SEATS AS IT IS BUILT WITH: a seat it lacks is refused, never masked into another one.
+many_seats        cockpit   res://tests/many_seats.tscn
+# THE CRAFT PAGE IN GROUPS, pressed through its own buttons, with the game's kinds and with sixty-four.
+craft_page        cockpit   res://tests/craft_page.tscn
+# SIXTY-FOUR PLAYERS: the ninth and the sixty-fourth join a craft, and every machine agrees who is aboard.
+players           cockpit   res://tests/players.tscn   net
+# A FULL SESSION SAYS SO: a host of two turns the third away in words, over a real socket.
+players_peers     cockpit   res://tests/players_peers.tscn   net
+# A JOINER SAYS WHICH BUILD IT IS FIRST: another build, another protocol and an unreadable hi are turned away naming both builds.
+handshake_peers   cockpit   res://tests/handshake_peers.tscn   net
+# THE LOG TAB: a host sees who joined and who was turned away and why, a joiner its own knocks, through the tab button.
+handshake_log     cockpit   res://tests/handshake_log.tscn   net
+# AIRPORT LIFE: the traffic pattern round a runway end, its legs and heights against the FAA numbers worked out by hand.
+traffic_pattern   cockpit   res://tests/traffic_pattern.tscn
+# THE ROAD VEHICLES: drawn meshes and nothing else -- each car's published envelope, wheelbase and stance read off
+# its own vertices, a pickup bed held to 5 ft 6 in from outside the model, and nothing of theirs solid anywhere.
+road_vehicles      cockpit   res://tests/road_vehicles.tscn
+# THE SHORE STRUCTURES: a marina and a container terminal, each sized by the things that use it -- the berths by the
+# boats, the gantry cranes by the largest container ship, and both helicopter pads by the Chinook against CAP 437.
+shore_structures   cockpit   res://tests/shore_structures.tscn

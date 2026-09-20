@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/many_devices.gd" id="1_many_devices"]
+
+[node name="ManyDevices" type="Node"]
+script = ExtResource("1_many_devices")

@@ -1,0 +1,67 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "TrimWheel",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "savoia",
+  "kind": 26,
+  "manifest_hash": "49bec28202e30d76774af4dc8cb8504b6d1fd6c28245c93de728d3f5f27b34b5",
+  "model": {
+    "native_model": "airplane",
+    "presentation_body": "SAVOIA"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.800000011920929,
+      0.0900000035762787,
+      0.0700000002980232,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_plane.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.0,
+        -1.0,
+        0.635
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "2ed7008f123c0ddb21f0c0ef0a3d62286681e065035d0527e910d7fb4d4ae03a",
+  "station_hashes": {
+    "0": "57c2c1a3453335e064f3d3d5e2fc4c9b06ea449f6f91a94d9383d6fb9dacb3ae"
+  },
+  "stations": {
+    "0": "stations/seat0.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1
+}

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/ranging_sight_shot.gd" id="1_ranging_sight_shot"]
+
+[node name="RangingSightShot" type="Node"]
+script = ExtResource("1_ranging_sight_shot")

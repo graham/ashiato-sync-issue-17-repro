@@ -1,0 +1,7 @@
+{
+	"name": "Cockpit Builder",
+	"summary": "Park one craft at its model origin and build its stations together.",
+	"world": "room",
+	"arrive": "segway",
+	"spawn": {"at": [-7.0, 0.5, 8.0], "yaw_degrees": 180, "apart": 1.8}
+}

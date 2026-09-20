@@ -1,0 +1,71 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "FlapsLever",
+    "GearLever",
+    "TrimWheel",
+    "TiltLever",
+    "GearHandle",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "lightning",
+  "kind": 32,
+  "manifest_hash": "ffc24f1989cc9892d589440a67a4b4348ac82d93ebb7c72293f36e2e1a74af5a",
+  "model": {
+    "native_model": "tiltrotor",
+    "presentation_body": "LIGHTNING"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.400000005960464,
+      0.419999986886978,
+      0.439999997615814,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_lightning.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.0,
+        -0.26,
+        -4.49
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "6c879fdee406e450d9ad37f97c14fbecc5840b78ea3e726b5b1632cc4dd09632",
+  "station_hashes": {
+    "0": "5f3b8deea5ffe6838e82601b1faa89943571959425173c1a629798c93d1fe041"
+  },
+  "stations": {
+    "0": "stations/seat0.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1
+}

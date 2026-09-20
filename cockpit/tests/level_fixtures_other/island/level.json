@@ -1,0 +1,6 @@
+{
+	"name": "The island",
+	"summary": "The island with its first pod put somewhere else: another copy of the same level.",
+	"world": "island",
+	"spawn": {"at": [300, 30, 300], "yaw_degrees": 0}
+}

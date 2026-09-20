@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://c0rvvl8lc23js"]
+
+[ext_resource type="Script" uid="uid://da5ppacs7q2r2" path="res://world/sky.gd" id="1_sky"]
+[ext_resource type="Shader" uid="uid://djbepfpoaroao" path="res://world/shaders/grass.gdshader" id="2_grass"]
+[ext_resource type="Shader" uid="uid://bxiut34lkgveu" path="res://world/shaders/ocean.gdshader" id="3_ocean"]
+
+[sub_resource type="ProceduralSkyMaterial" id="Sky_mat"]
+sky_top_color = Color(0.28, 0.45, 0.75, 1)
+sky_horizon_color = Color(0.72, 0.79, 0.86, 1)
+ground_bottom_color = Color(0.19, 0.22, 0.2, 1)
+ground_horizon_color = Color(0.6, 0.63, 0.62, 1)
+
+[sub_resource type="Sky" id="Sky"]
+sky_material = SubResource("Sky_mat")
+
+[sub_resource type="Environment" id="Env"]
+background_mode = 2
+sky = SubResource("Sky")
+tonemap_mode = 2
+fog_enabled = true
+fog_density = 0.00016
+fog_aerial_perspective = 0.3
+
+[sub_resource type="ShaderMaterial" id="Mat_ground"]
+render_priority = 0
+shader = ExtResource("2_grass")
+shader_parameter/dry_colour = Color(0.36, 0.38, 0.22, 1)
+shader_parameter/lush_colour = Color(0.16, 0.31, 0.14, 1)
+shader_parameter/earth_colour = Color(0.29, 0.25, 0.18, 1)
+shader_parameter/patch_scale = 0.0016
+shader_parameter/clump_scale = 0.035
+shader_parameter/blade_scale = 0.9
+shader_parameter/earth_amount = 0.35
+
+[sub_resource type="PlaneMesh" id="Mesh_ground"]
+size = Vector2(14400, 14400)
+subdivide_width = 96
+subdivide_depth = 96
+
+[sub_resource type="ShaderMaterial" id="Mat_sea"]
+render_priority = 0
+shader = ExtResource("3_ocean")
+shader_parameter/deep_colour = Color(0.016, 0.055, 0.094, 1)
+shader_parameter/foam_colour = Color(0.82, 0.88, 0.9, 1)
+shader_parameter/wave_speed = 0.55
+
+[sub_resource type="PlaneMesh" id="Mesh_sea"]
+size = Vector2(48000, 48000)
+
+[node name="Sky" type="Node3D" unique_id=7064390]
+script = ExtResource("1_sky")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=502455645]
+environment = SubResource("Env")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=52713189]
+transform = Transform3D(0.86, -0.29, 0.42, 0, 0.82, 0.57, -0.51, -0.49, 0.71, 0, 60, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 400.0
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=2006691872]
+material_override = SubResource("Mat_ground")
+mesh = SubResource("Mesh_ground")
+
+[node name="Sea" type="MeshInstance3D" parent="." unique_id=1154959359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0)
+material_override = SubResource("Mat_sea")
+mesh = SubResource("Mesh_sea")
+
+[node name="Vehicles" type="Node3D" parent="." unique_id=1960433594]
+
+[node name="Ui" type="CanvasLayer" parent="." unique_id=461477460]
+
+[node name="Status" type="Label" parent="Ui" unique_id=1430148787]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 1200.0
+offset_bottom = 40.0
+text = "starting…"
+
+[node name="Hint" type="Label" parent="Ui" unique_id=166504634]
+offset_left = 16.0
+offset_top = 40.0
+offset_right = 1200.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0.72, 0.79, 0.88, 1)
+text = "W/S pitch · A/D roll · Q/E rudder · Shift throttle · Ctrl brake · G next craft · F next seat · [ ] sim rate · V headset"

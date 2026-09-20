@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/far_out.gd" id="1_far_out"]
+
+[node name="FarOut" type="Node"]
+script = ExtResource("1_far_out")

@@ -1,0 +1,27 @@
+[configuration]
+
+entry_symbol = "godotsteam_init"
+compatibility_minimum = "4.4"
+
+[libraries]
+
+; GODOTSTEAM 4.21, TAGGED BY PRECISION, both sides, for the reason ashiato.gdextension gives: a double-precision Godot
+; reports every tag a single one does EXCEPT `single`, so an untagged entry matches a double editor and loads a
+; single-precision library into it. Measured 2026-09-14 (tests/steam_probe.gd): that editor then dies inside
+; libgodotsteam while registering its classes, and cockpit's lint exits 0xC0000374.
+;
+; Built here by tools/build_godotsteam.ps1, from GodotSteam v4.21-gde against the engine's own API files and the
+; Steamworks SDK 1.65. The release on codeberg ships single-precision libraries only.
+
+windows.debug.single.x86_64 = "res://addons/godotsteam/win64/libgodotsteam.windows.template_debug.x86_64.dll"
+windows.release.single.x86_64 = "res://addons/godotsteam/win64/libgodotsteam.windows.template_release.x86_64.dll"
+windows.debug.double.x86_64 = "res://addons/godotsteam/win64/libgodotsteam.windows.template_debug.double.x86_64.dll"
+windows.release.double.x86_64 = "res://addons/godotsteam/win64/libgodotsteam.windows.template_release.double.x86_64.dll"
+
+; LINUX IS OWED. No library is built for it here, so a Linux editor of either precision prints the three
+; "No GDExtension library found" ERROR lines and has no Steam, until tools/build_godotsteam gains a Linux half and is
+; run on that machine -- the way ashiato_gd.double.so is built there by ashiato-gd/tools/bootstrap-linux.sh --double.
+
+[dependencies]
+
+windows.x86_64 = { "res://addons/godotsteam/win64/steam_api64.dll": "" }

@@ -1,0 +1,137 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "FlapsLever",
+    "GearLever",
+    "TrimWheel",
+    "AirbrakeLever",
+    "GearHandle",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "fighter",
+  "kind": 23,
+  "manifest_hash": "b9f7d9a422bb8786a1cdaced09e7e39575c31a786606d8a68615fb91d04a75cc",
+  "model": {
+    "native_model": "airplane",
+    "presentation_body": "WINGED"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.639999985694885,
+      0.670000016689301,
+      0.689999997615814,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_plane.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.0,
+        0.6,
+        -4.24
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    },
+    {
+      "flies": false,
+      "gun": false,
+      "position": [
+        0.0,
+        0.73,
+        -3.15
+      ],
+      "station": "operator",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "da34cb65b8f18a584a96bf9368eebaac967d6c5003dbf500175b454a3b14db1c",
+  "station_hashes": {
+    "0": "d16c0f85db453683badfb07cd7cb1c9d45887737c3b021bb8dbddd40998be902",
+    "1": "95f1d50c8ccbd435413f4024bab0ceb89989502a6fd59e6d462a4a0d0034bcb2"
+  },
+  "stations": {
+    "0": "stations/seat0.json",
+    "1": "stations/seat1.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1,
+  "visual": {
+    "dimensions_m": [
+      13.68,
+      4.87,
+      18.5
+    ],
+    "forward_axis": "-Z",
+    "offset_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scene": "res://objects/vehicles/fighter_airframe.tscn",
+    "sockets": {
+      "arresting_hook": [
+        0.0,
+        0.35,
+        6.61
+      ],
+      "main_gear_port": [
+        -1.555,
+        -0.72,
+        3.12
+      ],
+      "main_gear_starboard": [
+        1.555,
+        -0.72,
+        3.12
+      ],
+      "nose_gear": [
+        0.0,
+        -0.82,
+        -3.32
+      ],
+      "weapon_port": [
+        -3.55,
+        0.55,
+        2.71
+      ],
+      "weapon_starboard": [
+        3.55,
+        0.55,
+        2.71
+      ]
+    },
+    "units": "metres",
+    "up_axis": "+Y"
+  }
+}

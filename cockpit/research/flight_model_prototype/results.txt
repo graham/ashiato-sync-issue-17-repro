@@ -1,0 +1,83 @@
+TIMING, ns per aircraft per tick (1,000 aircraft x 2,000 ticks, median of 5)
+  (today: 15 Box3D calls per aircraft per tick, not timed here)
+  (today: 15 Box3D calls per aircraft per tick, not timed here)
+  (today: 15 Box3D calls per aircraft per tick, not timed here)
+  (today: 15 Box3D calls per aircraft per tick, not timed here)
+  (today: 15 Box3D calls per aircraft per tick, not timed here)
+  today's fly_airplane + apply_controls        68.1
+  surfaces, 4 (wing L/R, tail, fin), raw      106.2
+  surfaces, 4, with the control law           113.9
+  surfaces, 6, with the control law           165.8
+
+TRIM: hands off (raw stick), level entry at 45 m/s, settled over the last 30 s of 90
+  throttle 0.35, elevator 0                    speed  45.16 m/s  climb  -2.29 m/s  pitch  -0.7 deg
+  throttle 0.35, elevator +0.15 (back)         speed  39.34 m/s  climb  +0.96 m/s  pitch  +5.6 deg
+  throttle 0.35, elevator +0.30 (back)         speed  35.41 m/s  climb  +2.37 m/s  pitch  +9.7 deg
+  throttle 0.60, elevator 0                    speed  44.56 m/s  climb  +8.40 m/s  pitch +13.1 deg
+
+STALL, power off, height held through the law until it cannot be
+  clean: slowest level 25.9 m/s   flaps full: 26.9 m/s
+
+ROLL, full stick right, rudder centred, from level
+  raw, 30 m/s, stated inertia                  peak  65.6 deg/s  t63 0.108 s  at 1 s  62.9  nose after 0.25 s -0.28 deg  slip +0.0..+5.3 deg
+  raw, 50 m/s, stated inertia                  peak  83.8 deg/s  t63 0.067 s  at 1 s  83.6  nose after 0.25 s -0.20 deg  slip +0.0..+4.0 deg
+  raw, 65 m/s, stated inertia                  peak  97.7 deg/s  t63 0.058 s  at 1 s   0.0  nose after 0.25 s -0.08 deg  slip +0.0..+3.5 deg
+  raw, 50 m/s, BOX inertia                     peak  90.6 deg/s  t63 0.025 s  at 1 s   0.0  nose after 0.25 s -0.09 deg  slip +0.0..+5.6 deg
+  law asks 2.0 rad/s (today's), 50 m/s         peak  85.1 deg/s  t63 0.075 s  at 1 s  84.4  nose after 0.25 s -0.23 deg  slip +0.0..+6.3 deg
+  law asks 2.0 rad/s, 30 m/s                   peak  63.0 deg/s  t63 0.100 s  at 1 s  62.6  nose after 0.25 s -0.02 deg  slip +0.0..+11.2 deg
+  law asks 2.0 rad/s, 50 m/s, BOX inertia      peak  91.0 deg/s  t63 0.083 s  at 1 s   0.0  nose after 0.25 s -0.07 deg  slip +0.0..+5.0 deg
+  raw, 50 m/s, NO DIHEDRAL (mutant)            peak  86.8 deg/s  t63 0.075 s  at 1 s  86.8  nose after 0.25 s -0.19 deg  slip +0.0..+4.0 deg
+  raw, 50 m/s, NO INDUCED DRAG (adverse-yaw mutant) peak  85.2 deg/s  t63 0.067 s  at 1 s  85.2  nose after 0.25 s +0.04 deg  slip +0.0..+3.7 deg
+
+STALL BREAK
+  stall, stick held back 6 s then released, panel asymmetry 0.000 rad: max alpha 23.3 deg, max bank   0.0 deg, min speed 24.3 m/s, height lost 145.4 m, flying again at 46.5 m/s pitch -35.6
+  stall, stick held back 6 s then released, panel asymmetry 0.010 rad: max alpha 15.5 deg, max bank  89.7 deg, min speed 30.4 m/s, height lost 274.9 m, flying again at 53.6 m/s pitch -30.5
+
+== cessna: inertia pitch 5982 yaw 6962 roll 1462 kg m^2; tail incidence DERIVED -3.00 deg for cruise 45 m/s
+   stall: book clean 26.1, flown clean 25.9 m/s; book flaps 22.2, flown flaps 25.7 m/s
+
+== glider: inertia pitch 3460 yaw 9422 roll 6158 kg m^2; tail incidence DERIVED -6.54 deg for cruise 30 m/s
+   stall: book clean 22.7, flown clean 22.2 m/s; book flaps 22.7, flown flaps 22.2 m/s
+
+== fighter: inertia pitch 210000 yaw 260000 roll 52000 kg m^2; tail incidence DERIVED -2.12 deg for cruise 150 m/s
+   stall: book clean 68.9, flown clean 67.2 m/s; book flaps 58.7, flown flaps 59.1 m/s
+
+ROLL, full stick right, rudder centred
+    cessna raw 30 m/s                          57.7 deg/s  t63 0.117 s
+    cessna raw 50 m/s                          76.9 deg/s  t63 0.092 s
+    cessna law asks 2.0 rad/s, 50 m/s          78.2 deg/s  t63 0.092 s
+    glider raw 25 m/s                          13.6 deg/s  t63 0.208 s
+    glider raw 35 m/s                          20.4 deg/s  t63 0.167 s
+    (glider with the BOX inertia alone: roll 158 kg m^2)
+    glider raw 35 m/s, BOX inertia             37.5 deg/s  t63 0.000 s
+    fighter law asks 2.25, 80 m/s             114.1 deg/s  t63 0.417 s
+    fighter law asks 2.25, 150 m/s            128.4 deg/s  t63 0.142 s
+    fighter law asks 2.25, 220 m/s            128.7 deg/s  t63 0.075 s
+    fighter RAW, 150 m/s                      185.7 deg/s  t63 0.233 s
+
+YANK, full back stick for two seconds
+    cessna raw, 60 m/s                         4.5 g, alpha up to 12.9 deg
+    cessna law (1.2 rad/s, 5 g), 60 m/s        4.6 g, alpha up to 11.5 deg
+    fighter law (1.45 rad/s, 8 g), 200 m/s     7.0 g, alpha up to 18.7 deg
+    fighter RAW, 200 m/s                       7.8 g, alpha up to 47.1 deg
+
+RUDDER ALONE (dihedral effect), raw, full right pedal
+    cessna 45 m/s, 1.7 deg dihedral          bank after 3 s  +17.0 deg (right is +), most slip 14.5 deg
+    cessna, NO DIHEDRAL, wing at the CG (mutant) bank after 3 s   +1.0 deg (right is +), most slip 15.0 deg
+
+THE STICK ON THE GROUND
+    cessna   full stick at  5.0 m/s:      198 N m of roll, against      7848 N m to lift the hull's edge (0.025)
+    fighter  full stick at  5.0 m/s:      709 N m of roll, against    248193 N m to lift the hull's edge (0.003)
+    cessna   full stick at 20.0 m/s:     3174 N m of roll, against      7848 N m to lift the hull's edge (0.404)
+    fighter  full stick at 40.0 m/s:    45403 N m of roll, against    248193 N m to lift the hull's edge (0.183)
+
+AUTOPILOT: the game's AircraftMixer, 90-degree turn and 100 m climb at once, from level at cruise
+  today's cessna (rate servo)        heading within 5 deg in  17.2 s, overshoot  0.0 deg, max bank 51.7, slowest  52.5 m/s | after 30 s: height within   1.2 m (-0.1 at 70 s),  0 climb reversals
+  surfaces + law, settle 0.12 s      heading within 5 deg in   7.8 s, overshoot  0.2 deg, max bank 53.2, slowest  40.3 m/s | after 30 s: height within   0.3 m (-0.1 at 70 s),  0 climb reversals
+  surfaces + law, settle 0.06 s      heading within 5 deg in   7.9 s, overshoot  0.1 deg, max bank 52.9, slowest  40.3 m/s | after 30 s: height within   0.3 m (-0.1 at 70 s),  0 climb reversals
+  surfaces + law, settle 0.03 s      heading within 5 deg in   7.9 s, overshoot  0.1 deg, max bank 52.8, slowest  40.3 m/s | after 30 s: height within   0.3 m (-0.1 at 70 s),  0 climb reversals
+    (surface cessna: book stall 26.1, so the mixer's cruise is 41.2 m/s)
+  today's fighter (rate servo)       heading within 5 deg in  30.5 s, overshoot  0.0 deg, max bank 51.6, slowest  74.6 m/s | after 30 s: height within   0.9 m (-0.1 at 70 s),  0 climb reversals
+  surfaces + law, settle 0.12 s      heading within 5 deg in  21.2 s, overshoot  0.0 deg, max bank 52.4, slowest  99.4 m/s | after 30 s: height within   0.5 m (-0.1 at 70 s),  0 climb reversals
+  surfaces + law, settle 0.06 s      heading within 5 deg in  21.3 s, overshoot  0.0 deg, max bank 52.1, slowest  99.4 m/s | after 30 s: height within   0.5 m (-0.1 at 70 s),  0 climb reversals
+    (surface fighter: book stall 68.9, so the mixer's cruise is 99.8 m/s)

@@ -1,0 +1,134 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "FlapsLever",
+    "TrimWheel",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "cessna",
+  "kind": 10,
+  "manifest_hash": "bc28eea70632f21c72afd3a0e0035bbc591ab8aaf7a76ecf4e3570f245e558b3",
+  "model": {
+    "native_model": "airplane",
+    "presentation_body": "HIGH_WING"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.899999976158142,
+      0.910000026226044,
+      0.930000007152557,
+      1.0
+    ],
+    "plunger": true,
+    "seat_scene": "res://objects/seats/seat_cessna.tscn",
+    "shared_throttle": true
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        -0.55,
+        -0.3,
+        -0.9
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    },
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.55,
+        -0.3,
+        -0.9
+      ],
+      "station": "copilot",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "c5e588b8b94a4390ca40cfdb470e09f054906bee13d11fc0d715a99326c3e856",
+  "station_hashes": {
+    "0": "03302cddfee4f1e22531e312cb428f4b4b9f61e8a8fd09d3670b495c07749161",
+    "1": "5633f4a3ea7415f16f2c6dfbf6683f67771f0f8e53a03aa91528ac796142e848"
+  },
+  "stations": {
+    "0": "stations/seat0.json",
+    "1": "stations/seat1.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1,
+  "visual": {
+    "dimensions_m": [
+      11.0,
+      2.36,
+      8.28
+    ],
+    "forward_axis": "-Z",
+    "offset_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scene": "res://objects/vehicles/skyhawk_airframe.tscn",
+    "sockets": {
+      "main_gear_port": [
+        -1.28,
+        -0.63,
+        -1.39
+      ],
+      "main_gear_starboard": [
+        1.28,
+        -0.63,
+        -1.39
+      ],
+      "nose_gear": [
+        0.0,
+        -0.67,
+        -3.04
+      ],
+      "propeller": [
+        0.0,
+        0.42,
+        -3.89
+      ],
+      "wing_strut_port": [
+        -2.49,
+        1.07,
+        -1.96
+      ],
+      "wing_strut_starboard": [
+        2.49,
+        1.07,
+        -1.96
+      ]
+    },
+    "units": "metres",
+    "up_axis": "+Y"
+  }
+}

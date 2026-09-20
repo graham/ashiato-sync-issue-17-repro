@@ -1,0 +1,94 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "GearLever",
+    "GearHandle",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "tank",
+  "kind": 14,
+  "manifest_hash": "bbc3a85db611acf7d181c42e2cb920ebf6b4cb8a5fee539365ce2b40ad52395b",
+  "model": {
+    "native_model": "car",
+    "presentation_body": "PLAIN"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.310000002384186,
+      0.340000003576279,
+      0.239999994635582,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_tank.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.0,
+        -0.1,
+        -1.9
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    },
+    {
+      "flies": false,
+      "gun": false,
+      "position": [
+        -0.45,
+        0.55,
+        0.3
+      ],
+      "station": "turret",
+      "yaw": 0.0
+    },
+    {
+      "flies": false,
+      "gun": false,
+      "position": [
+        0.55,
+        0.55,
+        0.7
+      ],
+      "station": "turret",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "96412a09df8f5042f9cdf549957cac81b7d035663b7add23427a69c114859de2",
+  "station_hashes": {
+    "0": "76ba6d499d4d6f9b54761d281ea5c94c87cd6edca0da80dd2d293621f11756a5",
+    "1": "7ebf91681f74f8adb87cbe799ba365d36f020e6a4c616d589e19c689cfedd142",
+    "2": "05fb7675ccc20d1cf9213ed2e6aac0f578f9dcff362418fef143348b636dcc46"
+  },
+  "stations": {
+    "0": "stations/seat0.json",
+    "1": "stations/seat1.json",
+    "2": "stations/seat2.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1
+}

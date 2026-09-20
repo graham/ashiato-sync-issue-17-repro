@@ -1,0 +1,292 @@
+name	project	tiers	deadline	secs	secs_max	secs_n	lines	code	doc	comment	ticks	awaits	results	script	scene
+lint	cockpit	core	0	34.1	53.7	14	595	380	145	29	0	0	2	cockpit/tests/lint.gd	res://tests/lint.tscn
+transition_curtain	cockpit	-	0			0	60	50	2	2	6	2	0	cockpit/tests/transition_curtain.gd	res://tests/transition_curtain.tscn
+long_message	cockpit	-	0			0	229	193	1	4	0	0	0	cockpit/tests/long_message.gd	res://tests/long_message.tscn
+radio_clip	cockpit	-	0			0	72	66	1	0	0	2	1	cockpit/tests/radio_clip.gd	res://tests/radio_clip.tscn
+radio_peers	cockpit	net	0	19.6	21.9	2	101	88	2	2	8	9	1	cockpit/tests/radio_peers.gd	res://tests/radio_peers.tscn
+stations	cockpit	core	0	7.2	10.5	4	263	221	8	7	0	0	0	cockpit/tests/stations.gd	res://tests/stations.tscn
+fit	cockpit	core	0	9.5	17.4	5	367	208	115	16	0	0	2	cockpit/tests/fit.gd	res://tests/fit.tscn
+shell_room	cockpit	core	0	6.6	7.3	3	542	290	141	69	0	0	1	cockpit/tests/shell_room.gd	res://tests/shell_room.tscn
+hull_hidden	cockpit	core	0	5.5	5.5	3	76	44	24	0	0	0	1	cockpit/tests/hull_hidden.gd	res://tests/hull_hidden.tscn
+screens_face	cockpit	core	0	6.3	6.6	3	222	159	38	6	2	0	1	cockpit/tests/screens_face.gd	res://tests/screens_face.tscn
+seat_room	cockpit	core	0	7.6	8.7	3	300	214	62	2	0	0	1	cockpit/tests/seat_room.gd	res://tests/seat_room.tscn
+pilot_seat	cockpit	core	0	8.6	9.7	3	371	285	56	10	0	0	1	cockpit/tests/pilot_seat.gd	res://tests/pilot_seat.tscn
+handling	cockpit	-	600	22.5	22.5	1	1532	1223	127	92	0	1	2	cockpit/tests/handling.gd	res://tests/handling.tscn
+cb90	cockpit	-	0			0	464	344	58	15	0	0	1	cockpit/tests/cb90.gd	res://tests/cb90.tscn
+fireboat	cockpit	-	0	4.5	4.7	2	448	308	70	32	0	0	1	cockpit/tests/fireboat.gd	res://tests/fireboat.tscn
+sense	cockpit	-	0			0	185	156	10	1	0	9	1	cockpit/tests/sense.gd	res://tests/sense.tscn
+smoke	cockpit	core	300	183.9	218.8	9	3218	2109	143	782	0	40	2	cockpit/tests/smoke.gd	res://tests/smoke.tscn
+trim	cockpit	core	0	22.3	34.9	3	175	97	26	37	0	6	1	cockpit/tests/trim.gd	res://tests/trim.tscn
+altitude_hold	cockpit	-	0			0	81	65	3	3	0	6	1	cockpit/tests/altitude_hold.gd	res://tests/altitude_hold.tscn
+trace_log	cockpit	-	0			0	191	151	14	2	0	7	1	cockpit/tests/trace_log.gd	res://tests/trace_log.tscn
+trace_cost	cockpit	-	0			0	63	49	8	0	0	6	2	cockpit/tests/trace_cost.gd	res://tests/trace_cost.tscn
+trace_replay	cockpit	-	0			0	242	192	13	11	0	25	1	cockpit/tests/trace_replay.gd	res://tests/trace_replay.tscn
+latency	cockpit	net,solo	0	25.4	25.4	1	104	85	5	0	4	4	2	cockpit/tests/latency.gd	res://tests/latency.tscn
+link_ms	cockpit	net,solo	0	31.3	31.3	1	254	173	39	15	4	6	3	cockpit/tests/link_ms.gd	res://tests/link_ms.tscn
+net_stats	cockpit	net,solo	0	29.1	29.1	1	318	236	35	18	4	6	3	cockpit/tests/net_stats.gd	res://tests/net_stats.tscn
+holding_stack	cockpit	-	0	10.8	10.8	1	191	158	3	20	0	9	1	cockpit/tests/holding_stack.gd	res://tests/holding_stack.tscn
+bulk_load	cockpit	net	300	156.9	156.9	1	156	126	10	9	2	0	3	cockpit/tests/bulk_load.gd	res://tests/bulk_load.tscn
+bulk_peers	cockpit	net,solo	0	36.1	36.1	1	190	159	6	5	4	5	3	cockpit/tests/bulk_peers.gd	res://tests/bulk_peers.tscn
+rotor_rates	cockpit	-	0			0	401	297	63	6	0	0	2	cockpit/tests/rotor_rates.gd	res://tests/rotor_rates.tscn
+climb	cockpit	-	0	11.6	11.6	1	266	175	57	13	0	3	1	cockpit/tests/climb.gd	res://tests/climb.tscn
+avoid	cockpit	-	0			0	159	112	27	4	0	3	1	cockpit/tests/avoid.gd	res://tests/avoid.tscn
+rota	cockpit	-	0			0	525	426	47	17	0	0	2	cockpit/tests/rota.gd	res://tests/rota.tscn
+marshalling	cockpit	core	0	7.1	8.1	3	763	496	80	98	0	5	2	cockpit/marshalling/tests/marshalling.gd	res://marshalling/tests/marshalling.tscn
+carrier_shape	cockpit	-	0	4.7	4.7	1	433	333	42	7	0	3	2	cockpit/tests/carrier_shape.gd	res://tests/carrier_shape.tscn
+tank_shape	cockpit	-	0			0	410	267	106	3	0	0	2	cockpit/tests/tank_shape.gd	res://tests/tank_shape.tscn
+mount_aim	cockpit	core	0	4.7	5.0	3	107	57	38	2	0	0	2	cockpit/tests/mount_aim.gd	res://tests/mount_aim.tscn
+ship_models	cockpit	-	0	5.0	5.2	2	378	263	66	19	0	0	2	cockpit/tests/ship_models.gd	res://tests/ship_models.tscn
+merchant_models	cockpit	-	0	7.1	7.1	1	774	503	141	82	0	0	0	cockpit/tests/merchant_models.gd	res://tests/merchant_models.tscn
+train_models	cockpit	-	0	5.7	5.8	2	530	328	116	32	0	0	1	cockpit/tests/train_models.gd	res://tests/train_models.tscn
+rakes_drawn	cockpit	-	0			0	176	110	43	4	0	2	1	cockpit/tests/rakes_drawn.gd	res://tests/rakes_drawn.tscn
+track_drawn	cockpit	-	0			0	619	465	75	26	0	2	1	cockpit/tests/track_drawn.gd	res://tests/track_drawn.tscn
+road_diesel	cockpit	-	0			0	354	249	42	14	0	0	1	cockpit/tests/road_diesel.gd	res://tests/road_diesel.tscn
+train_runs	cockpit	-	0	5.4	5.8	2	158	99	38	1	0	1	1	cockpit/tests/train_runs.gd	res://tests/train_runs.tscn
+boat_seats	cockpit	-	0			0	165	113	28	7	0	1	2	cockpit/tests/boat_seats.gd	res://tests/boat_seats.tscn
+plot_room	cockpit	core	0	4.2	4.5	3	295	179	81	9	0	0	2	cockpit/tests/plot_room.gd	res://tests/plot_room.tscn
+ship_legs	cockpit	-	420	351.8	351.8	1	336	248	51	11	0	8	2	cockpit/tests/ship_legs.gd	res://tests/ship_legs.tscn
+wind_sea	cockpit	-	0			0	265	206	26	5	0	0	1	cockpit/tests/wind_sea.gd	res://tests/wind_sea.tscn
+fleet_shapes	cockpit	-	0	5.8	5.8	1	690	517	83	22	0	0	2	cockpit/tests/fleet_shapes.gd	res://tests/fleet_shapes.tscn
+aircraft_fidelity	cockpit	core	0	4.5	8.7	5	195	151	2	23	0	0	2	cockpit/tests/aircraft_fidelity.gd	res://tests/aircraft_fidelity.tscn
+named_parts	cockpit	core	0	5.2	9.4	6	213	88	90	19	0	0	3	cockpit/tests/named_parts.gd	res://tests/named_parts.tscn
+joined_parts	cockpit	core	0	4.7	4.7	3	140	63	61	8	0	0	3	cockpit/tests/joined_parts.gd	res://tests/joined_parts.tscn
+lights_on_skin	cockpit	core	0	5.3	5.3	3	220	160	37	7	0	0	3	cockpit/tests/lights_on_skin.gd	res://tests/lights_on_skin.tscn
+sailplane	cockpit	-	0	4.5	4.5	1	557	431	66	7	0	1	1	cockpit/tests/sailplane.gd	res://tests/sailplane.tscn
+jumbo	cockpit	-	0	5.0	5.3	2	282	239	8	2	0	0	1	cockpit/tests/jumbo.gd	res://tests/jumbo.tscn
+fighter	cockpit	-	0			0	915	779	37	27	0	4	1	cockpit/tests/fighter.gd	res://tests/fighter.tscn
+skyhawk	cockpit	-	0	7.1	7.1	1	1040	783	113	55	0	0	1	cockpit/tests/skyhawk.gd	res://tests/skyhawk.tscn
+twin310	cockpit	-	0			0	461	326	59	21	0	0	3	cockpit/tests/twin310.gd	res://tests/twin310.tscn
+craft_model_audit	cockpit	core	0	13.1	15.5	3	409	242	122	10	0	0	1	cockpit/tests/craft_model_audit.gd	res://tests/craft_model_audit.tscn
+uh60	cockpit	-	0			0	215	173	4	5	0	0	1	cockpit/tests/uh60.gd	res://tests/uh60.tscn
+rotorcraft	cockpit	-	0			0	230	184	22	0	0	0	1	cockpit/tests/rotorcraft.gd	res://tests/rotorcraft.tscn
+rotor_hold	cockpit	-	0			0	238	161	49	2	0	0	1	cockpit/tests/rotor_hold.gd	res://tests/rotor_hold.tscn
+rotor_turn	cockpit	-	0			0	197	146	21	4	0	0	1	cockpit/tests/rotor_turn.gd	res://tests/rotor_turn.tscn
+prowler	cockpit	-	0			0	528	393	69	14	0	2	1	cockpit/tests/prowler.gd	res://tests/prowler.tscn
+tomcat	cockpit	-	0			0	834	639	114	7	0	4	1	cockpit/tests/tomcat.gd	res://tests/tomcat.tscn
+phantom	cockpit	-	0	6.6	7.4	2	768	552	114	22	0	0	1	cockpit/tests/phantom.gd	res://tests/phantom.tscn
+phantom_wear	cockpit	-	0	7.2	8.4	2	185	136	25	0	0	0	2	cockpit/tests/phantom_wear.gd	res://tests/phantom_wear.tscn
+sheet_cost	cockpit	-	0	5.8	5.8	1	59	28	20	2	0	0	2	cockpit/tests/sheet_cost.gd	res://tests/sheet_cost.tscn
+sweep_handle	cockpit	-	0			0	123	92	16	1	0	0	1	cockpit/tests/sweep_handle.gd	res://tests/sweep_handle.tscn
+falcon	cockpit	-	0			0	561	415	65	12	0	0	1	cockpit/tests/falcon.gd	res://tests/falcon.tscn
+falcon_flight	cockpit	-	0			0	331	262	30	6	0	0	2	cockpit/tests/falcon_flight.gd	res://tests/falcon_flight.tscn
+lightning	cockpit	-	0	7.2	9.3	2	831	661	78	8	0	2	1	cockpit/tests/lightning.gd	res://tests/lightning.tscn
+lightning_flight	cockpit	-	0	6.7	9.0	2	371	261	47	12	0	0	2	cockpit/tests/lightning_flight.gd	res://tests/lightning_flight.tscn
+lightning_bays	cockpit	-	0	7.1	7.1	1	224	169	25	6	0	0	2	cockpit/tests/lightning_bays.gd	res://tests/lightning_bays.tscn
+exhaust	cockpit	-	0	7.1	11.1	6	294	190	69	11	0	0	1	cockpit/tests/exhaust.gd	res://tests/exhaust.tscn
+harrier	cockpit	-	0	5.2	6.0	3	596	399	107	24	0	0	1	cockpit/tests/harrier.gd	res://tests/harrier.tscn
+warthog	cockpit	-	0	8.4	8.4	1	1011	816	89	21	0	2	1	cockpit/tests/warthog.gd	res://tests/warthog.tscn
+warthog_seat	cockpit	-	300	76.9	76.9	1	574	452	58	10	0	47	1	cockpit/tests/warthog_seat.gd	res://tests/warthog_seat.tscn
+warthog_flight	cockpit	-	0	4.7	4.7	1	143	100	20	16	0	0	2	cockpit/tests/warthog_flight.gd	res://tests/warthog_flight.tscn
+p51	cockpit	-	0	6.1	6.1	1	825	666	69	14	0	2	1	cockpit/tests/p51.gd	res://tests/p51.tscn
+p47	cockpit	-	0	6.3	6.3	1	873	706	77	8	0	2	1	cockpit/tests/p47.gd	res://tests/p47.tscn
+p38	cockpit	-	0			0	717	583	53	3	0	2	1	cockpit/tests/p38.gd	res://tests/p38.tscn
+warbird_book	cockpit	-	300			0	371	276	30	14	0	0	1	cockpit/tests/warbird_book.gd	res://tests/warbird_book.tscn
+taildragger	cockpit	-	300	5.2	5.2	1	642	480	78	12	0	0	1	cockpit/tests/taildragger.gd	res://tests/taildragger.tscn
+warbird_circuit	cockpit	-	900	10.2	10.2	1	238	177	31	10	0	6	1	cockpit/tests/warbird_circuit.gd	res://tests/warbird_circuit.tscn
+warbird_guns	cockpit	-	0			0	136	105	14	7	0	0	1	cockpit/tests/warbird_guns.gd	res://tests/warbird_guns.tscn
+warbird_cockpit	cockpit	-	0			0	221	177	16	5	0	0	1	cockpit/tests/warbird_cockpit.gd	res://tests/warbird_cockpit.tscn
+osprey	cockpit	-	0	6.3	6.3	1	891	703	91	13	0	2	1	cockpit/tests/osprey.gd	res://tests/osprey.tscn
+airliners	cockpit	-	0	5.5	5.9	2	562	442	45	11	0	0	1	cockpit/tests/airliners.gd	res://tests/airliners.tscn
+hercules	cockpit	-	0	5.4	5.8	2	179	140	18	9	0	0	0	cockpit/tests/hercules.gd	res://tests/hercules.tscn
+gun_stow	cockpit	-	0	6.1	6.1	1	183	139	16	5	0	0	1	cockpit/tests/gun_stow.gd	res://tests/gun_stow.tscn
+apache	cockpit	-	0			0	1022	803	107	15	0	0	1	cockpit/tests/apache.gd	res://tests/apache.tscn
+apache_flight	cockpit	-	0			0	273	208	26	9	0	0	2	cockpit/tests/apache_flight.gd	res://tests/apache_flight.tscn
+helmet_gun	cockpit	-	0			0	401	303	49	7	0	0	2	cockpit/tests/helmet_gun.gd	res://tests/helmet_gun.tscn
+helmet_lock	cockpit	-	0			0	391	280	54	5	0	0	1	cockpit/tests/helmet_lock.gd	res://tests/helmet_lock.tscn
+littlebird	cockpit	-	0	6.1	6.1	1	872	663	107	18	0	0	1	cockpit/tests/littlebird.gd	res://tests/littlebird.tscn
+littlebird_flight	cockpit	-	0			0	276	210	27	9	0	0	2	cockpit/tests/littlebird_flight.gd	res://tests/littlebird_flight.tscn
+littlebird_book	cockpit	-	0			0	158	125	9	0	0	0	2	cockpit/tests/littlebird_book.gd	res://tests/littlebird_book.tscn
+littlebird_circuit	cockpit	-	300			0	120	95	13	0	0	0	2	cockpit/tests/littlebird_circuit.gd	res://tests/littlebird_circuit.tscn
+savoia	cockpit	-	0			0	596	454	64	11	0	0	1	cockpit/tests/savoia.gd	res://tests/savoia.tscn
+water_rudder	cockpit	-	0			0	247	169	49	0	0	0	1	cockpit/tests/water_rudder.gd	res://tests/water_rudder.tscn
+ground_stick	cockpit	-	0			0	311	214	65	6	0	1	1	cockpit/tests/ground_stick.gd	res://tests/ground_stick.tscn
+surfaces	cockpit	-	0	5.8	5.8	1	576	421	67	18	0	0	1	cockpit/tests/surfaces.gd	res://tests/surfaces.tscn
+cessna_book	cockpit	-	0	5.3	5.3	1	515	385	50	18	0	0	1	cockpit/tests/cessna_book.gd	res://tests/cessna_book.tscn
+flight_fingerprint	cockpit	core	0	6.3	7.1	3	306	219	58	7	0	1	2	cockpit/tests/flight_fingerprint.gd	res://tests/flight_fingerprint.tscn
+vehicle_gym	cockpit	-	180	27.9	30.2	3	984	605	236	92	0	1	3	cockpit/tests/vehicle_gym.gd	res://tests/vehicle_gym.tscn
+tower	cockpit	core	120	4.5	5.1	3	166	102	44	0	0	0	3	cockpit/tests/tower.gd	res://tests/tower.tscn
+braking_curve	cockpit	core	0	4.4	4.8	3	202	127	45	10	0	0	2	cockpit/tests/braking_curve.gd	res://tests/braking_curve.tscn
+shots	cockpit	core	0	4.8	5.0	3	928	615	139	109	0	14	2	cockpit/tests/shots.gd	res://tests/shots.tscn
+missiles	cockpit	-	0	49.3	49.3	1	1235	921	137	63	2	120	2	cockpit/tests/missiles.gd	res://tests/missiles.tscn
+missile_cues	cockpit	-	0			0	168	124	18	3	0	14	1	cockpit/tests/missile_cues.gd	res://tests/missile_cues.tscn
+hulls	cockpit	-	0	10.1	10.2	2	202	159	22	2	0	14	1	cockpit/tests/hulls.gd	res://tests/hulls.tscn
+crashes	cockpit	-	0	5.0	5.3	2	404	286	54	15	0	0	1	cockpit/tests/crashes.gd	res://tests/crashes.tscn
+hull_link	cockpit	-	0	6.3	6.3	1	269	205	31	7	0	0	1	cockpit/tests/hull_link.gd	res://tests/hull_link.tscn
+respawn	cockpit	-	0	13.7	13.7	1	114	81	20	0	3	7	1	cockpit/tests/respawn.gd	res://tests/respawn.tscn
+attackers	cockpit	-	600	229.2	229.2	1	182	135	31	6	0	5	1	cockpit/tests/attackers.gd	res://tests/attackers.tscn
+jet_arms	cockpit	-	400	137.1	179.2	2	855	652	89	26	0	80	3	cockpit/tests/jet_arms.gd	res://tests/jet_arms.tscn
+jet_arms_peers	cockpit	-	240	27.1	29.0	2	127	94	17	0	6	1	1	cockpit/tests/jet_arms_peers.gd	res://tests/jet_arms_peers.tscn
+gun_scatter	cockpit	core	240	9.9	10.5	3	180	136	24	0	0	14	2	cockpit/tests/gun_scatter.gd	res://tests/gun_scatter.tscn
+gunners	cockpit	-	0			0	267	178	46	16	2	22	1	cockpit/tests/gunners.gd	res://tests/gunners.tscn
+gun_link	cockpit	net	0	8.4	8.4	1	551	339	129	19	0	0	2	cockpit/tests/gun_link.gd	res://tests/gun_link.tscn
+command_burst	cockpit	net	0	6.8	6.8	1	219	153	41	3	0	0	2	cockpit/tests/command_burst.gd	res://tests/command_burst.tscn
+many_devices	cockpit	-	0			0	445	331	49	8	0	0	2	cockpit/tests/many_devices.gd	res://tests/many_devices.tscn
+big_guns	cockpit	-	0			0	451	348	52	8	0	0	1	cockpit/tests/big_guns.gd	res://tests/big_guns.tscn
+shell_prediction	cockpit	net	0	9.4	9.4	1	568	403	102	7	0	0	1	cockpit/tests/shell_prediction.gd	res://tests/shell_prediction.tscn
+input_window	cockpit	core,net	0	5.7	6.6	3	355	255	61	19	0	0	2	cockpit/tests/input_window.gd	res://tests/input_window.tscn
+priority_sphere	cockpit	net	0	31.6	31.6	1	587	427	93	26	0	0	2	cockpit/tests/priority_sphere.gd	res://tests/priority_sphere.tscn
+priority_peers	cockpit	net	0	26.0	26.3	2	176	126	29	3	4	5	3	cockpit/tests/priority_peers.gd	res://tests/priority_peers.tscn
+pose_lod	cockpit	core,net	0	5.3	5.5	3	432	326	48	9	0	0	2	cockpit/tests/pose_lod.gd	res://tests/pose_lod.tscn
+save_bandwidth	cockpit	-	0	9.2	9.2	1	184	126	27	5	2	14	2	cockpit/tests/save_bandwidth.gd	res://tests/save_bandwidth.tscn
+station_budget	cockpit	-	0	10.8	10.8	1	131	88	23	3	0	2	2	cockpit/tests/station_budget.gd	res://tests/station_budget.tscn
+ranging_sight	cockpit	-	240			0	555	422	63	19	0	40	1	cockpit/tests/ranging_sight.gd	res://tests/ranging_sight.tscn
+turret_seats	cockpit	core	0	8.1	8.7	3	252	178	41	0	0	5	1	cockpit/tests/turret_seats.gd	res://tests/turret_seats.tscn
+crew_sync	cockpit	core,net	0	34.8	36.2	3	478	283	105	40	2	28	1	cockpit/tests/crew_sync.gd	res://tests/crew_sync.tscn
+bursts	cockpit	-	0			0	259	192	38	9	0	11	1	cockpit/tests/bursts.gd	res://tests/bursts.tscn
+hands	cockpit	-	0			0	307	233	36	3	0	35	1	cockpit/tests/hands.gd	res://tests/hands.tscn
+shared_controls	cockpit	-	0	18.5	18.5	1	621	441	89	16	2	69	2	cockpit/tests/shared_controls.gd	res://tests/shared_controls.tscn
+pedals	cockpit	-	0	12.6	12.6	1	443	317	55	23	2	31	2	cockpit/tests/pedals.gd	res://tests/pedals.tscn
+snap	cockpit	-	0			0	864	664	87	13	8	82	2	cockpit/tests/snap.gd	res://tests/snap.tscn
+pinch	cockpit	-	0			0	637	318	212	44	7	55	2	cockpit/tests/pinch.gd	res://tests/pinch.tscn
+director	cockpit	core	0	5.3	5.5	3	786	390	250	66	2	54	2	cockpit/tests/director.gd	res://tests/director.tscn
+signal_lamp	cockpit	-	0	11.8	11.8	1	841	634	103	28	2	81	2	cockpit/tests/signal_lamp.gd	res://tests/signal_lamp.tscn
+lamp_wire	cockpit	net	0	8.0	8.0	1	489	358	67	22	0	1	2	cockpit/tests/lamp_wire.gd	res://tests/lamp_wire.tscn
+lamp_peers	cockpit	net,solo	150	24.3	24.3	1	353	234	72	3	2	1	2	cockpit/tests/lamp_peers.gd	res://tests/lamp_peers.tscn
+restage	cockpit	-	0			0	285	214	24	7	0	0	2	cockpit/tests/restage.gd	res://tests/restage.tscn
+water	cockpit	core	0	11.5	12.6	3	1660	1067	288	182	0	14	2	cockpit/tests/water.gd	res://tests/water.tscn
+air	cockpit	-	0	9.5	9.5	1	1019	732	132	101	0	38	2	cockpit/tests/air.gd	res://tests/air.tscn
+puff_sky	cockpit	-	0			0	339	265	36	6	0	11	1	cockpit/tests/puff_sky.gd	res://tests/puff_sky.tscn
+daytime	cockpit	-	0	8.7	8.7	1	151	101	29	1	0	0	1	cockpit/tests/daytime.gd	res://tests/daytime.tscn
+sailing	cockpit	-	0			0	596	455	61	32	0	0	1	cockpit/tests/sailing.gd	res://tests/sailing.tscn
+wakes	cockpit	-	0			0	242	174	34	7	0	13	1	cockpit/tests/wakes.gd	res://tests/wakes.tscn
+seakeeping	cockpit	-	0	14.1	14.1	1	406	295	77	7	0	1	3	cockpit/tests/seakeeping.gd	res://tests/seakeeping.tscn
+nobody_aboard	cockpit	-	0			0	159	105	27	5	0	0	1	cockpit/tests/nobody_aboard.gd	res://tests/nobody_aboard.tscn
+mist	cockpit	-	0	12.4	12.4	1	457	344	57	6	2	7	2	cockpit/tests/mist.gd	res://tests/mist.tscn
+pirate_wire	cockpit	net	0	6.0	6.0	1	150	114	16	6	0	0	1	cockpit/tests/pirate_wire.gd	res://tests/pirate_wire.tscn
+brig	cockpit	-	0			0	114	81	15	4	0	0	1	cockpit/tests/brig.gd	res://tests/brig.tscn
+pirate_ai	cockpit	-	0			0	435	336	66	3	0	5	1	cockpit/tests/pirate_ai.gd	res://tests/pirate_ai.tscn
+clipboard	cockpit	core	0	5.8	6.3	3	1960	1421	225	161	2	129	2	cockpit/tests/clipboard.gd	res://tests/clipboard.tscn
+build_stamp	cockpit	-	0	23.4	23.4	1	369	271	48	9	0	25	2	cockpit/tests/build_stamp.gd	res://tests/build_stamp.tscn
+build_time	cockpit	-	0	7.1	7.1	1	237	166	37	3	0	4	1	cockpit/tests/build_time.gd	res://tests/build_time.tscn
+build_export	cockpit	solo	240	56.7	56.7	1	124	78	27	4	0	0	2	cockpit/tests/build_export.gd	res://tests/build_export.tscn
+builder	cockpit	core	0	5.5	6.0	3	1440	1040	194	83	0	59	1	cockpit/tests/builder.gd	res://tests/builder.tscn
+builder_authority	cockpit	core	0	4.5	4.7	3	100	87	3	0	0	0	0	cockpit/tests/builder_authority.gd	res://tests/builder_authority.tscn
+builder_peers	cockpit	net,solo	0	28.8	28.8	1	224	186	4	6	8	9	1	cockpit/tests/builder_peers.gd	res://tests/builder_peers.tscn
+craft_package	cockpit	-	0	6.3	6.3	1	16	16	0	0	0	0	0	cockpit/tests/craft_package.gd	res://tests/craft_package.tscn
+device_farm	cockpit	-	0			0	95	74	9	4	0	0	0	cockpit/tests/device_farm.gd	res://tests/device_farm.tscn
+device_yard	cockpit	-	0			0	88	74	5	0	0	3	0	cockpit/tests/device_yard.gd	res://tests/device_yard.tscn
+device_yard_level	cockpit	-	0			0	54	46	3	0	0	3	0	cockpit/tests/device_yard_level.gd	res://tests/device_yard_level.tscn
+device_yard_bridge	cockpit	-	0			0	78	65	2	0	0	0	0	cockpit/tests/device_yard_bridge.gd	res://tests/device_yard_bridge.tscn
+device_yard_interaction	cockpit	-	0			0	113	95	4	3	0	6	0	cockpit/tests/device_yard_interaction.gd	res://tests/device_yard_interaction.tscn
+device_router	cockpit	-	0			0	39	33	3	0	0	0	0	cockpit/tests/device_router.gd	res://tests/device_router.tscn
+session	cockpit	core,net	0	6.3	6.9	3	317	158	89	31	0	18	3	cockpit/tests/session.gd	res://tests/session.tscn
+launch_order	cockpit	-	0	4.2	4.2	1	95	64	14	1	0	0	2	cockpit/tests/launch_order.gd	res://tests/launch_order.tscn
+two_peers	cockpit	core,net	0	12.8	13.4	3	143	86	41	0	3	1	2	cockpit/tests/two_peers.gd	res://tests/two_peers.tscn
+desk_join	cockpit	net	0	16.7	16.7	1	355	231	58	30	10	12	2	cockpit/tests/desk_join.gd	res://tests/desk_join.tscn
+segway	cockpit	-	0			0	293	177	70	10	0	9	2	cockpit/tests/segway.gd	res://tests/segway.tscn
+segway_keys	cockpit	-	0			0	217	125	58	2	0	13	2	cockpit/tests/segway_keys.gd	res://tests/segway_keys.tscn
+lobby	cockpit	net	0	14.1	14.1	1	507	345	89	35	0	22	3	cockpit/tests/lobby.gd	res://tests/lobby.tscn
+lobby_peers	cockpit	net	0	30.3	30.3	1	195	118	49	2	5	5	2	cockpit/tests/lobby_peers.gd	res://tests/lobby_peers.tscn
+names	cockpit	-	0	5.8	5.8	1	164	142	7	6	0	2	1	cockpit/tests/names.gd	res://tests/names.tscn
+names_peers	cockpit	net	0	26.4	26.4	1	140	106	10	5	6	9	1	cockpit/tests/names_peers.gd	res://tests/names_peers.tscn
+lobby2d	cockpit	-	0	7.2	7.9	2	156	110	16	13	0	0	1	cockpit/tests/lobby2d.gd	res://tests/lobby2d.tscn
+lobby2d_peers	cockpit	net	120	38.8	41.9	2	314	204	52	17	5	6	2	cockpit/tests/lobby2d_peers.gd	res://tests/lobby2d_peers.tscn
+sight_line	cockpit	-	0			0	196	111	42	23	0	0	2	cockpit/tests/sight_line.gd	res://tests/sight_line.tscn
+radar_set	cockpit	-	0			0	215	135	36	16	0	0	2	cockpit/tests/radar_set.gd	res://tests/radar_set.tscn
+radar_peers	cockpit	net	260	22.5	22.5	1	201	123	32	14	2	4	2	cockpit/tests/radar_peers.gd	res://tests/radar_peers.tscn
+server_peers	cockpit	net	240	28.0	28.0	1	239	123	61	22	4	6	2	cockpit/tests/server_peers.gd	res://tests/server_peers.tscn
+intercom	cockpit	-	0	7.6	7.6	1	153	117	14	9	0	0	1	cockpit/tests/intercom.gd	res://tests/intercom.tscn
+intercom_peers	cockpit	net	150	15.8	15.8	1	372	215	75	35	5	5	2	cockpit/tests/intercom_peers.gd	res://tests/intercom_peers.tscn
+no_vr_flight	cockpit	core,solo	240	17.3	19.7	3	425	294	70	14	12	30	2	cockpit/tests/no_vr_flight.gd	res://tests/no_vr_flight.tscn
+crew_peers	cockpit	net,solo	0	16.5	16.5	1	158	109	33	0	5	1	2	cockpit/tests/crew_peers.gd	res://tests/crew_peers.tscn
+spotting	cockpit	-	0			0	546	421	61	11	0	31	2	cockpit/tests/spotting.gd	res://tests/spotting.tscn
+spotting_peers	cockpit	-	0	27.4	27.4	1	164	123	23	0	4	1	2	cockpit/tests/spotting_peers.gd	res://tests/spotting_peers.tscn
+sweep_peers	cockpit	net,solo	240	30.2	30.2	1	242	168	43	5	6	1	1	cockpit/tests/sweep_peers.gd	res://tests/sweep_peers.tscn
+craft_peers	cockpit	net,solo	0	45.5	45.5	1	142	110	6	3	4	7	0	cockpit/tests/craft_peers.gd	res://tests/craft_peers.tscn
+join_code	cockpit	net	0	6.8	6.8	1	140	90	25	8	0	0	2	cockpit/tests/join_code.gd	res://tests/join_code.tscn
+steam_join	cockpit	net,solo	0	12.1	12.1	1	647	478	60	38	4	42	3	cockpit/tests/steam_join.gd	res://tests/steam_join.tscn
+code_pad	cockpit	-	0			0	538	390	50	25	0	51	3	cockpit/tests/code_pad.gd	res://tests/code_pad.tscn
+desk_screens	cockpit	-	0			0	690	481	94	37	0	58	3	cockpit/tests/desk_screens.gd	res://tests/desk_screens.tscn
+levels	cockpit	core	0	9.5	10.6	5	494	396	47	3	0	24	3	cockpit/tests/levels.gd	res://tests/levels.tscn
+level_swap	cockpit	-	400			0	173	112	43	0	0	8	2	cockpit/tests/level_swap.gd	res://tests/level_swap.tscn
+water_surfaces	cockpit	-	240	66.6	68.4	2	451	338	59	8	0	10	1	cockpit/tests/water_surfaces.gd	res://tests/water_surfaces.tscn
+canyon	cockpit	-	240			0	395	264	88	16	0	0	1	cockpit/tests/canyon.gd	res://tests/canyon.tscn
+rock_quality	cockpit	-	240			0	180	117	44	3	0	0	1	cockpit/tests/rock_quality.gd	res://tests/rock_quality.tscn
+level_hello	cockpit	core	0	5.8	6.0	3	478	363	42	30	4	16	3	cockpit/tests/level_hello.gd	res://tests/level_hello.tscn
+level_join	cockpit	net	0	46.2	46.2	1	222	142	37	1	3	8	2	cockpit/tests/level_join.gd	res://tests/level_join.tscn
+sky_peers	cockpit	net	0	75.1	75.1	1	390	268	65	14	14	23	2	cockpit/tests/sky_peers.gd	res://tests/sky_peers.tscn
+notices	cockpit	net,solo	0	38.0	38.0	1	363	247	53	21	20	25	2	cockpit/tests/notices.gd	res://tests/notices.tscn
+world_edge	cockpit	-	0	18.3	18.3	1	478	329	87	13	0	0	2	cockpit/tests/world_edge.gd	res://tests/world_edge.tscn
+seabed	cockpit	-	0	64.0	65.7	2	344	217	91	9	0	9	2	cockpit/tests/seabed.gd	res://tests/seabed.tscn
+seabed_alpine	cockpit	-	0	61.6	64.4	2	344	217	91	9	0	9	2	cockpit/tests/seabed.gd	res://tests/seabed_alpine.tscn
+feel	cockpit	-	0	6.5	7.7	2	685	441	107	68	0	53	2	cockpit/tests/feel.gd	res://tests/feel.tscn
+headphones	cockpit	-	0			0	380	244	73	16	2	36	2	cockpit/tests/headphones.gd	res://tests/headphones.tscn
+voice_thread	cockpit	solo	0			0	176	133	3	8	4	22	2	cockpit/tests/voice_thread.gd	res://tests/voice_thread.tscn
+record_shelf	cockpit	solo	0			0	52	49	0	0	2	1	1	cockpit/tests/record_shelf.gd	res://tests/record_shelf.tscn
+music_page	cockpit	-	0			0	30	26	0	2	0	0	1	cockpit/tests/music_page.gd	res://tests/music_page.tscn
+music_peers	cockpit	net	0	14.9	14.9	1	102	87	1	3	6	5	1	cockpit/tests/music_peers.gd	res://tests/music_peers.tscn
+hitch	cockpit	solo	0			0	635	416	118	47	0	0	2	cockpit/tests/hitch_probe.gd	res://tests/hitch_probe.tscn
+docs	cockpit	core	0	5.3	25.2	14	674	441	132	48	0	0	2	cockpit/tests/docs.gd	res://tests/docs.tscn
+fires	cockpit	-	0	14.8	14.8	1	329	190	63	36	0	0	2	cockpit/tests/fires.gd	res://tests/fires.tscn
+towns	cockpit	-	0	7.1	7.1	2	513	400	45	19	0	0	2	cockpit/tests/towns.gd	res://tests/towns.tscn
+town_lights	cockpit	-	0	6.0	6.0	2	336	247	51	5	2	6	2	cockpit/tests/town_lights.gd	res://tests/town_lights.tscn
+night_lights	cockpit	-	0			0	828	678	67	27	6	16	2	cockpit/tests/night_lights.gd	res://tests/night_lights.tscn
+scenery	cockpit	-	0	22.7	35.4	5	1038	773	132	47	0	54	2	cockpit/tests/scenery.gd	res://tests/scenery.tscn
+pavement	cockpit	-	0	11.1	28.4	3	435	270	106	28	0	23	2	cockpit/tests/pavement.gd	res://tests/pavement.tscn
+forest	cockpit	-	0	10.8	16.4	3	665	507	80	30	0	5	2	cockpit/tests/forest.gd	res://tests/forest.tscn
+world_map	cockpit	-	0	5.5	5.5	1	206	149	26	5	0	0	2	cockpit/tests/world_map.gd	res://tests/world_map.tscn
+scenery_yard	cockpit	-	0	5.2	5.2	2	273	198	30	12	0	0	2	cockpit/tests/scenery_yard.gd	res://tests/scenery_yard.tscn
+scenery_rings	cockpit	-	0			0	461	358	41	13	0	3	2	cockpit/tests/scenery_rings.gd	res://tests/scenery_rings.tscn
+ground_field	cockpit	-	0	4.8	4.8	1	371	295	33	15	0	2	2	cockpit/tests/ground_field.gd	res://tests/ground_field.tscn
+ground_collision	cockpit	-	0	14.4	14.4	1	639	484	83	10	0	0	2	cockpit/tests/ground_collision.gd	res://tests/ground_collision.tscn
+mountains	cockpit	-	0	11.6	12.5	2	511	366	99	6	0	6	2	cockpit/tests/mountains.gd	res://tests/mountains.tscn
+seethrough	cockpit	-	0			0	65	37	20	0	0	0	2	cockpit/tests/seethrough.gd	res://tests/seethrough.tscn
+ground_view	cockpit	-	0			0	488	385	56	7	0	2	2	cockpit/tests/ground_view.gd	res://tests/ground_view.tscn
+terrain_level	cockpit	-	0	28.5	31.0	3	1426	1099	142	90	0	6	1	cockpit/tests/terrain_level.gd	res://tests/terrain_level.tscn
+testfield	cockpit	-	300	96.0	109.4	3	736	580	82	24	3	8	1	cockpit/tests/testfield.gd	res://tests/testfield.tscn
+testfield_traffic	cockpit	solo	1800			0	736	580	82	24	3	8	1	cockpit/tests/testfield.gd	res://tests/testfield_traffic.tscn
+gliderlevel	cockpit	-	900			0	571	453	59	17	2	7	1	cockpit/tests/gliderlevel.gd	res://tests/gliderlevel.tscn
+adriatic	cockpit	-	300			0	239	198	12	3	0	2	1	cockpit/tests/adriatic.gd	res://tests/adriatic.tscn
+gliderlevel_peers	cockpit	net	300	43.7	43.7	1	241	169	39	3	5	7	1	cockpit/tests/gliderlevel_peers.gd	res://tests/gliderlevel_peers.tscn
+gliderlevel_traffic	cockpit	-	900			0	215	152	40	3	0	8	1	cockpit/tests/gliderlevel_traffic.gd	res://tests/gliderlevel_traffic.tscn
+far_out	cockpit	-	0	5.0	5.0	1	510	359	88	9	0	0	1	cockpit/tests/far_out.gd	res://tests/far_out.tscn
+authored_chunks	cockpit	-	0			0	269	204	29	7	0	8	2	cockpit/tests/authored_chunks.gd	res://tests/authored_chunks.tscn
+airbase	cockpit	-	0	4.8	5.0	2	577	427	83	21	0	0	2	cockpit/tests/airbase.gd	res://tests/airbase.tscn
+airport	cockpit	-	0	18.7	23.8	3	711	556	71	28	0	8	1	cockpit/tests/airport.gd	res://tests/airport.tscn
+airbase_taxi	cockpit	solo	240	125.7	171.4	2	358	248	68	13	0	15	2	cockpit/tests/airbase_taxi.gd	res://tests/airbase_taxi.tscn
+scenery_workers	cockpit	-	0			0	253	183	31	9	2	9	2	cockpit/tests/scenery_workers.gd	res://tests/scenery_workers.tscn
+scenery_memory	cockpit	-	0			0	275	215	29	8	0	2	2	cockpit/tests/scenery_memory.gd	res://tests/scenery_memory.tscn
+cockpit_loopback	addon	net	0	20.2	20.2	1	3917	2715	420	432	0	0	2	ashiato-gd/addon/tests/cockpit_loopback.gd	res://tests/cockpit_loopback.tscn
+vr_loopback	addon	net	0	1.0	1.0	1	682	404	47	151	0	0	2	ashiato-gd/addon/tests/vr_loopback.gd	res://tests/vr_loopback.tscn
+driving_loopback	addon	net	0	0.5	0.5	1	212	128	22	28	0	0	0	ashiato-gd/addon/tests/driving_loopback.gd	res://tests/driving_loopback.tscn
+conformance	addon	net	0	0.5	0.5	1	23	15	5	0	0	0	0	ashiato-gd/addon/tests/conformance_loader.gd	res://tests/conformance.tscn
+physics_rewind	addon	net	0	0.5	0.5	1	131	77	17	12	0	0	0	ashiato-gd/addon/tests/physics_rewind.gd	res://tests/physics_rewind.tscn
+resim_settles	addon	net	0	0.5	0.5	1	88	63	10	2	0	0	0	ashiato-gd/addon/tests/resim_settles.gd	res://tests/resim_settles.tscn
+resim_events	addon	net	0	0.5	0.5	1	79	54	9	4	0	0	0	ashiato-gd/addon/tests/resim_events.gd	res://tests/resim_events.tscn
+two_clients	addon	net	0	0.8	0.8	1	159	109	12	20	0	0	0	ashiato-gd/addon/tests/two_clients.gd	res://tests/two_clients.tscn
+cue_crowd	addon	net	0	1.3	1.3	1	190	138	27	7	0	0	2	ashiato-gd/addon/tests/cue_crowd.gd	res://tests/cue_crowd.tscn
+crew_cabin	addon	net	0	1.0	1.0	1	585	399	110	10	0	0	2	ashiato-gd/addon/tests/crew_cabin.gd	res://tests/crew_cabin.tscn
+crowd_join	addon	net	0	6.4	6.4	1	233	174	36	1	0	0	2	ashiato-gd/addon/tests/crowd_join.gd	res://tests/crowd_join.tscn
+crew_join	addon	net	0	5.2	5.2	1	866	620	138	14	0	0	2	ashiato-gd/addon/tests/crew_join.gd	res://tests/crew_join.tscn
+issue	addon	net	0	0.5	0.5	1	124	94	4	4	0	0	0	ashiato-gd/addon/tests/issue.gd	res://tests/issue.tscn
+crowd_sight	addon	net	0	7.9	7.9	1	306	221	49	9	0	0	2	ashiato-gd/addon/tests/crowd_sight.gd	res://tests/crowd_sight.tscn
+predict_all	addon	net	0	0.5	0.5	1	127	89	14	11	0	0	0	ashiato-gd/addon/tests/predict_all.gd	res://tests/predict_all.tscn
+input_release	addon	net	0	0.5	0.5	1	112	80	11	5	0	0	0	ashiato-gd/addon/tests/input_release.gd	res://tests/input_release.tscn
+tracing	addon	net	0	0.5	0.5	1	80	62	3	1	0	0	0	ashiato-gd/addon/tests/tracing.gd	res://tests/tracing.tscn
+balance_probe	addon	net	0	0.5	0.5	1	126	89	20	9	0	0	0	ashiato-gd/addon/tests/balance_probe.gd	res://tests/balance_probe.tscn
+car_collision	addon	net	0	0.5	0.5	1	86	43	14	14	0	0	0	ashiato-gd/addon/tests/car_collision.gd	res://tests/car_collision.tscn
+correction_smoothness	addon	net	0	0.5	0.5	1	123	80	21	10	0	0	0	ashiato-gd/addon/tests/correction_smoothness.gd	res://tests/correction_smoothness.tscn
+reverse_wheels	addon	net	0	0.5	0.5	1	77	50	13	2	0	0	0	ashiato-gd/addon/tests/reverse_wheels.gd	res://tests/reverse_wheels.tscn
+roll_probe	addon	net	0	0.5	0.5	1	58	37	14	4	0	0	0	ashiato-gd/addon/tests/roll_probe.gd	res://tests/roll_probe.tscn
+tire_slip	addon	net	0	0.5	0.5	1	74	52	8	4	0	0	0	ashiato-gd/addon/tests/tire_slip.gd	res://tests/tire_slip.tscn
+top_speed	addon	net	0	0.5	0.5	1	68	48	7	6	0	0	0	ashiato-gd/addon/tests/top_speed.gd	res://tests/top_speed.tscn
+handling_probe	addon	net	0	0.5	0.5	1	186	109	48	10	0	0	0	ashiato-gd/addon/tests/handling_probe.gd	res://tests/handling_probe.tscn
+room_transport	cockpit	-	0			0	103	82	5	5	0	0	1	cockpit/tests/room_transport.gd	res://tests/room_transport.tscn
+room_load_proof	cockpit	-	0			0	254	209	4	11	0	0	1	cockpit/tests/room_load_proof.gd	res://tests/room_load_proof.tscn
+level_map	cockpit	-	0			0	47	43	0	0	0	1	2	cockpit/tests/level_map.gd	res://tests/level_map.tscn
+map_page	cockpit	core	0	4.1	4.2	3	31	28	0	0	0	1	2	cockpit/tests/map_page.gd	res://tests/map_page.tscn
+map_screen	cockpit	-	0			0	33	30	0	0	0	2	2	cockpit/tests/map_screen.gd	res://tests/map_screen.tscn
+air_picture	cockpit	-	0			0	399	281	51	23	0	0	1	cockpit/tests/air_picture.gd	res://tests/air_picture.tscn
+hangar	cockpit	-	0			0	489	382	38	27	0	0	1	cockpit/tests/hangar.gd	res://tests/hangar.tscn
+cooling_towers	cockpit	-	0			0	665	436	166	16	0	0	1	cockpit/tests/cooling_towers.gd	res://tests/cooling_towers.tscn
+oil_platform	cockpit	-	0	6.3	6.3	1	689	521	84	16	0	0	1	cockpit/tests/oil_platform.gd	res://tests/oil_platform.tscn
+many_kinds	cockpit	-	0	4.7	5.8	3	467	348	62	10	0	0	1	cockpit/tests/many_kinds.gd	res://tests/many_kinds.tscn
+many_seats	cockpit	-	0	5.0	5.3	2	655	507	71	10	0	3	1	cockpit/tests/many_seats.gd	res://tests/many_seats.tscn
+craft_page	cockpit	-	0	6.9	6.9	1	190	136	31	1	0	11	1	cockpit/tests/craft_page.gd	res://tests/craft_page.tscn
+players	cockpit	net	0	16.2	16.2	1	215	169	20	2	2	0	1	cockpit/tests/players.gd	res://tests/players.tscn
+players_peers	cockpit	net	0	18.0	18.0	1	102	69	16	2	2	7	1	cockpit/tests/players_peers.gd	res://tests/players_peers.tscn
+handshake_peers	cockpit	net	0	23.2	23.2	1	254	167	42	15	6	16	1	cockpit/tests/handshake_peers.gd	res://tests/handshake_peers.tscn
+handshake_log	cockpit	net	0	29.3	29.3	1	270	203	24	2	10	25	1	cockpit/tests/handshake_log.gd	res://tests/handshake_log.tscn
+traffic_pattern	cockpit	-	0	20.9	24.2	2	717	542	50	62	0	16	1	cockpit/tests/traffic_pattern.gd	res://tests/traffic_pattern.tscn
+road_vehicles	cockpit	-	0			0	897	519	258	51	0	0	1	cockpit/tests/road_vehicles.gd	res://tests/road_vehicles.tscn
+shore_structures	cockpit	-	0			0	245	161	47	8	0	0	1	cockpit/tests/shore_structures.gd	res://tests/shore_structures.tscn

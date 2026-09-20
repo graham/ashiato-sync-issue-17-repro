@@ -1,0 +1,50 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://objects/seats/cockpit_station.gd" id="station"]
+[ext_resource type="Script" path="res://objects/seats/cockpit_shell.gd" id="shell"]
+[ext_resource type="Script" path="res://objects/controls/flight_stick.gd" id="stick"]
+[ext_resource type="Script" path="res://objects/controls/rudder_indicator.gd" id="rudder"]
+[ext_resource type="Script" path="res://objects/seats/crew_board.gd" id="crew"]
+[ext_resource type="Script" path="res://objects/seats/craft_display.gd" id="display"]
+[ext_resource type="PackedScene" path="res://objects/seats/flight_page.tscn" id="flight"]
+[ext_resource type="Script" path="res://objects/controls/airbrake_lever.gd" id="airbrake"]
+[ext_resource type="Script" path="res://objects/controls/map_screen.gd" id="map"]
+[ext_resource type="Script" path="res://objects/controls/trim_wheel.gd" id="trim"]
+
+[node name="Station" type="Node3D"]
+script = ExtResource("station")
+
+[node name="Shell" type="Node3D" parent="."]
+script = ExtResource("shell")
+width = 0.86
+depth = 0.92
+
+[node name="Stick" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.7200, -0.2600)
+script = ExtResource("stick")
+
+[node name="Airbrakes" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2800, 0.8600, -0.0200)
+script = ExtResource("airbrake")
+
+[node name="Trim" type="Node3D" parent="."]
+position = Vector3(-0.28, 0.9, -0.42)
+script = ExtResource("trim")
+
+[node name="MapScreen" type="Node3D" parent="."]
+position = Vector3(0.18, 0.95, -0.54)
+rotation = Vector3(-0.45, 0.5, 0)
+script = ExtResource("map")
+
+[node name="Rudder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.8100, -0.3600)
+script = ExtResource("rudder")
+
+[node name="Crew" type="Node3D" parent="."]
+script = ExtResource("crew")
+
+[node name="Display" type="Node3D" parent="."]
+position = Vector3(-0.16, 0.95, -0.54)
+rotation = Vector3(-0.45, -0.5, 0)
+script = ExtResource("display")
+page = ExtResource("flight")

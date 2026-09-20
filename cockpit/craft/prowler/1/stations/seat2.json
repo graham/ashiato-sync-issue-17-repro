@@ -1,0 +1,165 @@
+{
+  "controls": [
+    {
+      "at": [
+        0.18,
+        1.01,
+        -0.43
+      ],
+      "binding": {
+        "channel": 10,
+        "id": "bus.10",
+        "range": 17,
+        "type": "bus_channel",
+        "version": 1
+      },
+      "channel": 10,
+      "channel_name": "display",
+      "device_id": "seat2/MfdLeft",
+      "facing": [
+        -20.054,
+        -6.875,
+        0.0
+      ],
+      "label": "MFD / DISPLAY",
+      "name": "MfdLeft",
+      "part": "MfdPanel",
+      "range": 17,
+      "scope": "pilot"
+    },
+    {
+      "at": [
+        -0.18,
+        1.01,
+        -0.43
+      ],
+      "binding": {
+        "channel": 10,
+        "id": "bus.10",
+        "range": 17,
+        "type": "bus_channel",
+        "version": 1
+      },
+      "channel": 10,
+      "channel_name": "display",
+      "device_id": "seat2/MfdRight",
+      "facing": [
+        -20.054,
+        6.875,
+        0.0
+      ],
+      "label": "MFD / DISPLAY",
+      "name": "MfdRight",
+      "part": "MfdPanel",
+      "range": 17,
+      "scope": "pilot"
+    },
+    {
+      "at": [
+        -0.24,
+        0.8,
+        -0.46
+      ],
+      "binding": {
+        "channel": 10,
+        "id": "bus.10",
+        "range": 5,
+        "type": "bus_channel",
+        "version": 1
+      },
+      "channel": 10,
+      "channel_name": "display",
+      "device_id": "seat2/DisplaySelector",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "KNOB / DISPLAY",
+      "name": "DisplaySelector",
+      "part": "RotaryKnob",
+      "range": 5,
+      "scope": "craft"
+    }
+  ],
+  "craft": "prowler",
+  "fitted_controls": [
+    {
+      "at": [
+        0.18,
+        1.01,
+        -0.43
+      ],
+      "channel": 10,
+      "class": "MfdPanel",
+      "facing": [
+        -20.054,
+        -6.875,
+        0.0
+      ],
+      "name": "MfdLeft",
+      "range": 17,
+      "scope": "pilot"
+    },
+    {
+      "at": [
+        -0.18,
+        1.01,
+        -0.43
+      ],
+      "channel": 10,
+      "class": "MfdPanel",
+      "facing": [
+        -20.054,
+        6.875,
+        0.0
+      ],
+      "name": "MfdRight",
+      "range": 17,
+      "scope": "pilot"
+    },
+    {
+      "at": [
+        -0.24,
+        0.8,
+        -0.46
+      ],
+      "channel": 10,
+      "class": "RotaryKnob",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "DisplaySelector",
+      "range": 5,
+      "scope": "craft"
+    }
+  ],
+  "furniture": [],
+  "kind": 29,
+  "seat": 2,
+  "shell": {
+    "at": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "depth": 0.92,
+    "facing": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "name": "Shell",
+    "tint": [
+      0.140000000596046,
+      0.150000005960464,
+      0.170000001788139,
+      1.0
+    ],
+    "width": 0.88
+  },
+  "source_scene": "res://objects/seats/seat_prowler.tscn",
+  "units": "metres and degrees, in the seat's own frame; -Z is forward, +Y is up"
+}

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/no_vr_flight.gd" id="1_no_vr_flight"]
+
+[node name="NoVrFlight" type="Node"]
+script = ExtResource("1_no_vr_flight")

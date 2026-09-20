@@ -1,0 +1,65 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "TimeOfDayDial",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "pirate",
+  "kind": 18,
+  "manifest_hash": "c945104386f7515dd4e5b42e023ac6d0356b3667d0ebd336ff217117dd1f258d",
+  "model": {
+    "native_model": "sail",
+    "presentation_body": "BRIG"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.200000002980232,
+      0.150000005960464,
+      0.109999999403954,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_wheel.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.0,
+        3.9,
+        11.0
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "893e7f942dab789538b0c61d89b33affc5fa08a07d92c14b09814437d0e4ed39",
+  "station_hashes": {
+    "0": "0ac38381c515a1708f846a3cb24dbe7bf21b09dd8938ebd4d470b8fa3a0202f8"
+  },
+  "stations": {
+    "0": "stations/seat0.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1
+}

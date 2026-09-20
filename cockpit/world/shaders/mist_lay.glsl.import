@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://coltqh4u1tgba"
+path="res://.godot/imported/mist_lay.glsl-6bbb53b7f19cad18ee8865a0952a684e.res"
+
+[deps]
+
+source_file="res://world/shaders/mist_lay.glsl"
+dest_files=["res://.godot/imported/mist_lay.glsl-6bbb53b7f19cad18ee8865a0952a684e.res"]
+
+[params]
+

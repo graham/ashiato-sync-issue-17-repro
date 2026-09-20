@@ -1,0 +1,39 @@
+{
+ "name": "West International, runway 36R/18L",
+ "summary": "The eastern of the test field's two parallel airliner runways, 1,310 m east of 36L. Landed on southward (18L) from its northern threshold, the arrivals' runway for traffic from the north and east while 36L departs northward; every end takes a 10 NM final.",
+ "world": "testfield",
+ "runway": {
+  "centre": [
+   -17345.0,
+   0.0,
+   0.0
+  ],
+  "bearing_degrees": 0.0,
+  "length_m": 3500.0,
+  "width_m": 45.72,
+  "protection": {
+   "ofa_half_width": 121.92,
+   "ofa_beyond_end": 304.8,
+   "rpz_from_end": 60.96,
+   "rpz_length": 762.0,
+   "rpz_outer_half": 266.7
+  }
+ },
+ "ends": {
+  "threshold": {
+   "pattern": "right"
+  },
+  "far_end": {
+   "pattern": "left"
+  }
+ },
+ "in_use": "far_end",
+ "sources": {
+  "length_m": "As Cape International's: the 747-400 at its maximum weight on a hot day, Boeing D6-58326-1 rev F 3.3.4, rounded up to 3,500 m.",
+  "width_m": "FAA AC 150/5300-13B change 1, table G-11 (C/D/E-V): 150 ft.",
+  "protection": "The same table as Cape International's, approach visibility below 3/4 mile; the test field's ground also keeps a 34:1 funnel clear 10 NM off each end (Airfield.pads_for).",
+  "place": "1,310 m east of 36L, the least spacing for independent parallel approaches.",
+  "pattern": "The outer side at each end: landing north on 36R the pattern is to the east, the right; landing south on 18L it is to the east, the left.",
+  "in_use": "18L for arrivals from the air base and the north, 36L for departures: parallel runways used one for arrivals and one for departures, as at most airports with a pair."
+ }
+}

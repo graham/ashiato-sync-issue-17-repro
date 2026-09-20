@@ -1,0 +1,62 @@
+{
+ "name": "A revetment with no taxilane in front of it, on purpose",
+ "summary": "The smallest working base: a parallel taxiway, one stub, a taxilane, a two-spot apron, one revetment bay, one hangar and the tower. Copy this folder, rename it, and change the numbers.",
+ "frame": "Metres, in the frame of the world's runway number `runway` (Terrain.runways()). `along` is from the runway's middle towards its far end; the strings \"threshold\" and \"far_end\" name its ends, and may carry a signed offset (\"threshold+20\"), so a longer runway moves what is laid off its ends. `across` is from its centreline, positive to the right looking along it; \"runway_edge\" is half its width. Heights are from the runway's level. A taxiway is a centreline: one of `along` and `across` is a pair (where it runs) and the other one number (where it lies); its width is `standards.taxiway_width`.",
+ "runway": 0,
+ "apron_craft": "AIRLINER",
+ "standards": {
+  "runway_clear_zone": 304.8,
+  "taxiway_width": 23.0,
+  "taxiway_obstacle_clearance": 60.96,
+  "taxiway_to_taxilane": 72.4,
+  "hold_bar": 76.2,
+  "wingtip_to_wingtip": 3.1,
+  "wingtip_to_taxilane": 9.2,
+  "wall_clearance": 3.05,
+  "revetment_wall_height": 3.66,
+  "revetment_wall_thickness": 1.68,
+  "sightline_degrees": 0.8,
+  "hangar_types": {
+   "I": {"width": 64.62, "depth": 28.96, "clear_height": 9.91, "door_width": 63.7, "door_height": 7.62, "roof": "gable"},
+   "III": {"width": 50.29, "depth": 50.29, "clear_height": 15.24, "door_width": 49.38, "door_height": 15.24, "roof": "arch"}
+  },
+  "fillet": 15.0
+ },
+ "sources": {
+  "runway_clear_zone": "UFC 3-260-01 (17 Nov 2008) Table 3-2 item 12 and remark 3: Class B runway lateral clearance zone, 1,000 ft from the centreline; a parallel taxiway's pavement lies outside it. https://buildingcriteria1.tpub.com/ufc_3_260_01/index.htm (public domain)",
+  "taxiway_width": "UFC 3-260-01 Table 5-1 item 1: USAF taxiway 75 ft.",
+  "taxiway_obstacle_clearance": "UFC 3-260-01 Table 5-1 item 10: taxiway centreline to fixed or mobile obstacles, 200 ft (Air Force).",
+  "taxiway_to_taxilane": "UFC 3-260-01 Table 5-1 item 11: taxiway centreline to a parallel taxilane, 237.5 ft.",
+  "hold_bar": "UFC 3-260-01 Table 3-2 item 16: the mandatory frangibility zone, 500 ft wide centred on the runway; the hold bar is at its edge.",
+  "wingtip_to_wingtip": "UFC 3-260-01 Table 6-1 item 4: parked wingtip to wingtip, 10 ft (spans to 110 ft).",
+  "wingtip_to_taxilane": "UFC 3-260-01 Table 6-1 item 6: wingtip clearance to a through taxilane, 30 ft.",
+  "wall_clearance": "AFMAN facility sheet 211111 (Hangar, Aircraft Maintenance) Table 1.2: 10 ft from wingtip or fuselage to walls and doors. https://www.wbdg.org/FFC/AF/AFMAN/211111_Hangar_Maint.pdf (public domain)",
+  "revetment_wall_height": "AFCESA history of Vietnam-era steel bin revetments: walls 12 ft high at Bien Hoa. https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_75328.pdf (public domain)",
+  "revetment_wall_thickness": "The same history: bin walls 5.5 ft wide.",
+  "sightline_degrees": "FAA Order 6480.4A, Airport Traffic Control Tower Siting Criteria: every line of sight meets the surface at 0.80 degrees or steeper (the military rule, UFC 3-260-01 Attachment 18, is 35 arc-minutes). https://www.faa.gov/documentLibrary/media/Order/ND/6480_4A.pdf (public domain)",
+  "hangar_types": "UFC 4-211-01 (2017, change 3) Table 7-1, Navy standard hangar modules: Type I 212 x 95 ft, 32.5 ft clear, door 209 x 25 ft; Type III 165 x 165 ft, 50 ft clear, door 162 x 50 ft. https://nibs-s3-wbdg3-production.s3.us-east-1.amazonaws.com/FFC/DOD/UFC/ufc_4_211_01_2017_c3.pdf (public domain)",
+  "layout": "Kunsan AB (RKJK), Korean AIP AD 2 and its aerodrome chart (facts only): one runway, 2,745 x 45 m; one parallel taxiway on the east with stubs A to E; the main apron between the middle stubs; the tower north-east of the apron. https://aim.koca.go.kr/eaipPub/Package/2024-09-19/html/eAIP/KR-AD-2.RKJK-en-GB.html. Where the revetments stand is this layout's own reading of a typical base: no public plan of Kunsan's shelters was found.",
+  "fillet": "Not a published figure: the pavement added round a junction on every side, chosen so a fighter turned at its desk-key taxi speed stays on the pavement, and measured by tests/airbase.gd."
+ },
+ "taxiways": [
+  {"id": "parallel", "kind": "taxiway", "along": ["threshold", "far_end"], "across": 320.0},
+  {"id": "a", "kind": "taxiway", "along": "threshold", "across": ["runway_edge", 320.0]},
+  {"id": "lane", "kind": "taxilane", "along": [-100.0, 100.0], "across": 395.0},
+  {"id": "link", "kind": "taxilane", "along": -100.0, "across": [320.0, 395.0]}
+ ],
+ "aprons": [
+  {"id": "apron", "along": [-40.0, 40.0], "across": [406.5, 470.0], "nose_line": 420.0, "spots": 2}
+ ],
+ "revetments": [
+  {"id": "bay", "along": 300.0, "taxilane": "lane", "bays": 1, "bay_width": 20.0, "bay_depth": 22.0}
+ ],
+ "hangars": [
+  {"id": "shed", "type": "I", "along": -60.0, "door": 520.0}
+ ],
+ "tower": {
+  "along": 150.0,
+  "across": 430.0
+ },
+ "parked": [
+ ]
+}

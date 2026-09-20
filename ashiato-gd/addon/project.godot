@@ -1,0 +1,15 @@
+; Minimal Godot project whose ONLY purpose is to load addons/ashiato/ straight from
+; where the build writes it, so the conformance test runs against the real artifact
+; with no copy step in between. Copy addons/ashiato/ into a game to use it.
+
+config_version=5
+
+[application]
+
+config/name="ashiato-gd conformance"
+run/main_scene="res://tests/conformance.tscn"
+config/features=PackedStringArray("4.7")
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ashiato/plugin.cfg")

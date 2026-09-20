@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/town_lights.gd" id="1_tl"]
+
+[node name="TownLights" type="Node"]
+script = ExtResource("1_tl")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/steam_probe.gd" id="1_steam_probe"]
+
+[node name="SteamProbe" type="Node"]
+script = ExtResource("1_steam_probe")

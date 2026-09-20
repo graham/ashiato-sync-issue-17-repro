@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/top_speed.gd" id="1_top"]
+
+[node name="TopSpeed" type="Node"]
+script = ExtResource("1_top")

@@ -1,0 +1,38 @@
+{
+ "name": "The air base, runway 09/27",
+ "summary": "The test field's military runway, north of the middle: 9,000 ft like Kunsan's. Landed on westward (27) from its eastern threshold; both ends take a 10 NM final.",
+ "world": "testfield",
+ "runway": {
+  "centre": [
+   0.0,
+   0.0,
+   -14000.0
+  ],
+  "bearing_degrees": 90.0,
+  "length_m": 2743.2,
+  "width_m": 45.72,
+  "protection": {
+   "ofa_half_width": 121.92,
+   "ofa_beyond_end": 304.8,
+   "rpz_from_end": 60.96,
+   "rpz_length": 762.0,
+   "rpz_outer_half": 266.7
+  }
+ },
+ "ends": {
+  "threshold": {
+   "pattern": "left"
+  },
+  "far_end": {
+   "pattern": "left"
+  }
+ },
+ "in_use": "threshold",
+ "sources": {
+  "length_m": "Kunsan AB (RKJK), the fighter base's pattern: runway 18/36, 9,000 ft (2,743 m) by 150 ft. FAA Chart Supplement, Kunsan AB.",
+  "width_m": "Kunsan's 150 ft.",
+  "protection": "FAA AC 150/5300-13B's airliner table as the civil runways', standing in for UFC 3-260-01's clear zone; the ground's 34:1 funnel is the same on every runway end.",
+  "place": "North of the middle at z -14 km (lane/testfield step 0), east-west so both 10 NM finals end at x +-19.9 km.",
+  "pattern": "Standard left-hand traffic both ways."
+ }
+}

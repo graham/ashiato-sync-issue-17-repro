@@ -1,0 +1,7 @@
+{
+	"name": "Alpine",
+	"summary": "Sixty-four kilometres of generated ranges, valleys, lakes, towns and airfields.",
+	"world": "alpine",
+	"ground": {"world_half": 32768, "peak_height": 3000, "seed": 0},
+	"spawn": {"at": [-21, 30, 0], "yaw_degrees": 0}
+}

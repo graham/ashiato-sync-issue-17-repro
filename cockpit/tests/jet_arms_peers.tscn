@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/jet_arms_peers.gd" id="1_jet_arms_peers"]
+
+[node name="JetArmsPeers" type="Node"]
+script = ExtResource("1_jet_arms_peers")

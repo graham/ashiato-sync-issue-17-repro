@@ -1,0 +1,168 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "FlapsLever",
+    "GearLever",
+    "TrimWheel",
+    "AirbrakeLever",
+    "GearHandle",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "plane",
+  "kind": 1,
+  "manifest_hash": "e2b547a544e3b8a0ff4f5d469fb193a03b3eb8f0ace44ed35c23c2c81426de70",
+  "model": {
+    "native_model": "airplane",
+    "presentation_body": "WINGED"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.879999995231628,
+      0.889999985694885,
+      0.920000016689301,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_plane.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        -0.55,
+        -0.15,
+        -0.7
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    },
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.55,
+        -0.15,
+        -0.7
+      ],
+      "station": "copilot",
+      "yaw": 0.0
+    },
+    {
+      "flies": false,
+      "gun": false,
+      "position": [
+        -0.55,
+        -0.15,
+        0.5
+      ],
+      "station": "turret",
+      "yaw": 0.0
+    },
+    {
+      "flies": false,
+      "gun": false,
+      "position": [
+        0.55,
+        -0.15,
+        0.5
+      ],
+      "station": "turret",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "631cb7b848bfb4e6cd0400d3fdbc810475206db3a2e493dfa214726c2fe2b18c",
+  "station_hashes": {
+    "0": "5ff9181cd1170d42744fd418e358510d7739137b3283e8331641353a8902b60f",
+    "1": "43f9f1b7a7f380a28df6f549e48270c441161d5eef7330313a3716d186f1099d",
+    "2": "9df04adeec46bf68bf7ac14c1e1099456222a97097efdf1302847154500f60d3",
+    "3": "f7116f4508458fe2e9a45c3ab8d2256fc1aa3613d529297d853b2cf3a6ddba58"
+  },
+  "stations": {
+    "0": "stations/seat0.json",
+    "1": "stations/seat1.json",
+    "2": "stations/seat2.json",
+    "3": "stations/seat3.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1,
+  "visual": {
+    "dimensions_m": [
+      11.23,
+      3.14,
+      9.91
+    ],
+    "forward_axis": "-Z",
+    "offset_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scene": "res://objects/vehicles/cessna310_airframe.tscn",
+    "sockets": {
+      "main_gear_port": [
+        -1.83,
+        -0.48,
+        -0.94
+      ],
+      "main_gear_starboard": [
+        1.84,
+        -0.48,
+        -0.94
+      ],
+      "nose_gear": [
+        0.0,
+        -0.53,
+        -3.86
+      ],
+      "propeller_port": [
+        -1.86,
+        0.75,
+        -3.97
+      ],
+      "propeller_starboard": [
+        1.86,
+        0.75,
+        -3.97
+      ],
+      "tip_tank_port": [
+        -5.34,
+        0.81,
+        -1.04
+      ],
+      "tip_tank_starboard": [
+        5.35,
+        0.81,
+        -1.04
+      ]
+    },
+    "units": "metres",
+    "up_axis": "+Y"
+  }
+}

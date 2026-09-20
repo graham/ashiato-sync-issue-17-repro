@@ -1,0 +1,7 @@
+.godot/
+*.translation
+
+# `tools/gate_run.ps1 -Probe` writes a probe's stdout and stderr here, inside the worktree
+# rather than in a shared temp directory, so two lanes photographing the same thing cannot read
+# each other's output. They are run artefacts, not evidence: the pictures are the evidence.
+tests/logs/

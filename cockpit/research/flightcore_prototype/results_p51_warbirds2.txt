@@ -1,0 +1,27 @@
+THE P-51D ON WARBIRDS2'S NUMBERS
+  fin and rudder 2.05 m^2, lift slope 3.51 per radian (end-plated by the fuselage), rudder 30 deg at tau 0.65
+
+  what full rudder holds, and what the propeller asks of it, at a standstill and at 20 m/s:
+    cg station   fin arm    rudder at rest   swing at rest   share      at 20 m/s
+        2.85 m    6.10 m        31218 N m         -7210 N m     23%         19%
+        3.00 m    5.95 m        30450 N m         -7082 N m     23%         19%
+        3.15 m    5.80 m        29682 N m         -6954 N m     23%         19%
+        3.30 m    5.65 m        28915 N m         -6827 N m     24%         19%
+
+  torque at full power: 7383 N m, which on a 3.4 m track is 2.2 kN of extra load on the left wheel
+  (the aeroplane weighs 41.0 kN, so that is 5 per cent of its weight moved across)
+
+THRUST THROUGH THE TAKE-OFF ROLL: their line against a constant-speed propeller
+  speed    their line (16.03 kN static)   constant-speed    difference
+      0            16030 N                   19020 N       +2990 N
+     10            15164 N                   24510 N       +9346 N
+     20            14297 N                   21985 N       +7688 N
+     30            13431 N                   19585 N       +6155 N
+     40            12564 N                   17378 N       +4814 N
+     50            11698 N                   15411 N       +3713 N
+     60            10831 N                   13703 N       +2872 N
+
+  the run to 47 m/s (about 1.1 x a 105 mph stall), on 0.02 of weight in rolling resistance and 0.6 v^2 of drag:
+    their line:         395 m
+    constant-speed:     265 m
+  the book's run is 442 m; theirs flies 692.

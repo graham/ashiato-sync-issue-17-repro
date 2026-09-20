@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3]
+
+[sub_resource type="BoxShape3D" id="Shape_wall"]
+size = Vector3(4, 2, 4)
+
+[node name="Collision" type="Node3D"]
+
+[node name="Wall" type="StaticBody3D" parent="."]
+
+[node name="Shape" type="CollisionShape3D" parent="Wall"]
+shape = SubResource("Shape_wall")

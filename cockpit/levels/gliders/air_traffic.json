@@ -1,0 +1,10 @@
+{
+	"summary": "Twenty-eight machines going about their own business over the ridge country: eight other people's gliders soaring the same thermals, eight Cessnas and six light twins crossing the farmland, four helicopters low over it, and two airliners high overhead. Nothing here is armed, and every one of them gives way to a player (`AirTraffic`).",
+	"flights": [
+		{"kind": "GLIDER", "count": 8, "band": [400, 1400]},
+		{"kind": "CESSNA", "count": 8, "band": [600, 1000]},
+		{"kind": "PLANE", "count": 6, "band": [1800, 2100]},
+		{"kind": "HELI", "count": 4, "band": [150, 300]},
+		{"kind": "AIRLINER", "count": 2, "band": [4000, 4600]}
+	]
+}

@@ -1,0 +1,17 @@
+# Which upstream revisions this binding was last built and tested against.
+#
+# Both libraries are moving fast, and they do NOT move together: ashiato-sync
+# pins its own ashiato revision in cmake/AshiatoSyncDependencies.cmake, and that
+# pin lags the ECS. tools/update_upstream.ps1 reports the gap rather than letting
+# a build quietly pick one.
+#
+# Update by running tools/update_upstream.ps1, which refreshes these and re-runs
+# the conformance test.
+
+ashiato       = 820c5b0ba9de93e854a6f4ae7638a01f1260297f
+box3d         = 47d7f7cc7e091142c08d11dc7d2e493c5d34f536
+ashiato-sync  = 8fa08cf8de573c8bd6a81a62268a978e6f187d68
+
+# What ashiato-sync itself pins. When this differs from 'ashiato' above, the
+# build is using an ECS revision sync has never been tested against.
+sync-pins-ashiato = 820c5b0ba9de93e854a6f4ae7638a01f1260297f

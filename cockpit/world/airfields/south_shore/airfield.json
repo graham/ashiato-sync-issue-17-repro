@@ -1,0 +1,15 @@
+{
+ "name": "South shore strip",
+ "summary": "A second island runway on the flat coastal band south of the mountain ring, laid east-west along the shore so each end's circuit lies out over the sea.",
+ "world": "island",
+ "runway": {"centre": [4400.0, 0.0, 6200.0], "bearing_degrees": 90.0},
+ "ends": {
+  "threshold": {"pattern": "left"},
+  "far_end": {"pattern": "right"}
+ },
+ "in_use": "threshold",
+ "sources": {
+  "place": "Where the island's rock map (400 m a character, 2026-09-19, lane/pattern) shows flat slab from z 4,800 to the island's edge at 7,200 for x past 3,200: the only flat ground on the island wide enough for a runway and a circuit. Every interior site of that size has rock in it.",
+  "pattern": "Right-hand traffic is published per runway end where terrain or noise calls for it (AIM 4-3-3 b, AC 90-66C 11.1). Here each end's pattern side is the SEA side: landing west from the threshold the sea is to the left, landing east from the far end it is to the right."
+ }
+}

@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://objects/seats/cockpit_station.gd" id="station"]
+[ext_resource type="Script" path="res://objects/seats/cockpit_shell.gd" id="shell"]
+[ext_resource type="Script" path="res://objects/controls/collective_lever.gd" id="collective"]
+[ext_resource type="Script" path="res://objects/controls/flight_stick.gd" id="stick"]
+[ext_resource type="Script" path="res://objects/controls/crew_button.gd" id="button"]
+[ext_resource type="Script" path="res://objects/controls/rudder_indicator.gd" id="rudder"]
+[ext_resource type="Script" path="res://objects/seats/crew_board.gd" id="crew"]
+[ext_resource type="Script" path="res://objects/seats/craft_display.gd" id="display"]
+[ext_resource type="PackedScene" path="res://objects/seats/flight_page.tscn" id="flight"]
+
+[node name="Station" type="Node3D"]
+script = ExtResource("station")
+
+[node name="Shell" type="Node3D" parent="."]
+script = ExtResource("shell")
+width = 1.05
+depth = 0.92
+
+[node name="Throttle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2600, 0.7340, 0.1848)
+script = ExtResource("collective")
+
+[node name="Stick" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.7200, -0.3400)
+script = ExtResource("stick")
+
+[node name="Button" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3400, 1.1000, -0.0200)
+script = ExtResource("button")
+
+[node name="Rudder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.8100, -0.3600)
+script = ExtResource("rudder")
+
+[node name="Crew" type="Node3D" parent="."]
+script = ExtResource("crew")
+
+[node name="Display" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0200, 1.1400, -0.3600)
+script = ExtResource("display")
+page = ExtResource("flight")
+

@@ -1,0 +1,71 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "FlapsLever",
+    "GearLever",
+    "TrimWheel",
+    "AirbrakeLever",
+    "GearHandle",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "falcon",
+  "kind": 27,
+  "manifest_hash": "12d7f64aa90497c590a8aeb2ec51b96ba82745b34be9e0884654b352980d25ff",
+  "model": {
+    "native_model": "airplane",
+    "presentation_body": "FALCON"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.519999980926514,
+      0.550000011920929,
+      0.569999992847443,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_plane.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.0,
+        0.064,
+        -3.265
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "19f915be911ff115c3f8fa09ea490109d3564659ea5644beb13078acefa29a15",
+  "station_hashes": {
+    "0": "be9ea8efce17aa881127400c248643ad9daae4cf5ac508cf894ef76101b2b30b"
+  },
+  "stations": {
+    "0": "stations/seat0.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1
+}

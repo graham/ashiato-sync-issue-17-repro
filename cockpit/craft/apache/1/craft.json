@@ -1,0 +1,81 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "TrimWheel",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "DetentDial",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "apache",
+  "kind": 31,
+  "manifest_hash": "9b50e05f92a7296838798570adad5780f54f7ac9ec3a7e464bf4cf52b36f6e43",
+  "model": {
+    "native_model": "helicopter",
+    "presentation_body": "APACHE"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.270000010728836,
+      0.28999999165535,
+      0.219999998807907,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_apache.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.0,
+        -0.37,
+        -3.879
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    },
+    {
+      "flies": true,
+      "gun": true,
+      "position": [
+        0.0,
+        -0.646,
+        -5.37
+      ],
+      "station": "copilot",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "8f0ffb0ac7b5d1925b60ab8ee3494e5e76fcb68c389d95b4b840bab04ae2ba3e",
+  "station_hashes": {
+    "0": "40ce66f0d0524724234424974f3a1c3650b4f635e1b61a6b2ca210b8b895a3eb",
+    "1": "88f827b7fbe392946201d662489a23241a84ab5631f79ab6e2c38f82df6a2cde"
+  },
+  "stations": {
+    "0": "stations/seat0.json",
+    "1": "stations/seat1.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1
+}

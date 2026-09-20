@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Texture2D" path="res://world/chunks/_template/hardstand.png" id="1"]
+
+[sub_resource type="BoxMesh" id="Mesh_slab"]
+size = Vector3(80, 2, 20)
+
+[sub_resource type="StandardMaterial3D" id="Paint_slab"]
+albedo_texture = ExtResource("1")
+uv1_scale = Vector3(8, 2, 1)
+
+[node name="Template" type="Node3D"]
+
+[node name="Hardstand" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 20)
+mesh = SubResource("Mesh_slab")
+surface_material_override/0 = SubResource("Paint_slab")

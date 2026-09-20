@@ -1,0 +1,48 @@
+[configuration]
+
+entry_symbol = "ashiato_gd_library_init"
+compatibility_minimum = "4.7"
+; The extension owns an ashiato::Registry with live entity storage. Godot's
+; hot-reload of the library would tear that down underneath anything holding an
+; AshiatoWorld, so it is off.
+reloadable = false
+
+[libraries]
+
+; TAGGED BY PRECISION, both of them, and the `single` on the ordinary entries is the half
+; that is easy to forget.
+;
+; A double-precision Godot reports every tag a single-precision one does EXCEPT `single`,
+; so an untagged `windows.editor.x86_64` entry matches a double editor perfectly well and
+; it would cheerfully load the single-precision library into it. The two disagree about the
+; width of every real_t that crosses the boundary, which is not a crash you would enjoy
+; reading. Naming the precision on both sides makes the choice explicit and exclusive.
+;
+; See agents.md: the world is ten kilometres across and float32 draws the far corner on a
+; half-millimetre grid, which is seven times what the eye resolves at arm's length.
+
+windows.editor.single.x86_64 = "res://addons/ashiato/bin/ashiato_gd.dll"
+windows.debug.single.x86_64 = "res://addons/ashiato/bin/ashiato_gd.dll"
+windows.release.single.x86_64 = "res://addons/ashiato/bin/ashiato_gd.dll"
+
+windows.editor.double.x86_64 = "res://addons/ashiato/bin/ashiato_gd.double.dll"
+windows.debug.double.x86_64 = "res://addons/ashiato/bin/ashiato_gd.double.dll"
+windows.release.double.x86_64 = "res://addons/ashiato/bin/ashiato_gd.double.dll"
+
+; LINUX IS TAGGED TOO, since 2026-09-11. Until then these three carried no precision, so
+; the double editor built by tools/build_godot_double.sh matched them, loaded the single
+; library, and aborted in godot-cpp's class registration with "stack smashing detected" --
+; the crash the paragraph above describes, on the platform that paragraph forgot.
+; ashiato-gd/tools/bootstrap-linux.sh --double builds the double one.
+
+linux.editor.single.x86_64 = "res://addons/ashiato/bin/ashiato_gd.so"
+linux.debug.single.x86_64 = "res://addons/ashiato/bin/ashiato_gd.so"
+linux.release.single.x86_64 = "res://addons/ashiato/bin/ashiato_gd.so"
+
+linux.editor.double.x86_64 = "res://addons/ashiato/bin/ashiato_gd.double.so"
+linux.debug.double.x86_64 = "res://addons/ashiato/bin/ashiato_gd.double.so"
+linux.release.double.x86_64 = "res://addons/ashiato/bin/ashiato_gd.double.so"
+
+macos.editor = "res://addons/ashiato/bin/ashiato_gd.dylib"
+macos.debug = "res://addons/ashiato/bin/ashiato_gd.dylib"
+macos.release = "res://addons/ashiato/bin/ashiato_gd.dylib"

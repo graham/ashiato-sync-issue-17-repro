@@ -1,0 +1,39 @@
+{
+ "name": "East International, runway 09/27",
+ "summary": "The crossing runway of the test field's east airport. Landed on eastward (09) from its western threshold. A final into 27 would begin 37 km out, past the wire's edge, so 27 is for take-offs only.",
+ "world": "testfield",
+ "runway": {
+  "centre": [
+   16300.0,
+   0.0,
+   -1100.0
+  ],
+  "bearing_degrees": 90.0,
+  "length_m": 3500.0,
+  "width_m": 45.72,
+  "protection": {
+   "ofa_half_width": 121.92,
+   "ofa_beyond_end": 304.8,
+   "rpz_from_end": 60.96,
+   "rpz_length": 762.0,
+   "rpz_outer_half": 266.7
+  }
+ },
+ "ends": {
+  "threshold": {
+   "pattern": "right"
+  },
+  "far_end": {
+   "pattern": "left"
+  }
+ },
+ "in_use": "far_end",
+ "sources": {
+  "length_m": "As Cape International's: the 747-400 at its maximum weight on a hot day, Boeing D6-58326-1 rev F 3.3.4, rounded up to 3,500 m.",
+  "width_m": "FAA AC 150/5300-13B change 1, table G-11 (C/D/E-V): 150 ft.",
+  "protection": "The same table as Cape International's, approach visibility below 3/4 mile; the test field's ground also keeps a 34:1 funnel clear 10 NM off each end (Airfield.pads_for).",
+  "place": "Cape International's 09/27 relative to its 18/36.",
+  "unusable_end": "27 (this file's threshold, the east end) takes no final: 10 NM out from it is x 36.6 km, past the wire's +-32.8 km. A runway laid across the map cannot take a final from outside it; lane/testfield step 0.",
+  "pattern": "As Cape International's 09/27."
+ }
+}

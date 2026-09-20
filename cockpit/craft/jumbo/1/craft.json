@@ -1,0 +1,111 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "FlapsLever",
+    "GearLever",
+    "TrimWheel",
+    "AirbrakeLever",
+    "GearHandle",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "DetentDial",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "jumbo",
+  "kind": 22,
+  "manifest_hash": "c8558b10e88dad258b8f05d3b60da96bca36b01f89fd5f3c4c6416e63b56140c",
+  "model": {
+    "native_model": "airplane",
+    "presentation_body": "JETLINER"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.920000016689301,
+      0.930000007152557,
+      0.939999997615814,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_airliner.tscn",
+    "shared_throttle": true
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        -0.55,
+        2.175,
+        -28.435
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    },
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.55,
+        2.175,
+        -28.435
+      ],
+      "station": "copilot",
+      "yaw": 0.0
+    },
+    {
+      "flies": false,
+      "gun": false,
+      "position": [
+        -1.05,
+        2.175,
+        -24.335
+      ],
+      "station": "operator",
+      "yaw": -1.57079637050629
+    },
+    {
+      "flies": false,
+      "gun": false,
+      "position": [
+        1.05,
+        2.175,
+        -24.335
+      ],
+      "station": "operator",
+      "yaw": 1.57079637050629
+    }
+  ],
+  "simulation_contract": "a7271cbf0d31e755353e5516c2cc0c33878fffd378c557b0a5a485c835be68fb",
+  "station_hashes": {
+    "0": "940a40989aa69cde7c02e9c09fb1b8d7efa527c0c7cfb32b4445cae01f61bc47",
+    "1": "b5a838b1a45e9961423adab20066025d8458af1d881b0df16cc3caeb37108828",
+    "2": "88754e543d95cd85b3b40957ec8b45f64d7db3b40b1e7441f027073faeac79a7",
+    "3": "e3ddd208e4b1e8927b4d83908ef496e55cf7873583dd5980a846852baf655788"
+  },
+  "stations": {
+    "0": "stations/seat0.json",
+    "1": "stations/seat1.json",
+    "2": "stations/seat2.json",
+    "3": "stations/seat3.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1
+}

@@ -1,0 +1,79 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "submarine",
+  "kind": 20,
+  "manifest_hash": "6d13cefacb285636d155cae06c02e95a1b6669998b0d2dbbe88593364c2af07e",
+  "model": {
+    "native_model": "boat",
+    "presentation_body": "PLAIN"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "well",
+    "paint": [
+      0.0549999997019768,
+      0.0579999983310699,
+      0.061999998986721,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_wheel.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        -0.35,
+        6.86,
+        -35.2
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    },
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.35,
+        6.86,
+        -35.2
+      ],
+      "station": "copilot",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "50e9641ed5d986ffdf67894baf197ec8ae5042cf1049296a10f03370373d03df",
+  "station_hashes": {
+    "0": "dc86a699bbb2e39efa124890dd90681be689244c18ab2f79f8c6ca32982a2920",
+    "1": "f95a4f256a51022c602c008914e83accbdf27e94644576410bfd07f4547a5b94"
+  },
+  "stations": {
+    "0": "stations/seat0.json",
+    "1": "stations/seat1.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1
+}

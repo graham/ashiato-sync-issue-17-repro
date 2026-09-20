@@ -1,0 +1,292 @@
+name	tiers	lines	secs	tokens	title
+lint	core	595	34.1	craft,seat,station,peer,pic,gun,ui,docs,sound,water,xr,sim	Headless: does every script in the project still COMPILE, and does every scene still
+transition_curtain	-	60		craft,peer,level,ui	The persistent level curtain's contract without loading a large world. Network provenance/validation is held by
+long_message	-	229		craft,peer,ui	Deterministic packet-list check for the bounded document stream. Read RESULT=, not exit code.
+radio_clip	-	72		craft,peer,gun,ui,sound,water	Model-free proof of the clip carried by Item 9's bounded long-message pump.
+radio_peers	net	101	19.6	peer,level,ui,sound,water	Real ENet proof: only the host owns Kokoro; host and model-free client play
+stations	core	263	7.2	craft,seat,station,ui,water,sim	The checked-in immutable package revision is a numeric census of every fitted station.
+fit	core	367	9.5	craft,seat,station,gun,ui,flight,water,xr,sim	Headless: does every cockpit in the game fit a pair of hands?
+shell_room	core	542	6.6	craft,seat,station,gun,ui,docs,water	Headless: IS THE STRUCTURE A STATION DRAWS ACTUALLY INSIDE THE AIRCRAFT IT IS DRAWN IN?
+hull_hidden	core	76	5.5	craft,seat,ui,water,sim	Headless: DOES THE OLD SKIN STAY GONE WHEN A CREW BOARDS, AND WHEN THEY LEAVE?
+screens_face	core	222	6.3	craft,seat,station,ui,water,sim	Headless: DOES EVERY CREW MEMBER SEE THE FACE OF EVERY SCREEN IN THEIR OWN STATION?
+seat_room	core	300	7.6	craft,seat,station,gun,ui,water,xr	Headless: IS THERE ROOM FOR A PERSON IN EVERY SEAT OF EVERY CRAFT?
+pilot_seat	core	371	8.6	craft,seat,station,ui,flight,water,sim	Headless: THE PILOT'S CHAIR -- every preset of `PilotSeat` builds its parts inside its budget, has no armrests,
+handling	-	1532	22.5	craft,seat,station,level,gun,flight,docs,water,xr,sim	Headless: HOW DOES EVERY CRAFT FLY, DRIVE OR SAIL, when somebody sits in it and works the controls?
+cb90	-	464		craft,seat,station,gun,ui,flight,water,xr,sim	Headless: THE CB90 FAST ASSAULT CRAFT -- its shape against the published figures, its crew, its two guns at the back,
+fireboat	-	448	4.5	craft,seat,station,gun,ui,docs,water,sim	THE FIREBOAT, HELD TO WHAT IS DRAWN -- not to the numbers that were typed.
+sense	-	185		craft,seat,station,ui,flight,water,sim	Headless: every finger and flight-page row makes sense for the craft it belongs to.
+smoke	core	3218	183.9	craft,seat,station,peer,level,pic,gun,ui,flight,docs,sound,water,xr,sim	Headless: does the whole Godot side stand up, and is the cockpit actually steady?
+trim	core	175	22.3	craft,level,gun,flight,sound,water,sim	ONE AEROPLANE, LEFT ALONE, AND WHETHER IT FINDS LEVEL FLIGHT.
+altitude_hold	-	81		craft,flight,sim	AN AUTOPILOT CAN BE GIVEN ITS OWN TRAFFIC LAYER, and letting the layer go gives the
+trace_log	-	191		craft,flight,sim	THE FLIGHT RECORDER WRITES WHAT WAS FLOWN, and the file reads back: a real Cessna on its autopilot flies five seconds
+trace_cost	-	63		flight,sim	WHAT THE FLIGHT RECORDER COSTS A TICK: ten AI Cessnas flying, the wall time of a physics frame averaged over 600 of them with
+trace_replay	-	242		craft,level,pic,gun,ui,flight,sim	THE TRACE LEVEL REPLAYS A FLIGHT AS IT WAS FLOWN: it loads a trace, and the craft drawn at three stated times is where the
+latency	net,solo	104	25.4	level	REAL ENET, one host and two joiners. One joiner has a clean loopback; the other delays
+link_ms	net,solo	254	31.3	peer,level,docs	Headless: THE LEVEL'S OWN LINK, AND WHAT SYNC MEASURES OF IT ON THE OTHER MACHINE.
+net_stats	net,solo	318	29.1	craft,seat,peer,level,docs,water,sim	Headless: EVERY MACHINE'S LINK, ONCE A SECOND, AND ONE COLUMN THE OTHER END CAN CONTRADICT.
+holding_stack	-	191	10.8	craft,ui,flight,docs,water,sim	THE TRAFFIC PAGE drives the real layered stack. Counts come back from the page and
+bulk_load	net	156	156.9	craft,peer,flight,sim	Deterministic load gate. The carrier is an exact tick queue so this measures sync and
+bulk_peers	net,solo	190	36.1	peer,flight	Real ENet confirmation: a host and two delayed joiners load 200 aircraft through the
+rotor_rates	-	401		craft,seat,ui,flight,docs,water,sim	Headless: HOW FAST A ROTORCRAFT ANSWERS A FULL STICK OR A FULL PEDAL, in pitch, roll and yaw, at a hover and at sixty
+climb	-	266	11.6	craft,gun,flight,water,sim	EVERY AEROPLANE LEFT TO ITS AUTOPILOT FOR THREE MINUTES, FROM THE GROUND AND FROM THE AIR.
+avoid	-	159		craft,level,flight,sim	TWO AEROPLANES WITH SOMETHING SOLID IN THE WAY, left to their autopilots.
+rota	-	525		craft,gun,flight,docs,water,sim	THE CHORE ROTA: every wing's look ahead and leg re-check, served on a budget and held to their limits.
+marshalling	core	763	7.1	craft,level,ui,water,xr,sim	Headless: is a marshalling signal a thing this game can actually tell apart?
+carrier_shape	-	433	4.7	craft,seat,station,gun,ui,flight,docs,water,sim	Headless: IS THE CARRIER A FORD, where a player can find out?
+tank_shape	-	410		seat,gun,ui,water,sim	Headless: IS THE TANK A TANK -- seven road wheels a side, a track that wraps a sprocket and an
+mount_aim	core	107	4.7	craft,seat,gun,ui,water,sim	Headless: DOES EACH GUN'S AIM LAND ON ITS OWN MOUNT, AND IS NOTHING DRAWN ON A MOUNT WITH NO GUN?
+ship_models	-	378	5.0	craft,seat,station,gun,ui,docs,water,xr,sim	Headless: is every ship's model within its budget, wound the right way out, whole, and can its helm see its bow?
+merchant_models	-	774	7.1	craft,seat,station,gun,ui,docs,water,sim	Headless: are the merchant ships drawn the size their references say, near and far, and are they ships by every check
+train_models	-	530	5.7	craft,seat,station,ui,flight,docs,water,sim	Headless: THE TRAIN'S ROLLING STOCK, held to what was measured off a photograph and to bounds
+rakes_drawn	-	176		craft,level,ui,docs,sim	EVERY LOCOMOTIVE ON THE ISLAND IS DRAWN HAULING ITS RAKE. Headless. Read RESULT=, not the exit code.
+track_drawn	-	619		craft,level,gun,ui,flight,sim	THE TRACK AS IT IS DRAWN ON THE ISLAND, against the standards it is built to. Headless. Read RESULT=, not the exit code.
+road_diesel	-	354		station,ui,docs	THE SD40-2 AGAINST WHAT EMD PUBLISHED, and against the shape of a hood unit. Headless. Read RESULT=, not the exit code.
+train_runs	-	158	5.4	seat,ui,flight,docs,water,sim	A TRAIN THAT IS ACTUALLY DRIVEN, and one that is not. Headless. Read RESULT=, not the exit code.
+boat_seats	-	165		craft,seat,station,level,gun,ui,docs,water,sim	Headless: does every boat's crew stand in a room that is part of the boat, where its helm really is?
+plot_room	core	295	4.2	craft,seat,station,gun,ui,flight,docs,water,xr,sim	Headless: is the carrier's flag plot a room somebody can work in, with no flight controls in it?
+ship_legs	-	336	351.8	craft,level,gun,ui,sound,water,sim	Headless: does every ship the levels drive sail only where the water floats it -- every leg it chooses deep enough the
+wind_sea	-	265		pic,ui,water,sim	Headless: the wind-sea both ocean shaders paint is a real sea's slope, whole in its tile, and foams as much as the wind
+fleet_shapes	-	690	5.8	craft,seat,station,level,pic,gun,ui,flight,docs,water,sim	Headless: THE US NAVY FLEET'S E-2D HAWKEYE AND VIRGINIA-CLASS SUBMARINE, held to their fact sheets and to what their C++
+aircraft_fidelity	core	195	4.5	craft,seat,station,ui,docs,water,sim	Measures the reference-aircraft geometry players actually see. Read RESULT= rather
+named_parts	core	213	5.2	craft,station,pic,gun,ui,water,sim	EVERY VISIBLE MESH ON EVERY CRAFT IS A NAMED PART. Read RESULT= rather than the exit code.
+joined_parts	core	140	4.7	craft,gun,ui,water,sim	EVERY CRAFT IN THE GAME IS ONE OBJECT: every drawn part touches the rest. Read RESULT= rather
+lights_on_skin	core	220	5.3	craft,station,gun,ui,water,sim	Headless: does every light of every kind stand on its own craft's drawn skin, and does every kind that should carry
+sailplane	-	557	4.5	craft,seat,station,peer,gun,ui,flight,docs,water,sim	Headless: IS THE GLIDER A DUO DISCUS? The airframe `SailplaneAirframe` draws, held to Schempp-Hirth's published figures
+jumbo	-	282	5.0	craft,seat,station,gun,ui,flight,docs,water,sim	Headless: kind `jumbo`, the Boeing 747-400, is a distinct, selectable, networked and pilotable craft, the size the
+fighter	-	915		craft,seat,station,peer,gun,ui,flight,docs,water,xr,sim	Headless: the two-seat carrier fighter is selectable, networked and pilotable, while its
+skyhawk	-	1040	7.1	craft,seat,station,peer,gun,ui,flight,docs,water,xr,sim	Headless: the Cessna 172S is drawn as the aircraft it is, measured from the vertices it draws. Every reference figure is
+twin310	-	461		station,gun,ui,docs,water,sim	THE CESSNA 310R'S OWN GEOMETRY SUITE. Read RESULT=, never the exit code.
+craft_model_audit	core	409	13.1	craft,seat,station,pic,gun,ui,flight,water,sim	Headless: WHICH CRAFT NOBODY HAS MODELLED YET, computed from the triangles each one draws rather than read off a
+uh60	-	215		craft,seat,station,ui,flight,water,xr,sim	Headless contract for the distinct UH-60M-inspired craft: public dimensions, semantic
+rotorcraft	-	230		craft,seat,peer,ui,flight,water,sim	Headless: THE THREE HELICOPTERS ARE DRAWN AS HELICOPTERS, AND WHAT MOVES ON THEM MOVES FROM THE BUS. Read RESULT=.
+rotor_hold	-	238		craft,ui,flight,sim	Headless: AN AI-FLOWN ROTORCRAFT WITH NOWHERE TO GO HOLDS THE HEIGHT IT IS GIVEN. Read RESULT=.
+rotor_turn	-	197		craft,ui,flight,water,sim	Headless: A BANKED HELICOPTER TURNS, AND ITS PEDALS STILL TURN IT. Read RESULT=.
+prowler	-	528		craft,seat,station,gun,ui,flight,docs,water,xr,sim	Headless contract for the EA-6B Prowler airframe: the published envelope, the raked ground a Prowler parks on, the
+tomcat	-	834		craft,seat,station,gun,ui,flight,docs,water,sim	Headless contract for the F-14D Tomcat airframe AND ITS SWING WING: the published span at three sweeps, the pivot
+phantom	-	768	6.6	craft,station,gun,ui,docs,water	Headless contract for the F-4E PHANTOM II airframe. Read RESULT=.
+phantom_wear	-	185	7.2	station,pic,gun,ui	THE WEATHERING, CHECKED WHERE A HEADLESS RUN CAN SEE IT: that the aeroplane carries a second set of texture
+sheet_cost	-	59	5.8	craft,seat,station,ui,water,xr	WHAT IT COSTS TO DRESS AN AEROPLANE, because nothing else here measures that and a three-second airframe hid
+sweep_handle	-	123		craft,seat,station,ui,docs,water,xr,sim	Headless contract for the WING SWEEP HANDLE on its own, before any craft is fitted with the channel: a hand takes it
+falcon	-	561		craft,seat,station,gun,ui,docs,water,sim	Headless contract for the F-16A Block 15 airframe: the measured envelope, the features that make it an F-16 rather
+falcon_flight	-	331		craft,seat,ui,flight,docs,water,sim	Headless: DOES THE F-16 FLY WELL, flown through a seated pilot's own control frame. Read RESULT=.
+lightning	-	831	7.2	craft,seat,station,gun,ui,docs,water,sim	Headless contract for the F-35B airframe: its measured envelope against the published one, the features that make it
+lightning_flight	-	371	6.7	craft,ui,flight,water,xr,sim	Headless: DOES THE F-35B DO WHAT AN F-35B IS FOR -- go straight up, hover, turn into an aeroplane, come back, and land
+lightning_bays	-	224	7.1	craft,station,gun,ui,flight,water,sim	Headless: THE F-35B'S WEAPONS BAYS AND ITS GUN POD, launched and fired through a seated pilot's own control frame -- the
+exhaust	-	294	7.1	craft,station,gun,ui,flight,docs,sim	Headless contract for the THRUST EXHAUST -- the first effect of its kind in this game (lane/harrier, 2026-09-19),
+harrier	-	596	5.2	station,gun,ui,docs,water	Headless contract for the AV-8B Harrier II airframe: its measured envelope against the published one, the features
+warthog	-	1011	8.4	seat,station,gun,ui,flight,docs,water,sim	Headless contract for the A-10C airframe: its measured envelope against the published one, the features that make it
+warthog_seat	-	574	76.9	craft,seat,station,gun,ui,flight,water,sim	Headless: THE A-10C'S GAU-8 WORKS -- fired by the pilot through the level, the rig and the desk's own keys, against the
+warthog_flight	-	143	4.7	craft,ui,flight,water,sim	Headless: DOES THE A-10C FLY LIKE AN A-10 -- off a runway, level flat out at its published speed, rolls at its rate,
+p51	-	825	6.1	station,level,gun,ui,flight,docs	Headless contract for the P-51D airframe: its measured envelope against the published and the printed one, the features
+p47	-	873	6.3	craft,seat,station,level,gun,ui,flight,docs,water,sim	Headless contract for the P-47D-30 airframe: its measured envelope against the published and the printed one, the
+p38	-	717		station,level,gun,ui,flight,docs	Headless contract for the P-38L airframe: its measured envelope against the printed one, the features that make it a
+warbird_book	-	371		craft,level,flight,docs,water,sim	Headless: THE WARBIRDS AGAINST THEIR BOOKS, on their lifting surfaces (lane/warbirds2).
+taildragger	-	642	5.2	craft,level,gun,flight,docs,water,sim	"Headless: A TAILDRAGGER ON ITS THREE WHEELS, flown from the pilot's control frame (lane/warbirds2). The user: ""some are"
+warbird_circuit	-	238	10.2	craft,gun,water,sim	Headless: A WARBIRD DOES ITS JOB, a take-off, a circuit and a landing, flown by its own autopilot through the airport's
+warbird_guns	-	136		craft,gun,flight,water,sim	"Headless: A WARBIRD'S GUNS FIRE FROM THE MUZZLES ITS MODEL DRAWS (lane/warbirds2): the brief's ""the P-51's six .50s ... at"
+warbird_cockpit	-	221		craft,seat,station,ui,water,sim	Headless: A WARBIRD'S COCKPIT SEEN FROM ITS OWN SEAT (lane/warbirds2). The warthog lane's view checks (`tests/warthog.gd`,
+osprey	-	891	6.3	craft,seat,station,gun,ui,flight,docs,water,xr,sim	Headless contract for the V-22 airframe: its measured envelope against the published one, the parts that make it a
+airliners	-	562	5.5	craft,ui,flight,docs	Headless contract for the two airliners, the 737-800 (kind `airliner`) and the 747-400 (kind `jumbo`): each one's
+hercules	-	179	5.4	craft,gun,water	Headless contract for the C-130H and its AC-130U gunship (`HerculesAirframe`, kind `gunship`): everything the airliners
+gun_stow	-	183	6.1	craft,seat,station,gun,ui,flight,docs,water,sim	"Headless contract for THE GUNSHIP'S GUNS STOWED: the user asked for the AC-130's ""3 guns poking out of it that can be"
+apache	-	1022		craft,seat,station,gun,ui,docs,water,sim	Headless contract for the AH-64D Apache airframe: the published envelope, the features that make it an Apache, THE
+apache_flight	-	273		craft,gun,ui,flight,water,sim	Headless: THE AH-64D APACHE FLIES, through the pilot's own controls. Read RESULT=.
+helmet_gun	-	401		craft,seat,peer,gun,ui,flight,docs,water,xr,sim	Headless: THE AH-64's CHIN GUN FOLLOWS THE GUNNER'S HEAD, LATE, AND FIRES WHERE THE BARREL IS. Read RESULT=.
+helmet_lock	-	391		craft,seat,station,peer,gun,ui,flight,docs,water,xr,sim	Headless: THE AH-64's HELLFIRES LOCK WHAT A CREWMAN LOOKS AT, AND FLY TO IT. Read RESULT=.
+littlebird	-	872	6.1	craft,seat,station,gun,ui,docs,water,sim	Headless contract for the MH-6M Little Bird airframe: the published envelope, the features that make it a Little Bird,
+littlebird_flight	-	276		craft,gun,ui,flight,water,sim	Headless: THE MH-6M LITTLE BIRD FLIES, through the pilot's own controls. Read RESULT=.
+littlebird_book	-	158		gun,ui,flight,docs,water,sim	Headless: THE LITTLE BIRD AGAINST ITS BOOK, on its rotor disc.
+littlebird_circuit	-	120		gun,ui,flight,water,sim	Headless: THE LITTLE BIRD TAKES OFF, FLIES A HELICOPTER PATTERN, AND LANDS.
+savoia	-	596		craft,seat,station,gun,ui,flight,docs,water,sim	Headless contract for Porco Rosso's red flying boat, `SavoiaAirframe`: the measured envelope, the features that make
+water_rudder	-	247		craft,ui,flight,water,sim	Headless: does a flying boat on the water turn when the pilot pushes a pedal, and go straight when they don't?
+ground_stick	-	311		craft,seat,level,gun,ui,flight,docs,water,sim	Headless: does the stick leave an aeroplane at a standstill alone, as a wing with no air over it must?
+surfaces	-	576	5.8	station,flight,docs,water,sim	Headless: DOES THE CESSNA FLY ON ITS SURFACES THE WAY AN AEROPLANE DOES? (lane/flightmodel, step 1)
+cessna_book	-	515	5.3	level,flight,water,sim	Headless: THE CESSNA AGAINST ITS BOOK, on its lifting surfaces (lane/cessnafm).
+flight_fingerprint	core	306	6.3	craft,gun,ui,flight,docs,water,sim	"Headless: EVERY CRAFT KIND'S MOTION, PRINTED BIT FOR BIT, so ""every other kind is unchanged"" is a fact a suite"
+vehicle_gym	-	984	27.9	craft,level,gun,ui,flight,docs,water,sim	Headless: A GYM FOR THE PILOTS. Every kind is given the same tasks -- level off, make a speed gate, turn onto a
+tower	core	166	4.5	craft,pic,ui,flight,docs,sim	Headless: THE TOWER'S BUTTONS REACH THE AUTOPILOT AND THE AEROPLANE OBEYS.
+braking_curve	core	202	4.4	craft,level,ui,flight	Headless: THE BRAKING CURVE, FLOWN. `world/braking_curve.gd` is four lines of arithmetic, and the only way to check
+shots	core	928	4.8	craft,seat,station,pic,gun,ui,docs,water,xr,sim	Headless: does a round leave the barrel, fly the right way, and land where it should?
+missiles	-	1235	49.3	craft,seat,station,pic,gun,ui,flight,docs,water,xr,sim	Headless: a missile, from the pilot's finger to the smoke it leaves -- through the level, the rig and the keys,
+missile_cues	-	168		craft,seat,station,level,gun,ui,docs,water,sim	A LAUNCH FROM THE SEAT IS HANDED ITS LAUNCH CUE, on the pilot's own machine -- where for a while it was not.
+hulls	-	202	10.1	craft,seat,station,gun,ui,water,xr,sim	Headless: A GUNNER ON THE CB90 SHOOTS A CRAFT DOWN -- every round that hits takes the table's damage on the host,
+crashes	-	404	5.0	craft,gun,ui,flight,docs,water,sim	Headless: WHAT DESTROYS AN AIRCRAFT AND WHAT DOES NOT -- the crash rule (`CockpitWorld::judge_impacts`) against
+hull_link	-	269	6.3	craft,peer,gun,ui,flight,water,sim	Headless: HIT POINTS ACROSS A LINK -- a client's trigger proposes, the host disposes, the client draws what the host
+respawn	-	114	13.7	craft,seat,gun,ui,water,sim	Headless: WHEN YOUR CRAFT IS DESTROYED -- the pieces fall, you watch the wreck from a still stand with a line saying
+attackers	-	182	229.2	craft,level,gun,ui,flight,water,sim	Headless: THE BAD ATTACKERS -- two light aeroplanes and an Apache come for a CB90 under way, get into gun range, fire,
+jet_arms	-	855	137.1	craft,seat,station,level,pic,gun,ui,water,sim	Headless: the three jets' guns and missiles -- the F/A-18F, the F-14D and the F-16 -- fired by the pilot, through the
+jet_arms_peers	-	127	27.1	craft,peer,gun,ui	Headless, two real machines: A JET'S GUN AND MISSILE, SEEN BY SOMEBODY ELSE. A host takes an F-16 with the real key,
+gun_scatter	core	180	9.9	craft,station,gun,ui,water,sim	Headless: a fighter's rounds do not all leave down one line (lane/gunscatter, 2026-09-19).
+gunners	-	267		craft,seat,station,gun,ui,docs,water,xr,sim	Headless: A GUNNER HOLDS THE TRIGGER AND THE GUN FIRES AT ITS OWN RATE UNTIL THEY LET GO -- through the hand, the
+gun_link	net	551	8.4	craft,seat,station,peer,gun,ui,flight,water,xr,sim	Headless: A GUN WORKED BY A CLIENT, ACROSS A LINK WITH A DELAY IN IT.
+command_burst	net	219	6.8	craft,seat,peer,gun,ui,flight,water,sim	Headless: A JOINER'S COMMANDS ARRIVE IN A BURST, AND THE LAST ONE STILL LANDS.
+many_devices	-	445		craft,seat,peer,ui,flight,water,sim	Headless: A CRAFT WITH FIVE HUNDRED DEVICES, AND ONE AT THE TOP OF THE WIRE, WORKED BY A JOINER.
+big_guns	-	451		seat,peer,gun,ui,flight,water,xr,sim	Headless: THE BATTLESHIP'S BIG GUNS, from a gunner's stick to the splash six kilometres off.
+shell_prediction	net	568	9.4	craft,seat,peer,gun,ui,flight,water,sim	Headless: A BATTLESHIP SHELL IS PREDICTED BY THE GUNNER WHO FIRED IT, and every other claim that makes prediction honest.
+input_window	core,net	355	5.7	craft,seat,peer,gun,ui,flight,water,sim	Headless: A CLIENT FLYING OVER AN ORDINARY INTERNET LINK GETS ITS OWN INPUT TO THE SERVER IN TIME.
+priority_sphere	net	587	31.6	craft,seat,peer,gun,ui,docs,water,sim	Headless: THE HOST SENDS EACH MACHINE WHAT IS NEAR IT MORE OFTEN THAN WHAT IS FAR AWAY.
+priority_peers	net	176	26.0	craft,peer	Headless, two real processes: A JOINED MACHINE UNDER A PRIORITY SPHERE STILL RECEIVES EVERY CRAFT, NEAR AND FAR.
+pose_lod	core,net	432	5.3	craft,seat,peer,gun,ui,flight,docs,water,sim	Headless: A FAR PLAYER'S HEAD AND HANDS ARE NOT SENT, AND A NEAR ONE'S ARE, LIVE.
+save_bandwidth	-	184	9.2	peer,level,pic,ui,water,xr,sim	Headless: SAVE BANDWIDTH ON THE HOST'S iPAD TURNS THE FAR-POSE LOD ON AND OFF, AND IS KEPT.
+station_budget	-	131	10.8	craft,seat,station,level,ui,flight,docs,water,sim	Headless: A MANNED CRAFT'S STATIONS ARE BUILT OVER FRAMES IN A FLIGHT, THIS MACHINE'S SEAT FIRST.
+ranging_sight	-	555		craft,seat,station,level,pic,gun,ui,water,xr,sim	Headless: THE BATTLESHIP GUNNER'S RANGING SIGHT, worked from a desk -- laid with the keys, read off the glass, fired, and
+turret_seats	core	252	8.1	craft,seat,gun,ui,water,sim	Headless: A BATTLESHIP'S TURRET GUNNERS SIT WHERE THEY CAN SEE WHAT THEIR GUNS REACH.
+crew_sync	core,net	478	34.8	craft,seat,station,level,gun,ui,flight,docs,water,xr,sim	Headless: WHAT ONE CREW MEMBER DOES, EVERY OTHER SEAT SEES -- on every craft with more than one
+bursts	-	259		craft,station,level,gun,ui,sim	Headless: A BIG EXPLOSION COSTS NOTHING TO SET OFF -- no node, no material, no resource made at the moment one goes
+hands	-	307		craft,seat,station,gun,ui,docs,water,xr,sim	Headless: every finger on both controllers moves the part it presses and turns it amber, lets it back to rest when
+shared_controls	-	621	18.5	craft,seat,station,level,gun,ui,flight,docs,water,xr,sim	Headless: A SWITCH ON THE CRAFT SHOWS THE CRAFT -- at every seat, whoever moved it, and whatever this machine did last.
+pedals	-	443	12.6	craft,seat,station,gun,ui,docs,water,sim	Headless: RUDDER PEDALS SHOW WHERE THE RUDDER IS, whatever put it there, at every seat that flies an aircraft with one.
+snap	-	864		craft,seat,station,pic,ui,flight,water,xr,sim	Headless: A CONTROL BEING PLACED GOES DOWN ON A GRID, when the pilot wants one -- and a control being placed is
+pinch	-	637		craft,seat,station,gun,ui,docs,water,xr,sim	Headless: WHICH FINGER TAKES WHICH CONTROL -- the grab and the pinch.
+director	core	786	5.3	craft,seat,station,pic,ui,docs,water,xr,sim	Headless: THE DIRECTOR'S CAMERA -- the switch, the red light, the field of view, the carry, and the
+signal_lamp	-	841	11.8	craft,seat,station,pic,gun,ui,docs,water,xr,sim	Headless: THE SIGNAL LAMP -- a part off the BUILD tab, at no seat until a player puts one there, arriving in a
+lamp_wire	net	489	8.0	craft,seat,station,peer,ui,flight,water,xr,sim	Headless: THE SIGNAL LAMP ON THE WIRE -- a lamp channel at every seat of every kind, the package contract untouched by
+lamp_peers	net,solo	353	24.3	seat,peer,gun,ui,water	Headless: two real processes over a real socket on the loopback, each flying its own aircraft, flash signal lamps at each
+restage	-	285		craft,seat,peer,ui,flight,docs,water,xr,sim	Headless: A PLAYER PUT IN ANOTHER CRAFT BY THE SERVER IS STILL ONE PLAYER, FLOWN BY THEIR OWN INPUT.
+water	core	1660	11.5	craft,seat,station,peer,level,pic,gun,ui,flight,docs,water,xr,sim	Headless: does the water leave the aeroplane, land in a line, and put a fire out?
+air	-	1019	9.5	craft,peer,level,pic,gun,ui,flight,water,xr	Headless: is the air moving, does it hold a glider up, and can you see where it does?
+puff_sky	-	339		craft,peer,level,gun,ui,flight	Headless: does the layered sky of puff clouds (`PuffSky`, `PuffCloud`) put every kind at its own height, with clear air
+daytime	-	151	8.7	gun,ui	Headless and pure: does the clock put the sun where the three old presets had it, and is the look at each preset's point
+sailing	-	596		craft,gun,ui,docs,water,xr,sim	Headless: does a ship under sail go where the wind lets it, and nowhere it does not?
+wakes	-	242		craft,level,ui,water,sim	WHO WAKES AND WHO SPRAYS, ASKED OF THE LEVEL'S OWN YARDS ABOUT CRAFT THE SIMULATION IS MOVING.
+seakeeping	-	406	14.1	craft,seat,gun,flight,water,sim	HOW A HULL RIDES THE SEA: heave, pitch, roll, and how far its deck goes under, for every powered hull, stopped, at
+nobody_aboard	-	159		craft,seat,ui,water,sim	Headless: a craft nobody may board is refused by the server, on every path a player has to it.
+mist	-	457	12.4	level,pic,gun,ui,water,xr	Headless: does the low mist lie low, thin with height, change with the time of day, stand on the ground the world says, and
+pirate_wire	net	150	6.0	craft,peer,ui,docs,water,sim	Headless: a pirate ship the server sails is where the server says on a joined machine, and so are its sails.
+brig	-	114		ui,water,sim	Headless: the brig drawn is the brig simulated, and its sails do what the rigging says.
+pirate_ai	-	435		craft,level,gun,ui,sound,water,sim	Headless: the sea the brigs are sent about, and the water they need under them.
+clipboard	core	1960	5.8	craft,seat,station,peer,level,pic,gun,ui,flight,docs,sound,water,xr,sim	Headless: is there a menu in the player's hand, and does pressing it reach the server?
+build_stamp	-	369	23.4	level,pic,ui,xr,sim	Headless: the build is written in the lower right of the screen and on the clipboard's frame, everywhere, on top,
+build_time	-	237	7.1	peer,ui,sim	Headless: A BUILD KNOWS WHEN IT WAS MADE, SAYS HOW FAR IT IS FROM ANOTHER, AND THE CREW PAGE SHOWS WHO IS BEHIND.
+build_export	solo	124	56.7	ui,docs,sound	"Headless: a build made by the release script says, when it runs, which build it is -- not ""dev""."
+builder	core	1440	5.5	craft,seat,station,level,gun,ui,flight,water,xr,sim	Headless: can a cockpit be rearranged from the seat, and does what comes out read back?
+builder_authority	core	100	4.5	craft,seat,station,peer,ui,water,sim	Deterministic authority and wire gate for the multiplayer builder. The existing
+builder_peers	net,solo	224	28.8	craft,seat,station,peer,gun,ui,water,xr,sim	Three real Godot processes over ENet prove the builder's production boundary: a
+craft_package	-	16	6.3	craft,station,ui,flight,water,sim	
+device_farm	-	95		seat,station,ui,water,sim	A configurable load fixture for real authored devices.
+device_yard	-	88		level,ui,sim	Headless: the Device Yard's hashed level contract, two room boundaries and configurable endpoint density.
+device_yard_level	-	54		craft,seat,level,ui,flight,water,sim	Headless: the real session path loads the Device Yard, seats a player in a Segway, and puts both endpoint banks in
+device_yard_bridge	-	78		ui,water	Headless: the Device Yard is a native-state view, not a local toggle. This seam exercises the exact optional API
+device_yard_interaction	-	113		level,ui,water,xr,sim	Headless: a player seated on the Device Yard's real Segway points a forced VR hand at
+device_router	-	39		ui,flight,water,sim	Headless contract for semantic device routing. It deliberately tests the package-level
+session	core,net	317	6.3	peer,level,pic,ui,flight,docs,sim	Headless: can a second person actually get into this game?
+launch_order	-	95	4.2	craft,seat,ui,docs,water	Headless: does a command line start the session it spells, and refuse, in words, every spelling that is almost one?
+two_peers	core,net	143	12.8	seat,peer,ui,water,sim	Headless: does a second PLAYER arrive -- two real processes, one hosting and one joining by command line, over a
+desk_join	net	355	16.7	peer,ui,docs,sim	Headless: can somebody sitting at the MAIN MENU join a game by typing its address, without playing solo first?
+segway	-	293		craft,seat,gun,ui,flight,water,sim	Headless: does a segway go where the stick points, stay on the ground, and never lean?
+segway_keys	-	217		craft,seat,ui,flight,docs,water,xr,sim	Headless: does a person at a KEYBOARD walk a segway with WASD, without breaking what those keys
+lobby	net	507	14.1	craft,seat,peer,level,gun,ui,flight,docs,water,xr,sim	Headless: THE LOBBY, as a level. What a level says its arrivals stand in, and the briefing room it stands them in.
+lobby_peers	net	195	30.3	craft,seat,peer,level,ui,water	Headless: two real processes standing in the LOBBY, and does each of them see the other's segway?
+names	-	164	5.8	seat,peer,level,ui,water	Identity protocol validation and the actual controls/surfaces that consume it.
+names_peers	net	140	26.4	peer,ui	A real ENet host, a joiner, then a late joiner: all three converge on one roster.
+lobby2d	-	156	7.2	peer,ui,sound	THE RULES THE FLAT VOICE LOBBY STANDS ON, in one process and in under a second: what a team may be, what a typed line
+lobby2d_peers	net	314	38.8	seat,peer,ui,docs,sound,water,sim	Headless, THREE real processes over a real socket: does the flat 2D voice lobby hold a session of people who can see
+sight_line	-	196		level,gun,ui,flight,water	Headless: DOES A MOUNTAIN BLOCK A SIGHT LINE, AND DOES OPEN AIR NOT?
+radar_set	-	215		craft,ui,docs,sim	Headless: DOES RADAR SEE WHAT IT SHOULD AND MISS WHAT IS HIDDEN?
+radar_peers	net	201	22.5	craft,seat,peer,ui,docs,water	Headless, TWO real processes over a real socket: does a joiner get a radar picture, is it the HOST'S picture, and
+server_peers	net	239	28.0	craft,seat,peer,ui,water,xr,sim	Headless, TWO real processes over a real socket: does `--level=server` serve a world it is not playing?
+intercom	-	153	7.6	craft,peer,gun,ui,sim	THE RULES LIVE VOICE STANDS ON, in one process: what a frame may be, what the label means, and who is allowed to
+intercom_peers	net	372	15.8	craft,peer,ui,docs,sound,water	Headless, THREE real processes over a real socket: does a held button put somebody's voice on the other machines,
+no_vr_flight	core,solo	425	17.3	craft,seat,peer,level,ui,docs,water,xr,sim	Headless, two machines: THE WHOLE FLOW WITH NO HEADSET. Start the game, join the lobby, have the host launch the
+crew_peers	net,solo	158	16.5	craft,seat,peer,ui,water	Headless: two real processes, a host and a joiner over a real socket on the loopback, each flying a craft of its own --
+spotting	-	546		craft,seat,station,peer,pic,ui,flight,docs,water,xr,sim	Headless: SPOTTING SIZE -- far aircraft drawn bigger for one viewer, true size inside a limit, and nothing else moved.
+spotting_peers	-	164	27.4	craft,peer,level,ui	Headless: SPOTTING SIZE IS NOBODY ELSE'S -- two real processes over a real socket, the host wearing HIGH, the joiner
+sweep_peers	net,solo	242	30.2	craft,seat,peer,ui,flight,water,xr	Headless: THE F-14'S WING SWEEP ACROSS TWO REAL MACHINES. A host takes a Tomcat and flies it; a joiner boards it as
+craft_peers	net,solo	142	45.5	craft,seat,peer,ui,water	Real ENet proof for CRAFT requests. Every process is explicitly desktop-only.
+join_code	net	140	6.8	ui,sound,water	Headless: is a join code something a person can read aloud, type on a keypad and have understood?
+steam_join	net,solo	647	12.1	seat,peer,level,ui,docs,water,xr,sim	Headless: can a game be hosted over Steam with a code, and joined by typing that code -- and when it cannot, does the
+code_pad	-	538		peer,level,pic,gun,ui,docs,water,xr,sim	Headless: can a join code be typed on the desk's session screen -- with a fingertip or the beam in a headset, with a
+desk_screens	-	690		craft,level,pic,ui,docs,water,xr,sim	Headless: can the desk's screens be pointed at and pressed with the trigger, the way the clipboard is?
+levels	core	494	9.5	craft,peer,level,pic,ui,water,sim	Headless: a level is a folder, a broken one takes itself off the desk and says why, a joiner and a host can agree on
+level_swap	-	173		level,gun,ui,sim	Headless: a world loaded and let go gives back what it took, level after level.
+water_surfaces	-	451	66.6	craft,level,ui,docs,water,sim	EVERY WATER SURFACE IN THE GAME IS DRAWN WITH THE SEA'S OWN SHADERS -- and every lake is drawn at all.
+canyon	-	395		station,level,gun,ui,flight,water,sim	THE GORGE: A RIVER IN A CANYON DEEP ENOUGH TO HIDE A FIGHTER, MEASURED (lane/rivers, 2026-09-20).
+rock_quality	-	180		peer,level,ui,docs	THE MOUNTAINS' QUALITY DIAL, MEASURED (lane/rivers, 2026-09-20).
+level_hello	core	478	5.8	craft,peer,level,gun,ui,docs,sim	Headless, one process: the join handshake's pieces, each where it can be made to fail. What a hello may say, why a
+level_join	net	222	46.2	peer,level,ui	Headless, two real processes on the loopback: a joiner learns the host's level before either simulates the other,
+sky_peers	net	390	75.1	peer,level,ui,docs,water,xr,sim	Headless, three machines: THE SKY IS THE SESSION'S, AND THE FINISH IS NOT.
+notices	net,solo	363	38.0	peer,level,ui,water,sim	Headless, two machines: A LEVEL CHANGE IS ANNOUNCED BEFORE IT HAPPENS, AND WHO JOINED AND WHO LEFT IS SAID.
+world_edge	-	478	18.3	craft,level,gun,ui,flight,docs,water,sim	Headless: the world's soft edge turns every craft back inside the wire, the same on a predicting client as on the
+seabed	-	344	64.0	craft,level,gun,ui,flight,docs,sound,water,sim	Headless: does everything that goes into the open sea come to rest on the seabed, rather than fall through the world?
+seabed_alpine	-	344	61.6	craft,level,gun,ui,flight,docs,sound,water,sim	Headless: does everything that goes into the open sea come to rest on the seabed, rather than fall through the world?
+feel	-	685	6.5	craft,seat,station,level,gun,ui,flight,sound,water,xr,sim	Headless: what the player FEELS and HEARS, which until now was nothing at all.
+headphones	-	380		pic,ui,flight,docs,sound,xr	Headless: does the game start with both ears off, and does the voice either come on or say
+voice_thread	solo	176		ui,sound,xr	The first voice activation, model loading, host capture queue and both shutdown cases are
+record_shelf	solo	52		ui	
+music_page	-	30		ui	
+music_peers	net	102	14.9	peer,level,ui,sim	Real ENet host and two sequential joiners: current music, fade and late-join state cross the carrier.
+hitch	solo	635		craft,station,gun,ui,flight,docs,sim	WHERE DOES THE TIME GO AT 300 KPH?
+docs	core	674	5.3	craft,seat,station,peer,level,pic,gun,ui,flight,docs,sound,water,xr,sim	AGENTS.MD IS NOT ALLOWED TO ROT. Headless, it checks that the map still describes the
+fires	-	329	14.8	level,gun,ui,flight,docs,water	Headless: do the fires spread, does the cap hold, and does attending to one stop it?
+towns	-	513	7.1	craft,seat,station,level,gun,ui,water,sim	Headless: do the towns grow where they may, along streets an aeroplane fits down, joined by roads
+town_lights	-	336	6.0	level,ui	Headless: does every building carry far lights that stand where its windows are, carry what its windows give, are
+night_lights	-	828		craft,gun,ui,water,xr	Headless: does every building over the height carry obstruction lights where ICAO Annex 14 puts them, on its own
+scenery	-	1038	22.7	craft,station,level,pic,gun,ui,docs,water,xr,sim	THE SCENERY HAS TWO FINISHES, AND THE THINGS THAT CHOOSE ONE ARE THE REAL CONTROLS.
+pavement	-	435	11.1	craft,level,gun,ui,docs,water	Headless: does the runway's pavement know where it is, and is there one place that says how near its detail comes in?
+forest	-	665	10.8	level,gun,ui,water,sim	THE WOODS: WHERE THEY ARE, WHAT GROWS IN THEM, THAT NOTHING IN THEM IS SOLID, AND THAT EVERY
+world_map	-	206	5.5	ui,water	Headless: is the island's filing by the kilometre the island, box for box?
+scenery_yard	-	273	5.2	ui	Headless: is the island's picture, drawn a kilometre at a time, still the island -- every box, street, road and
+scenery_rings	-	461		level,gun,ui,water	Headless: does the picture keep round the eye -- built as it comes within reach, built ahead of where the eye is
+ground_field	-	371	4.8	peer,level,gun,ui,docs,water	Headless: is the C++ ground the ground phase 1 proved, to the bit, and does every tuned number change it?
+ground_collision	-	639	14.4	seat,peer,level,gun,ui,flight,docs,water,sim	Headless: does the simulation stand on the ground the function describes -- and ask it the questions it asked the
+mountains	-	511	11.6	peer,level,gun,ui,flight,docs,water,sim	Headless: are the island's mountains the mountains recorded, held inside their envelope, clear of every keep-out -- and
+seethrough	-	65		ui	Headless: A DRAWN LINE NEVER SHOWS THROUGH A MOUNTAIN FROM A CHASE CAMERA, and the game itself never draws with the depth
+ground_view	-	488		level,gun,ui	Headless: is the ground drawn the ground the simulation stands on -- every cell the collision holds drawn, the finest
+terrain_level	-	1426	28.5	craft,level,gun,ui,flight,sound,water,sim	Headless: does the flight level stand on the generated ground when it is asked to, and is the ground it stands on the
+testfield	-	736	96.0	craft,level,pic,gun,ui,water,sim	Headless: does the test field stand, with no sea anywhere, its edge band fitting, and every runway end it offers a final
+testfield_traffic	solo	736		craft,level,pic,gun,ui,water,sim	Headless: does the test field stand, with no sea anywhere, its edge band fitting, and every runway end it offers a final
+gliderlevel	-	571		craft,seat,peer,level,gun,ui,flight,sound,water,sim	Headless: does the glider level stand -- sixteen kilometres of ridge country with its own thermals, a cloud over each
+adriatic	-	239		craft,level,gun,ui,water,sim	Headless: does the Adriatic level stand -- a small home island in a lot of sea, other islands and sea stacks laid as
+gliderlevel_peers	net	241	43.7	craft,peer,level,gun,ui,water,xr,sim	Headless, two real processes over ENet: WHERE A SECOND PLAYER IS PUT on the glider level, when they join and after
+gliderlevel_traffic	-	215		craft,level,gun,ui,water,sim	Headless: the glider level's own air traffic -- twenty-eight machines going about their business -- and does it get
+far_out	-	510	5.0	craft,gun,ui,flight,docs,water,xr,sim	HOW FAR OUT THE SIMULATION AND THE WIRE STAY RIGHT, measured through the real CockpitWorld: a craft sent to a client,
+authored_chunks	-	269		ui	Headless: does a hand-built place read, refuse, load on a thread and draw the way `AuthoredChunks` says -- and does the
+airbase	-	577	4.8	craft,seat,station,ui,flight,docs,water,sim	Headless: is the air base laid the way its file says, does it keep the published clearances it cites, and does a base
+airport	-	711	18.7	craft,flight,docs,water,sim	CAPE INTERNATIONAL, HEADLESS: the island's airliner airport (lane/airport, 2026-09-19) against the standards it cites,
+airbase_taxi	solo	358	125.7	craft,seat,ui,flight,docs,water,xr,sim	Headless, the island level itself: can a player at a desk reach every seat in the base's tower, and taxi a fighter
+scenery_workers	-	253		level,ui,docs,water	Headless: does the yard do its work off the frame -- each cell's buffer on a worker, the plan on a worker -- and still
+scenery_memory	-	275		level,gun,ui,water	Headless: is what the yard holds bounded by the ring round the eye, never by the distance flown -- and does turning back
+cockpit_loopback	net	3917	20.2	craft,seat,station,peer,level,gun,ui,flight,docs,sound,water,xr,sim	A server and TWO clients in one process, across a delayed link.
+vr_loopback	net	682	1.0	craft,seat,station,peer,ui,flight,water,xr	A server and TWO clients in one process, wired to each other through a delayed link.
+driving_loopback	net	212	0.5	ui,flight,water	A server and a client in one process, wired to each other through a delayed link.
+conformance	net	23	0.5		Loads the checks only after the native class exists.
+physics_rewind	net	131	0.5	ui	Can Box3D be rewound? The whole predicted-driving architecture rests on this.
+resim_settles	net	88	0.5	ui	Does resimulation converge, or does it keep going forever?
+resim_events	net	79	0.5	ui	Does the client actually report when it rewinds, and does latency make it happen more?
+two_clients	net	159	0.8	peer,gun,ui	Does a SECOND player get a car?
+cue_crowd	net	190	1.3	craft,seat,station,gun,ui,flight,water	EVERY CUE ON A CROWDED AEROPLANE REACHES ITS PILOT, EXACTLY ONCE.
+crew_cabin	net	585	1.0	craft,seat,peer,gun,ui,flight,sound,water	WHAT HAPPENS IN A COCKPIT REACHES ITS CREW AT ONCE, AND NOBODY ELSE AT ALL.
+crowd_join	net	233	6.4	craft,seat,peer,ui,water,sim	A player joining a busy sky keeps their seat: on the host's machine and on their own, every tick, exactly one craft
+crew_join	net	866	5.2	craft,seat,peer,ui,flight,docs,water,sim	WHO SITS WHERE IS THE SERVER'S TO SAY, ONE PLAYER TO A SEAT, AND EVERY MACHINE AGREES.
+issue	net	124	0.5	craft,seat,peer,ui,flight,water	A named CRAFT request prefers a free vehicle, issues only when none exists, refuses
+crowd_sight	net	306	7.9	craft,peer,gun,ui,docs,water	A WATCHED SKY IS DRAWN WITHOUT A HOLD OR A LEAP, AND EVERY MISSILE IN IT ENDS WHERE A CLIENT CAN SEE.
+predict_all	net	127	0.5	ui	What does predicting EVERY car actually do to the cars you do not drive?
+input_release	net	112	0.5	ui,flight	What happens to the predicted car when you LET GO of a key?
+tracing	net	80	0.5	gun,ui	Does the tracer actually produce anything, and can it be turned off?
+balance_probe	net	126	0.5	seat,ui,flight,water	Does the car understeer or oversteer, and by how much?
+car_collision	net	86	0.5	ui,flight	Do two cars collide with each other, and is the result fair to both?
+correction_smoothness	net	123	0.5	ui,sim	How violently does a car move when the server corrects it?
+reverse_wheels	net	77	0.5	ui,flight	Do another player's front wheels point the right way when they REVERSE?
+roll_probe	net	58	0.5	flight	Does anything ever tip, climb or roll? The sim is 3D; the game is not.
+tire_slip	net	74	0.5	ui,flight	Do the tires report sliding when they are actually sliding, and which ones?
+top_speed	net	68	0.5		What actually stops the car going faster?
+handling_probe	net	186	0.5	ui,flight,water,sim	What does the car actually do, and does it still fit the racer's track?
+room_transport	-	103		seat,peer,ui,flight,water,sim	A real ashiato-sync loopback: the request enters a seated Segway client's ControlInput,
+room_load_proof	-	254		peer,ui,flight,water	Real two-peer RoomControlPage transport proof.  Every state change below starts at a
+level_map	-	47		craft,level,pic,ui	
+map_page	core	31	4.1	level,ui	
+map_screen	-	33		level,gun,ui	
+air_picture	-	399		craft,seat,ui,docs,sound,water,sim	Headless: THE PLOT CANNOT LIE ABOUT WHO IS A PERSON.
+hangar	-	489		level,pic,ui,docs,water,sim	Headless: HANGAR 03 IS THE SHEET'S HANGAR, measured off the vertices it actually drew.
+cooling_towers	-	665		craft,seat,station,pic,ui,flight,docs,water,sim	THE COOLING TOWERS' SHAPE, ASKED OF THE DRAWN TRIANGLES.
+oil_platform	-	689	6.3	craft,seat,station,level,gun,ui,flight,docs,sound,water,sim	THE OIL PLATFORM'S SHAPE, ITS PLACE AND ITS SOLID, ASKED OF WHAT IS DRAWN AND OF WHAT A BODY HITS.
+many_kinds	-	467	4.7	craft,seat,peer,gun,ui,flight,sound,water,sim	Headless: a craft kind is a number the whole game can grow into, and one this build does not have is refused.
+many_seats	-	655	5.0	craft,seat,station,peer,ui,flight,docs,water,xr,sim	Headless: A CRAFT MAY HAVE AS MANY SEATS AS IT IS BUILT WITH, and joiners fill seats far past the fourth.
+craft_page	-	190	6.9	craft,ui,water,sim	Headless: the CRAFT page offers every kind a player may take, in groups, and still does at sixty-four kinds.
+players	net	215	16.2	craft,seat,station,peer,ui,flight,water,sim	Headless: A SESSION OF SIXTY-FOUR PLAYERS, the ninth and the sixty-fourth of whom join a craft through the real path.
+players_peers	net	102	18.0	peer,ui	Headless, three processes over real ENet: A SESSION THAT IS FULL SAYS SO, in words, to the player it turns away.
+handshake_peers	net	254	23.2	peer,ui,docs	Headless, over real ENet: A JOINER SAYS WHICH BUILD IT IS FIRST, AND ONE THAT IS NOT THE HOST'S IS TURNED AWAY IN WORDS
+handshake_log	net	270	29.3	peer,pic,ui,sim	Headless, over real ENet: THE CLIPBOARD'S LOG TAB, pressed through its own tab button: on a host flying the real
+traffic_pattern	-	717	20.9	craft,level,gun,flight,docs,water,xr,sim	AIRPORT LIFE, HEADLESS: the traffic pattern's geometry against the FAA's numbers worked out by hand here, then (as
+road_vehicles	-	897		craft,station,ui,docs,water	Headless: THE ROAD VEHICLES, held to their published envelopes and to bounds from outside them.
+shore_structures	-	245		ui,docs,water	Headless: are the marina and the container terminal built to the things that use them, and are their helicopter pads

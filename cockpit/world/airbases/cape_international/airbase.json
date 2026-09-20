@@ -1,0 +1,75 @@
+{
+ "name": "Cape International",
+ "summary": "The island's airliner airport, on the flat north-east cape: two 3,500 m runways crossing, 09/27 along the north shore and 18/36 down the east, laid for the 747-400. A parallel taxiway inside each, stubs with hold bars, a 30-degree high-speed exit onto 09's parallel and two onto 36's, all short of the crossing. Between the runways, an apron taxilane with power-out remote stands for 747s, nose-in contact gates for 747s and 737s at a long low terminal, and a control tower.",
+ "frame": "Metres, in the frame of runway 09/27 (airfield cape_09_27): `along` from its middle toward its far end, which is the WEST end and 09's threshold (a 90-degree runway's threshold is its east end); `across` from its centreline, positive to the NORTH. Runway 18/36 (airfield cape_18_36) runs across the frame at along -700; its places are named `cape_18_36.threshold` (the south end, 36's threshold, across -2,850), `cape_18_36.far_end`, `cape_18_36.centreline` and `cape_18_36.edge`, which is its centreline plus half its width -- on its WEST side here, the apron's side. Otherwise as the fighter base's file.",
+ "runway": "cape_09_27",
+ "also_runways": ["cape_18_36"],
+ "apron_craft": "JUMBO",
+ "standards": {
+  "runway_to_taxiway": 121.92,
+  "taxiway_width": 22.86,
+  "taxiway_obstacle_clearance": 43.43,
+  "taxilane_obstacle_clearance": 41.15,
+  "taxiway_to_taxilane": 76.05,
+  "hold_bar": 85.34,
+  "wingtip_to_wingtip": 7.62,
+  "wingtip_to_taxilane": 8.53,
+  "exit_angle_degrees": 30.0,
+  "exit_radius": 457.2,
+  "tower_height": 37.0,
+  "tower_cab": 9.0,
+  "hangar_types": {},
+  "fillet": 20.0
+ },
+ "sources": {
+  "document": "FAA Advisory Circular 150/5300-13B, Airport Design, change 1 with errata (public domain): https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC-150-5300-13B-Airport-Design-Chg1-w-errata.pdf. The design craft is the 747-400: airplane design group V, taxiway design group 5, approach category D; runways with approach visibility below 3/4 mile. Every figure below is from it unless it says otherwise.",
+  "apron_craft": "The 747-400 (Sim.Kind.JUMBO, 64.9 m span): the widest craft the taxilane and the remote stands are laid for. The 737 gates name their own craft, the 737-800 (ADG III). The plan spaces each apron's stands a span plus wingtip_to_wingtip apart.",
+  "runway_to_taxiway": "Table G-11 (C/D/E-V): runway centreline to parallel taxiway centreline, 400 ft below 1,345 ft elevation. ICAO Annex 14 table 3-1 gives 172.5 m for code E; this layout keeps the FAA's.",
+  "taxiway_width": "Table 4-2, TDG 5: 75 ft.",
+  "taxiway_obstacle_clearance": "Table 4-1, ADG V: taxiway centreline to fixed or movable object, 142.5 ft.",
+  "taxilane_obstacle_clearance": "Table 4-1, ADG V: taxilane centreline to fixed or movable object, 135 ft. A nose-in gate's tail is kept this far off its taxilane's centreline.",
+  "taxiway_to_taxilane": "Table 4-1, ADG V: taxiway centreline to parallel taxiway centreline, 249.5 ft (the taxilane's own figure is less, 242 ft).",
+  "hold_bar": "Table G-11, footnote 8: runway centreline to holding position, 280 ft for a precision approach runway.",
+  "wingtip_to_wingtip": "Table 5-1: parking position clearance, 25 ft for ADG III to VI.",
+  "wingtip_to_taxilane": "Table 4-1, ADG V: wingtip clearance on a taxilane, 28 ft.",
+  "exit_angle_degrees": "Paragraph 4.8.5 and figure 4-19: an acute-angled (high-speed) exit meets the runway at 30 degrees.",
+  "exit_radius": "The same figure: the exit's radius of 1,500 ft. The plan lays the exit as its straight 30-degree line; the radius is cited for the view, not yet drawn.",
+  "exit_places": "Figure 4-18, read off the chart: half of category D aircraft reach an acute-angled exit by about 5,900 ft (1,800 m) from the threshold at sea level. Paragraph 4.8.4.2 allows exits in the middle third where no taxiway crosses. So one at 1,700 m on 09 and two on 36 at 1,700 and 2,250 m, all short of the runways' crossing (2,450 m from 09's threshold, 2,850 m from 36's), so a landing turns off before it.",
+  "tower_height": "Not a standard: the FAA's recent towers stand 121 ft (Asheville) and 141 ft (Northwest Arkansas) to the cab; this one is 37 m to the cab's roof. From search summaries, not the pages themselves.",
+  "tower_cab": "Not a standard: a cab 9 m square, about a small tower's.",
+  "terminals": "Not a standard: a two-storey terminal, 15 m high. Its face stands 7 m past the gates' nose line.",
+  "fillet": "Not a published figure: the pavement added round a junction, wider than the fighter base's 15 m for a 747's wheelbase.",
+  "layout": "The shape of an intersecting-runway airport with the terminal between the runways, the arrangement AC 150/5300-13B paragraph 3.7.6 describes. The remote stands are power-out, as at a cargo or remote apron: the autopilot's wheels only drive forward, so a departure starts from one and an arrival parks nose-in at a contact gate."
+ },
+ "taxiways": [
+  {"id": "alpha", "kind": "taxiway", "along": [-578.08, "far_end"], "across": -121.92},
+  {"id": "bravo", "kind": "taxiway", "along": -578.08, "across": ["cape_18_36.threshold", -121.92]},
+  {"id": "a1", "kind": "taxiway", "along": "far_end", "across": ["-runway_edge", -121.92]},
+  {"id": "a2", "kind": "taxiway", "along": 900.0, "across": ["-runway_edge", -121.92]},
+  {"id": "a3", "kind": "taxiway", "along": -578.08, "across": ["-runway_edge", -121.92]},
+  {"id": "b1", "kind": "taxiway", "along": ["cape_18_36.edge", -578.08], "across": "cape_18_36.threshold"},
+  {"id": "b2", "kind": "taxiway", "along": ["cape_18_36.edge", -578.08], "across": -1800.0},
+  {"id": "apron_lane", "kind": "taxilane", "along": [-290.0, 1580.0], "across": -200.0},
+  {"id": "east_link", "kind": "taxilane", "along": -290.0, "across": [-200.0, -121.92]},
+  {"id": "middle_link", "kind": "taxilane", "along": 440.0, "across": [-200.0, -121.92]},
+  {"id": "west_link", "kind": "taxilane", "along": 1580.0, "across": [-200.0, -121.92]}
+ ],
+ "exits": [
+  {"id": "e09", "runway": "", "from": "far_end-1700", "heading": -1, "to": "alpha"},
+  {"id": "e36a", "runway": "cape_18_36", "from": "cape_18_36.threshold+1700", "heading": 1, "to": "bravo"},
+  {"id": "e36b", "runway": "cape_18_36", "from": "cape_18_36.threshold+2250", "heading": 1, "to": "bravo"}
+ ],
+ "aprons": [
+  {"id": "remote", "along": [-282.0, -58.0], "across": [-211.43, -330.0], "nose_line": -245.0, "spots": 3},
+  {"id": "heavy", "along": [480.0, 780.0], "across": [-211.43, -322.0], "nose_line": -315.0, "spots": 4, "nose_in": true},
+  {"id": "narrow", "along": [780.0, 1030.0], "across": [-211.43, -322.0], "nose_line": -315.0, "spots": 5, "nose_in": true,
+   "craft": "AIRLINER"}
+ ],
+ "terminals": [
+  {"id": "terminal", "along": [470.0, 1040.0], "across": [-322.0, -372.0], "height": 15.0}
+ ],
+ "revetments": [],
+ "hangars": [],
+ "tower": {"along": -180.0, "across": -400.0, "built": true},
+ "parked": []
+}

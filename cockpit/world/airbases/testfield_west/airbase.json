@@ -1,0 +1,347 @@
+{
+ "name": "West International",
+ "summary": "The test field's parallel-runway airliner airport: 36L/18R and 36R/18L 1,310 m apart, a parallel taxiway inside each, stubs and exits to both, and a midfield terminal on each side of the field between them, with 747 and 737 gates and remote stands.",
+ "frame": "Metres, in the frame of runway 36L/18R (airfield testfield_west_36l): `along` from its middle toward its far end, the NORTH end (18R's threshold; a 0-degree runway's threshold is its south end); `across` from its centreline, positive to the EAST, toward runway 36R/18L (airfield testfield_west_36r), which runs along the frame 1,310 m east: its places are `testfield_west_36r.centreline` and `testfield_west_36r.edge` across, and its ends `testfield_west_36r.threshold` and `.far_end` along. Heights are from the runway's level.",
+ "runway": "testfield_west_36l",
+ "also_runways": [
+  "testfield_west_36r"
+ ],
+ "apron_craft": "JUMBO",
+ "standards": {
+  "runway_to_taxiway": 121.92,
+  "taxiway_width": 22.86,
+  "taxiway_obstacle_clearance": 43.43,
+  "taxilane_obstacle_clearance": 41.15,
+  "taxiway_to_taxilane": 76.05,
+  "hold_bar": 85.34,
+  "wingtip_to_wingtip": 7.62,
+  "wingtip_to_taxilane": 8.53,
+  "exit_angle_degrees": 30.0,
+  "exit_radius": 457.2,
+  "tower_height": 37.0,
+  "tower_cab": 9.0,
+  "hangar_types": {},
+  "fillet": 20.0
+ },
+ "sources": {
+  "standards": "Cape International's, FAA AC 150/5300-13B change 1 for the 747-400 (ADG V, TDG 5, AAC D): see world/airbases/cape_international.",
+  "layout": "A midfield layout between parallel runways, on the pattern of Atlanta's (KATL) concourses between its runway pairs, cut to the two terminals this map needs. Each runway has a parallel taxiway on its inner side at 400 ft (Cape's `runway_to_taxiway`), stubs at both ends and the middle with hold bars, one 30-degree high-speed exit in each direction of landing, and an apron taxilane 250 ft further in (`taxiway_to_taxilane`, rounded as Cape's). The terminals face their own runway's taxilane across a nose-in apron, back to back across the 560 m of ground between them.",
+  "spacing": "1,310 m centreline to centreline: FAA JO 7110.65 5-9-7, simultaneous independent ILS approaches to parallel runways 4,300 ft apart.",
+  "remote": "Six remote power-out stands for 747s, three each end of the west terminal: laid as Cape International's are, off the base's own runway's taxilane. Three on the east side, facing 36R's taxilane, would not hold a 747: the plan points a remote stand's nose away from the base's own runway, so the east side's were a hull's length short.",
+  "cross": "Two taxiways across the field between the parallel taxiways, 1,000 m either side of the middle, clear of the aprons: without them a 747 from a stand on 36L's side had no route to 36R's hold bars, and lined up from where it stood, across the grass."
+ },
+ "taxiways": [
+  {
+   "id": "alpha",
+   "kind": "taxiway",
+   "along": [
+    "threshold",
+    "far_end"
+   ],
+   "across": 121.92
+  },
+  {
+   "id": "a1",
+   "kind": "taxiway",
+   "along": "threshold",
+   "across": [
+    "runway_edge",
+    121.92
+   ]
+  },
+  {
+   "id": "a2",
+   "kind": "taxiway",
+   "along": 0.0,
+   "across": [
+    "runway_edge",
+    121.92
+   ]
+  },
+  {
+   "id": "a3",
+   "kind": "taxiway",
+   "along": "far_end",
+   "across": [
+    "runway_edge",
+    121.92
+   ]
+  },
+  {
+   "id": "bravo",
+   "kind": "taxiway",
+   "along": [
+    "threshold",
+    "far_end"
+   ],
+   "across": "testfield_west_36r.centreline-121.92"
+  },
+  {
+   "id": "b1",
+   "kind": "taxiway",
+   "along": "threshold",
+   "across": [
+    "testfield_west_36r.centreline-121.92",
+    "-testfield_west_36r.edge"
+   ]
+  },
+  {
+   "id": "b2",
+   "kind": "taxiway",
+   "along": 0.0,
+   "across": [
+    "testfield_west_36r.centreline-121.92",
+    "-testfield_west_36r.edge"
+   ]
+  },
+  {
+   "id": "b3",
+   "kind": "taxiway",
+   "along": "far_end",
+   "across": [
+    "testfield_west_36r.centreline-121.92",
+    "-testfield_west_36r.edge"
+   ]
+  },
+  {
+   "id": "west_lane",
+   "kind": "taxilane",
+   "along": [
+    -700.0,
+    700.0
+   ],
+   "across": 200.0
+  },
+  {
+   "id": "west_south_link",
+   "kind": "taxilane",
+   "along": -700.0,
+   "across": [
+    121.92,
+    200.0
+   ]
+  },
+  {
+   "id": "west_middle_link",
+   "kind": "taxilane",
+   "along": 0.0,
+   "across": [
+    121.92,
+    200.0
+   ]
+  },
+  {
+   "id": "west_north_link",
+   "kind": "taxilane",
+   "along": 700.0,
+   "across": [
+    121.92,
+    200.0
+   ]
+  },
+  {
+   "id": "east_lane",
+   "kind": "taxilane",
+   "along": [
+    -700.0,
+    700.0
+   ],
+   "across": "testfield_west_36r.centreline-200"
+  },
+  {
+   "id": "east_south_link",
+   "kind": "taxilane",
+   "along": -700.0,
+   "across": [
+    "testfield_west_36r.centreline-200",
+    "testfield_west_36r.centreline-121.92"
+   ]
+  },
+  {
+   "id": "east_middle_link",
+   "kind": "taxilane",
+   "along": 0.0,
+   "across": [
+    "testfield_west_36r.centreline-200",
+    "testfield_west_36r.centreline-121.92"
+   ]
+  },
+  {
+   "id": "east_north_link",
+   "kind": "taxilane",
+   "along": 700.0,
+   "across": [
+    "testfield_west_36r.centreline-200",
+    "testfield_west_36r.centreline-121.92"
+   ]
+  },
+  {
+   "id": "cross_south",
+   "kind": "taxiway",
+   "along": -1000.0,
+   "across": [
+    121.92,
+    "testfield_west_36r.centreline-121.92"
+   ]
+  },
+  {
+   "id": "cross_north",
+   "kind": "taxiway",
+   "along": 1000.0,
+   "across": [
+    121.92,
+    "testfield_west_36r.centreline-121.92"
+   ]
+  }
+ ],
+ "exits": [
+  {
+   "id": "e36l",
+   "runway": "",
+   "from": "threshold+1700",
+   "heading": 1,
+   "to": "alpha"
+  },
+  {
+   "id": "e18r",
+   "runway": "",
+   "from": "far_end-1700",
+   "heading": -1,
+   "to": "alpha"
+  },
+  {
+   "id": "e36r",
+   "runway": "testfield_west_36r",
+   "from": "testfield_west_36r.threshold+1700",
+   "heading": 1,
+   "to": "bravo"
+  },
+  {
+   "id": "e18l",
+   "runway": "testfield_west_36r",
+   "from": "testfield_west_36r.far_end-1700",
+   "heading": -1,
+   "to": "bravo"
+  }
+ ],
+ "aprons": [
+  {
+   "id": "west_remote",
+   "along": [
+    -680.0,
+    -456.0
+   ],
+   "across": [
+    211.43,
+    330.0
+   ],
+   "nose_line": 245.0,
+   "spots": 3
+  },
+  {
+   "id": "west_heavy",
+   "along": [
+    -300.0,
+    0.0
+   ],
+   "across": [
+    211.43,
+    322.0
+   ],
+   "nose_line": 315.0,
+   "spots": 4,
+   "nose_in": true
+  },
+  {
+   "id": "west_narrow",
+   "along": [
+    0.0,
+    250.0
+   ],
+   "across": [
+    211.43,
+    322.0
+   ],
+   "nose_line": 315.0,
+   "spots": 5,
+   "nose_in": true,
+   "craft": "AIRLINER"
+  },
+  {
+   "id": "west_remote_north",
+   "along": [
+    456.0,
+    680.0
+   ],
+   "across": [
+    211.43,
+    330.0
+   ],
+   "nose_line": 245.0,
+   "spots": 3
+  },
+  {
+   "id": "east_heavy",
+   "along": [
+    0.0,
+    300.0
+   ],
+   "across": [
+    1098.57,
+    988.0
+   ],
+   "nose_line": 995.0,
+   "spots": 4,
+   "nose_in": true
+  },
+  {
+   "id": "east_narrow",
+   "along": [
+    -250.0,
+    0.0
+   ],
+   "across": [
+    1098.57,
+    988.0
+   ],
+   "nose_line": 995.0,
+   "spots": 5,
+   "nose_in": true,
+   "craft": "AIRLINER"
+  }
+ ],
+ "terminals": [
+  {
+   "id": "west_terminal",
+   "along": [
+    -310.0,
+    260.0
+   ],
+   "across": [
+    322.0,
+    372.0
+   ],
+   "height": 15.0
+  },
+  {
+   "id": "east_terminal",
+   "along": [
+    -260.0,
+    310.0
+   ],
+   "across": [
+    938.0,
+    988.0
+   ],
+   "height": 15.0
+  }
+ ],
+ "revetments": [],
+ "hangars": [],
+ "tower": {
+  "along": -450.0,
+  "across": 655.0,
+  "built": true
+ },
+ "parked": []
+}

@@ -1,0 +1,11 @@
+{
+ "name": "A template airfield",
+ "summary": "Copy this folder without the underscore. `runway` is either the index of a runway the world already has (Terrain.runways()) or a new one's middle and compass bearing; its length and width are the island's constants. `ends` gives each end's pattern side, left unless a right-hand pattern is published for it; `in_use` is the end landed on from.",
+ "world": "island",
+ "runway": {"centre": [0.0, 0.0, 0.0], "bearing_degrees": 0.0},
+ "ends": {
+  "threshold": {"pattern": "left"},
+  "far_end": {"pattern": "left"}
+ },
+ "in_use": "threshold"
+}

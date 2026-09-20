@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://objects/vehicles/vehicle_view.gd" id="1"]
+
+[node name="Craft" type="Node3D"]
+script = ExtResource("1")
+preview_kind = 3
+
+[node name="Hull" type="MeshInstance3D" parent="."]

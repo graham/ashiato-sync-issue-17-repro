@@ -1,0 +1,65 @@
+﻿THE CESSNA, the game's builder against the panel list (they must agree)
+                   the game                           the panels
+  wing right       (  2.31, 1.08, -0.15)  8.10 m^2 4.560 | (  2.31, 1.08, -0.15)  8.10 m^2 4.560
+  wing left        ( -2.31, 1.08, -0.15)  8.10 m^2 4.560 | ( -2.31, 1.08, -0.15)  8.10 m^2 4.560
+  tailplane        (  0.00, 0.01,  4.22)  2.90 m^2 3.887 | (  0.00, 0.01,  4.22)  2.90 m^2 3.887
+  fin              (  0.00, 0.80,  4.63)  1.20 m^2 3.380 | (  0.00, 0.80,  4.63)  1.20 m^2 3.380
+  centre of gravity aft of the nose: 2.4720 | 2.4720
+  the tail's derived incidence: +0.2353 deg | +0.2353 deg
+  stall speed clean: 26.112 | 26.112 m/s
+
+THE CESSNA 172S (one fin, one tailplane: what the four-surface table holds)
+  4 panels, reference area 16.20 m^2, mean chord 1.47 m, 1000 kg
+    wing right       at (  2.31,  1.08,  -0.15) m,  8.10 m^2, slope 4.56, normal (-0.03,  1.00), stall 18.2 deg
+    wing left        at ( -2.31,  1.08,  -0.15) m,  8.10 m^2, slope 4.56, normal ( 0.03,  1.00), stall 18.2 deg
+    tailplane        at (  0.00,  0.01,   4.22) m,  2.90 m^2, slope 3.89, normal ( 0.00,  1.00), stall 17.2 deg
+    fin              at (  0.00,  0.80,   4.63) m,  1.20 m^2, slope 3.38, normal (-1.00,  0.00), stall 20.1 deg
+  neutral point 2.69 m aft of the nose, centre of gravity 2.47 (15% of the mean chord ahead)
+  the trimming panel's incidence: +0.24 degrees at 57 m/s
+  stall speed clean 26.1 m/s, with flap 22.9 m/s
+  full aileron at 50 m/s: 49 deg/s of roll (pb/2V 0.047)
+  full rudder at 50 m/s: -5 kN m of yaw, -1 kN m of roll with it (-17% of the yaw)
+
+THE F/A-18F SUPER HORNET (two fins canted 20 degrees, stabilators that roll; mass, CLmax and travels ESTIMATE)
+  6 panels, reference area 46.45 m^2, mean chord 3.40 m, 22000 kg
+    wing right       at (  4.14, -0.15,  -0.30) m, 23.23 m^2, slope 3.86, normal ( 0.05,  1.00), stall 17.8 deg
+    wing left        at ( -4.14, -0.15,  -0.30) m, 23.23 m^2, slope 3.86, normal (-0.05,  1.00), stall 17.8 deg
+    tailplane right  at (  2.34, -0.25,   4.77) m,  5.83 m^2, slope 4.02, normal (-0.03,  1.00), stall 17.2 deg
+    tailplane left   at ( -2.34, -0.25,   4.77) m,  5.83 m^2, slope 4.02, normal ( 0.03,  1.00), stall 17.2 deg
+    fin right        at (  0.90,  1.19,   3.02) m,  6.24 m^2, slope 1.90, normal (-0.94,  0.34), stall 20.1 deg
+    fin left         at ( -0.90,  1.19,   3.02) m,  6.24 m^2, slope 1.90, normal (-0.94, -0.34), stall 20.1 deg
+  neutral point 11.88 m aft of the nose, centre of gravity 11.71 (5% of the mean chord ahead)
+  the trimming panel's incidence: -0.84 degrees at 150 m/s
+  stall speed clean 79.5 m/s, with flap 67.8 m/s
+  full aileron at 150 m/s: 156 deg/s of roll (pb/2V 0.062)
+  full rudder at 150 m/s: -243 kN m of yaw, -122 kN m of roll with it (-50% of the yaw)
+
+  what the cant changes: canted 20 deg, -243 kN m of yaw and -122 of roll; upright, -258 and -102
+  what the rolling stabilator is worth: 156 deg/s of roll at 150 m/s against 127 without it
+
+THE P-38L LIGHTNING (two booms, two fins 2.438 m out, a tailplane end-plated between them; mass and CLmax ESTIMATE)
+  6 panels, reference area 27.44 m^2, mean chord 1.73 m, 7940 kg
+    wing right       at (  3.48,  0.30,  -0.72) m, 13.72 m^2, slope 4.74, normal (-0.10,  1.00), stall 17.5 deg
+    wing left        at ( -3.48,  0.30,  -0.72) m, 13.72 m^2, slope 4.74, normal ( 0.10,  1.00), stall 17.5 deg
+    tailplane right  at (  1.60,  0.41,   5.53) m,  3.70 m^2, slope 4.59, normal ( 0.00,  1.00), stall 17.2 deg
+    tailplane left   at ( -1.60,  0.41,   5.53) m,  3.70 m^2, slope 4.59, normal (-0.00,  1.00), stall 17.2 deg
+    fin right        at (  2.44,  0.60,   5.87) m,  2.52 m^2, slope 2.72, normal (-1.00,  0.00), stall 20.1 deg
+    fin left         at ( -2.44,  0.60,   5.87) m,  2.52 m^2, slope 2.72, normal (-1.00, -0.00), stall 20.1 deg
+  neutral point 4.64 m aft of the nose, centre of gravity 4.43 (12% of the mean chord ahead)
+  the trimming panel's incidence: +0.57 degrees at 120 m/s
+  stall speed clean 56.5 m/s, with flap 48.7 m/s
+  full aileron at 100 m/s: 73 deg/s of roll (pb/2V 0.050)
+  full rudder at 100 m/s: -129 kN m of yaw, -13 kN m of roll with it (-10% of the yaw)
+
+  what the booms change:
+    two fins of 2.52 m^2 each: aspect 1.78, slope 2.72 each, 13.70 between them
+    ONE fin of 5.03 m^2 on a fuselage would be: aspect 1.78, slope 2.72, 13.70 altogether
+    the tailplane between them: slope 4.59 end-plated against 4.32 bare, +6%
+    the booms' own offset, with the fins moved to the centreline: yaw -129 against -129 kN m,
+      roll -13 against -13 kN m -- a SIDE force at an arm out to the side makes neither, so the
+      offset is not what a twin boom needs said; the fins' own aspect ratio and the end plate are
+
+what one evaluation costs (median of five runs of a million)
+  the Cessna, 4 panels     75.6 ns
+  the F/A-18F, 6 panels    115.5 ns
+  the P-38, 6 panels       113.9 ns

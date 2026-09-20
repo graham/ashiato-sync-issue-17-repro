@@ -1,0 +1,20 @@
+# Cloned or downloaded by cockpit/tools/issue17/setup.ps1, never committed here.
+/ashiato/
+/ashiato-sync/
+/box3d/
+/godot-cpp/
+/_tools/
+
+# Built.
+*.dll
+*.so
+*.dylib
+*.pdb
+*.ilk
+*.exp
+*.lib
+!cockpit/addons/godotsteam/**/*.dll
+!cockpit/addons/godotsteam/**/*.so
+
+# Godot's import cache. The first run of setup.ps1 fills it.
+.godot/

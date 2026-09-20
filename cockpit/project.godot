@@ -1,0 +1,158 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="cockpit"
+run/main_scene="res://world/boot.tscn"
+config/features=PackedStringArray("4.7", "Double Precision", "Mobile")
+
+[autoload]
+
+Net="*res://autoload/net.gd"
+Transition="*res://autoload/transition_curtain.gd"
+Sim="*res://autoload/sim.gd"
+Finish="*res://autoload/finish.gd"
+Headphones="*res://autoload/headphones.gd"
+Radio="*res://autoload/radio.gd"
+Fullscreen="*res://autoload/fullscreen.gd"
+Monitor="*res://autoload/monitor.gd"
+BuildStamp="*res://autoload/build_stamp.gd"
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/stretch/mode="canvas_items"
+
+[physics]
+
+common/physics_jitter_fix=0.0
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
+textures/default_filters/anisotropic_filtering_level=4
+
+[shader_globals]
+
+mist_ground={
+"type": "sampler2D",
+"value": ""
+}
+mist_chart_frame={
+"type": "vec4",
+"value": Vector4(-8192, -8192, 16384, 0)
+}
+mist_ground_range={
+"type": "vec2",
+"value": Vector2(0, 0)
+}
+mist_ceiling={
+"type": "float",
+"value": 700.0
+}
+mist_reach={
+"type": "float",
+"value": 14000.0
+}
+mist_haze={
+"type": "vec4",
+"value": Vector4(0, 50, 0.9, 0.000667)
+}
+mist_stratus={
+"type": "vec4",
+"value": Vector4(0, 200, 45, 0.0011)
+}
+mist_stratus_cover={
+"type": "vec2",
+"value": Vector2(0.6, 0.8)
+}
+mist_stratus_look={
+"type": "vec4",
+"value": Vector4(0, 0.25, 8000, 0.5)
+}
+mist_colour={
+"type": "color",
+"value": Color(0.7, 0.72, 0.75, 1)
+}
+mist_sun_colour={
+"type": "color",
+"value": Color(1, 1, 1, 1)
+}
+mist_towards_sun={
+"type": "vec3",
+"value": Vector3(0.42, 0.57, 0.71)
+}
+mist_sun={
+"type": "vec3",
+"value": Vector3(0.4, 6, 0.6)
+}
+mist_steps={
+"type": "int",
+"value": 1
+}
+mist_clock={
+"type": "float",
+"value": 0.0
+}
+mist_towns={
+"type": "sampler2D",
+"value": ""
+}
+mist_town={
+"type": "vec4",
+"value": Vector4(0, 0, 80, 1.4)
+}
+mist_town_glow={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
+mist_pool={
+"type": "vec4",
+"value": Vector4(0, 60, 0, 0)
+}
+sea_glint_flare={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 1)
+}
+sea_glint_flare_colour={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+sea_glint_lamps={
+"type": "mat4",
+"value": Projection(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+}
+sea_glint_lamps_colour={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+
+[steam]
+
+initialization/app_data/app_type=0
+initialization/app_data/app_id=0
+initialization/app_data/demo_id=0
+initialization/app_data/playtest_id=0
+initialization/app_data/tool_id=0
+initialization/processes/initialize_on_startup=false
+initialization/processes/embed_callbacks=false
+multiplayer_peer/max_channels=4
+
+[xr]
+
+openxr/enabled=true
+openxr/form_factor=0
+openxr/view_configuration=1
+openxr/reference_space=1
+openxr/startup_alert=false
+shaders/enabled=true

@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://player/remote_pilot.gd" id="1_pilot"]
+
+[sub_resource type="BoxMesh" id="Mesh_head"]
+size = Vector3(0.19, 0.21, 0.23)
+
+[sub_resource type="BoxMesh" id="Mesh_visor"]
+size = Vector3(0.16, 0.055, 0.02)
+
+[sub_resource type="SphereMesh" id="Mesh_hand"]
+radius = 0.05
+height = 0.1
+radial_segments = 10
+rings = 5
+
+[node name="RemotePilot" type="Node3D"]
+script = ExtResource("1_pilot")
+
+[node name="Head" type="MeshInstance3D" parent="."]
+mesh = SubResource("Mesh_head")
+
+[node name="Visor" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, -0.12)
+mesh = SubResource("Mesh_visor")
+
+[node name="LeftHand" type="MeshInstance3D" parent="."]
+mesh = SubResource("Mesh_hand")
+
+[node name="RightHand" type="MeshInstance3D" parent="."]
+mesh = SubResource("Mesh_hand")
+
+[node name="Label" type="Label3D" parent="."]
+billboard = 1
+pixel_size = 0.0014
+font_size = 40
+outline_size = 9
+text = "Pilot"

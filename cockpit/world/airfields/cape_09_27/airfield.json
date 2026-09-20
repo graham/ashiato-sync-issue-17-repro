@@ -1,0 +1,30 @@
+{
+ "name": "Cape International, runway 09/27",
+ "summary": "The long runway of the island's airliner airport, along the flat north shore of the north-east cape. Landed on eastward (09) from its western threshold: a final into 27 would begin 21.7 km out, past the world's edge. It crosses runway 18/36 2,450 m from 09's threshold; the airport round both is world/airbases/cape_international.",
+ "world": "island",
+ "runway": {
+  "centre": [5400.0, 0.0, -6400.0],
+  "bearing_degrees": 90.0,
+  "length_m": 3500.0,
+  "width_m": 45.72,
+  "protection": {
+   "ofa_half_width": 121.92,
+   "ofa_beyond_end": 304.8,
+   "rpz_from_end": 60.96,
+   "rpz_length": 762.0,
+   "rpz_outer_half": 266.7
+  }
+ },
+ "ends": {
+  "threshold": {"pattern": "right"},
+  "far_end": {"pattern": "left"}
+ },
+ "in_use": "far_end",
+ "sources": {
+  "length_m": "The 747-400 (PW4056) needs about 11,100 ft (3,380 m) to take off at its maximum 875,000 lb on a hot day at sea level (Boeing D6-58326-1 rev F, 747-400 Airplane Characteristics for Airport Planning, 3.3.4, read off the chart), rounded up to 3,500 m. At the game's 280 t it needs about 1,660 m to take off (3.3.3) and 2,010 m to land, flaps 30 (3.4.2). https://www.boeing.com/content/dam/boeing/v2/airports/acaps/747-400_Rev_F.pdf",
+  "width_m": "FAA AC 150/5300-13B change 1, table G-11 (C/D/E-V): 150 ft. https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC-150-5300-13B-Airport-Design-Chg1-w-errata.pdf",
+  "protection": "The same, table G-11, approach visibility below 3/4 mile: runway object free area 800 ft wide and 1,000 ft beyond each end; approach runway protection zone from 200 ft past the end, 2,500 ft long, 1,750 ft wide at its outer end. Kept clear of rock, towns and woods as one box (Terrain._clearances).",
+  "place": "Where the island's rock map (25 m samples, 150 m either side, lane/airport 2026-09-19) is clear along the whole north band from z -7,000 to -6,400: the final into 09 comes in from the west over flat ground north of the mountain ring.",
+  "pattern": "Each end's pattern side is the sea side (AIM 4-3-3 b): landing east on 09 the sea is to the left, landing west on 27 it is to the right."
+ }
+}

@@ -1,0 +1,183 @@
+{
+  "controls": [
+    {
+      "at": [
+        -0.34,
+        1.1,
+        -0.02
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat3/Button",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "CABIN LIGHT",
+      "name": "Button",
+      "part": "CrewButton",
+      "range": 255,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        0.0,
+        0.94,
+        -0.34
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat3/Stick",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "STICK / PITCH / ROLL",
+      "name": "Stick",
+      "part": "FlightStick",
+      "range": 255,
+      "scope": "seat"
+    }
+  ],
+  "craft": "tower",
+  "fitted_controls": [
+    {
+      "at": [
+        -0.34,
+        1.1,
+        -0.02
+      ],
+      "channel": -1,
+      "class": "CrewButton",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Button",
+      "range": 255,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        0.0,
+        0.94,
+        -0.34
+      ],
+      "channel": -1,
+      "class": "FlightStick",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Stick",
+      "range": 255,
+      "scope": "seat"
+    }
+  ],
+  "furniture": [
+    {
+      "at": [
+        0.0,
+        0.81,
+        -0.36
+      ],
+      "class": "RudderIndicator",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Rudder"
+    },
+    {
+      "at": [
+        0.26,
+        0.86,
+        -0.12
+      ],
+      "class": "CrewBoard",
+      "facing": [
+        -60.161,
+        -51.566,
+        0.0
+      ],
+      "name": "Crew"
+    },
+    {
+      "at": [
+        -0.02,
+        1.14,
+        -0.36
+      ],
+      "class": "CraftDisplay",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Display",
+      "page": "res://objects/seats/flight_page.tscn"
+    },
+    {
+      "at": [
+        -0.3,
+        1.0,
+        -0.42
+      ],
+      "class": "CraftDisplay",
+      "facing": [
+        -31.513,
+        20.054,
+        0.0
+      ],
+      "name": "MfdLeft",
+      "page": "res://objects/seats/mfd_page.tscn"
+    },
+    {
+      "at": [
+        0.3,
+        1.0,
+        -0.42
+      ],
+      "class": "CraftDisplay",
+      "facing": [
+        -31.513,
+        -20.054,
+        0.0
+      ],
+      "name": "MfdRight",
+      "page": "res://objects/seats/mfd_page.tscn"
+    }
+  ],
+  "kind": 11,
+  "seat": 3,
+  "shell": {
+    "at": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "depth": 0.92,
+    "facing": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "name": "Shell",
+    "tint": [
+      0.140000000596046,
+      0.150000005960464,
+      0.170000001788139,
+      1.0
+    ],
+    "width": 1.05
+  },
+  "source_scene": "res://objects/seats/seat_tower.tscn",
+  "units": "metres and degrees, in the seat's own frame; -Z is forward, +Y is up"
+}

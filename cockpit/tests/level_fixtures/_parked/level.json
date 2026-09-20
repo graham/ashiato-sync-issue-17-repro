@@ -1,0 +1,6 @@
+{
+	"name": "Parked",
+	"summary": "Skipped for its underscore.",
+	"world": "island",
+	"spawn": {"at": [0, 30, 0], "yaw_degrees": 0}
+}

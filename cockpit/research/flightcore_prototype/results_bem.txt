@@ -1,0 +1,37 @@
+﻿solidity 0.0837, disc 54.8 m^2, weight 13793 N, vh 10.14 m/s
+hover, hub 2.75 m up: lever 0.415, pitch 6.7 deg, power 204 kW
+hover, hub 3.75 m up: lever 0.432, pitch 6.9 deg, power 215 kW
+hover, hub 5.75 m up: lever 0.443, pitch 7.1 deg, power 222 kW
+hover, hub 42.75 m up: lever 0.451, pitch 7.2 deg, power 227 kW
+lever 1.00 held: climb 10.9 m/s (2145 ft/min), power 319 kW, power limited
+lever 0.80 held: climb 10.8 m/s (2122 ft/min), power 318 kW, power limited
+lever 0.65 held: climb 11.1 m/s (2180 ft/min), power 321 kW, power limited
+   4 deg nose down:  39.8 m/s ( 77 kt), vz +0.00, lever 0.32, power 156 kW
+   6 deg nose down:  49.5 m/s ( 96 kt), vz -0.00, lever 0.35, power 188 kW
+   8 deg nose down:  57.9 m/s (113 kt), vz -0.00, lever 0.41, power 231 kW
+  10 deg nose down:  65.8 m/s (128 kt), vz -0.00, lever 0.47, power 285 kW
+  12 deg nose down:  72.9 m/s (142 kt), vz -1.84, lever 1.00, power 319 kW (limit)
+lever 0.000, hover, 40 m: T 0 N
+lever 0.050, hover, 40 m: T 419 N
+lever 0.079, hover, 40 m: T 932 N
+lever 0.080, hover, 40 m: T 952 N
+lever 0.100, hover, 40 m: T 1387 N
+autorotation at  0 m/s forward: disc sink 19.5 m/s, with the fuselage's drag 19.5 m/s (3835 ft/min)
+autorotation at 10 m/s forward: disc sink 18.7 m/s, with the fuselage's drag 18.7 m/s (3687 ft/min)
+autorotation at 20 m/s forward: disc sink 12.4 m/s, with the fuselage's drag 12.8 m/s (2513 ft/min)
+autorotation at 30 m/s forward: disc sink 11.0 m/s, with the fuselage's drag 12.2 m/s (2406 ft/min)
+autorotation at 40 m/s forward: disc sink 8.5 m/s, with the fuselage's drag 11.3 m/s (2217 ft/min)
+autorotation at 55 m/s forward: disc sink 8.5 m/s, with the fuselage's drag 15.7 m/s (3098 ft/min)
+bem::fly, a spread of states (many power-limited or descending): median 161.9 ns a call (min 159.7, max 163.2)
+bem::fly, cruise (the common case): median 59.7 ns a call (min 59.6, max 60.6)
+bem::fly, a climb at the power limit (full lever, 8 m/s up, 20 m/s along): median 211.6 ns
+bem::fly, a slow vertical descent in the vortex ring (8 m/s down, 3 along): median 177.5 ns
+bem::fly, an autorotation at 40 m/s (engine at idle, 11 m/s down): median 374.2 ns
+bem::fly, a vertical autorotation (engine at idle, 19 m/s down): median 348.6 ns
+rotor::fly median 117.5 ns a call (min 115.7, max 132.1)
+--- work per call (count_bem.exe)
+climb at the limit     at_pitch 3, ring steps 0; T 17637 N, P 320.6 kW
+vortex ring            at_pitch 1, ring steps 5; T 12691 N, P 220.6 kW
+autorotation at 40     at_pitch 2, ring steps 10; T 35202 N, P -38.6 kW
+vertical autorotation  at_pitch 2, ring steps 10; T 12293 N, P 0.9 kW
+cruise                 at_pitch 1, ring steps 0; T 21570 N, P 226.8 kW

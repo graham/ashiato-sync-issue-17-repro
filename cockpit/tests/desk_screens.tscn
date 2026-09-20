@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/desk_screens.gd" id="1_d"]
+
+[node name="DeskScreens" type="Node"]
+script = ExtResource("1_d")

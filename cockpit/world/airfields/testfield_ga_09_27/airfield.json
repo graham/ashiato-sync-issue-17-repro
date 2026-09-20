@@ -1,0 +1,26 @@
+{
+ "name": "The small field, runway 09/27",
+ "summary": "The test field's general aviation strip for the Cessna and the light twin, south of the middle. The island's runway size, left-hand traffic at 1,000 ft, landed on westward (27).",
+ "world": "testfield",
+ "runway": {
+  "centre": [
+   2000.0,
+   0.0,
+   13000.0
+  ],
+  "bearing_degrees": 90.0
+ },
+ "ends": {
+  "threshold": {
+   "pattern": "left"
+  },
+  "far_end": {
+   "pattern": "left"
+  }
+ },
+ "in_use": "threshold",
+ "sources": {
+  "place": "South of the middle at z +13 km (lane/testfield step 0), east-west so each end's circuit and final lie over the map.",
+  "pattern": "Standard left-hand traffic both ways (AIM 4-3-3)."
+ }
+}

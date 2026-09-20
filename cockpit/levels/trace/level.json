@@ -1,0 +1,10 @@
+{
+	"name": "Trace playback",
+	"summary": "A small plain map: one craft posed from a flight trace, its path drawn, its inputs beside it.",
+	"world": "alpine",
+	"ground": {"world_half": 8192, "peak_height": 30, "seed": 1, "coast": 128},
+	"reach": 30000,
+	"haze": 0.3,
+	"fleet": false,
+	"spawn": {"at": [-7900, 3, -7900], "yaw_degrees": 0}
+}

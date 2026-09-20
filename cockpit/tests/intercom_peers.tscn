@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/intercom_peers.gd" id="1_intercom_peers"]
+
+[node name="IntercomPeers" type="Node"]
+script = ExtResource("1_intercom_peers")

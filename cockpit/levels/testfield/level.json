@@ -1,0 +1,52 @@
+{
+	"name": "The test field",
+	"summary": "Sixty-five kilometres of farmland, no sea: two airliner airports, an air base, a small field.",
+	"world": "alpine",
+	"ground": {"world_half": 32768, "peak_height": 300, "seed": 0, "coast": 96, "sites_within": 20500},
+	"reach": 42000,
+	"haze": 0.35,
+	"fleet": false,
+	"spawn": {"at": [-18000, 30, 0], "yaw_degrees": 0},
+	"mountains": [
+		{
+			"salt": 5100,
+			"peak": 900,
+			"saddle": 260,
+			"points": [
+				[-13000, -19500, 650, 1100],
+				[-9000, -20500, 780, 1200],
+				[-5000, -20000, 720, 1150],
+				[-1500, -21000, 640, 1000]
+			]
+		},
+		{
+			"salt": 5101,
+			"peak": 880,
+			"saddle": 250,
+			"points": [
+				[4000, 18000, 620, 1000],
+				[8000, 19000, 740, 1150],
+				[12000, 18500, 700, 1100],
+				[15000, 19500, 600, 900]
+			]
+		},
+		{
+			"salt": 5102,
+			"peak": 860,
+			"saddle": 240,
+			"points": [
+				[-6000, -4700, 720, 1100]
+			]
+		},
+		{
+			"salt": 5103,
+			"peak": 860,
+			"saddle": 250,
+			"points": [
+				[10500, -9000, 640, 950],
+				[12500, -8000, 720, 1050],
+				[14500, -8500, 650, 900]
+			]
+		}
+	]
+}

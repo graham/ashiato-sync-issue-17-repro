@@ -1,0 +1,8 @@
+{
+	"name": "The stress test",
+	"summary": "The island, a stack of aeroplanes, and an 80 ms link on every machine but the host.",
+	"world": "island",
+	"link_ms": 80,
+	"stats": true,
+	"spawn": {"at": [-21, 30, 0], "yaw_degrees": 0}
+}

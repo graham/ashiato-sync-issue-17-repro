@@ -1,0 +1,14 @@
+{
+ "name": "The island strip",
+ "summary": "The island's first runway, Terrain.runway_axis(): 900 m, landed on northward from its southern threshold. Standard left-hand traffic both ways.",
+ "world": "island",
+ "runway": 0,
+ "ends": {
+  "threshold": {"pattern": "left"},
+  "far_end": {"pattern": "left"}
+ },
+ "in_use": "threshold",
+ "sources": {
+  "pattern": "AIM 4-3-3 b: all turns to the left unless a right pattern is published for the runway end. See cockpit/research/traffic_pattern.md."
+ }
+}

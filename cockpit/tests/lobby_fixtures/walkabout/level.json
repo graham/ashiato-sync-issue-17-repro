@@ -1,0 +1,7 @@
+{
+	"name": "Walkabout",
+	"summary": "The island, with everyone put on a segway a stride apart.",
+	"world": "island",
+	"arrive": "segway",
+	"spawn": {"at": [-21, 0.5, 0], "yaw_degrees": 0, "apart": 1.8}
+}

@@ -1,0 +1,5 @@
+@echo off
+cd /d %~dp0
+for /f "usebackq tokens=*" %%i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -products * -property installationPath`) do set VS=%%i
+call "%VS%\VC\Auxiliary\Build\vcvars64.bat" >nul
+cl /nologo /O2 /EHsc /std:c++17 /fp:precise rotor_audit.cpp /Fe:rotor_audit.exe && cl /nologo /O2 /EHsc /std:c++17 /fp:precise rotor_cost.cpp /Fe:rotor_cost.exe && cl /nologo /O2 /EHsc /std:c++17 /fp:precise rotor_bem_audit.cpp /Fe:rotor_bem_audit.exe && cl /nologo /O2 /EHsc /std:c++17 /fp:precise probe_bem.cpp /Fe:probe_bem.exe && cl /nologo /O2 /EHsc /std:c++17 /fp:precise count_bem.cpp /Fe:count_bem.exe && cl /nologo /O2 /EHsc /std:c++17 /fp:precise rotor_fleet.cpp /Fe:rotor_fleet.exe && cl /nologo /O2 /EHsc /std:c++17 /fp:precise surfaces_fleet.cpp /Fe:surfaces_fleet.exe && cl /nologo /O2 /EHsc /std:c++17 /fp:precise propeller_fleet.cpp /Fe:propeller_fleet.exe && cl /nologo /O2 /EHsc /std:c++17 /fp:precise p51_for_warbirds2.cpp /Fe:p51_for_warbirds2.exe

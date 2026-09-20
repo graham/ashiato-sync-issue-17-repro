@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/desk_join.gd" id="1_desk_join"]
+
+[node name="DeskJoin" type="Node"]
+script = ExtResource("1_desk_join")

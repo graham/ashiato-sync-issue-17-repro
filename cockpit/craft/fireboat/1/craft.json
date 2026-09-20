@@ -1,0 +1,118 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "fireboat",
+  "kind": 37,
+  "manifest_hash": "de894dcd52947db3ffe16bff07e9938dbcf472cf6fed4f36710f9a8e326bc8ec",
+  "model": {
+    "native_model": "boat",
+    "presentation_body": "PLAIN"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.550000011920929,
+      0.0900000035762787,
+      0.0900000035762787,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_wheel.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        1.1,
+        5.2,
+        -6.8
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    },
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        -1.1,
+        5.2,
+        -6.8
+      ],
+      "station": "copilot",
+      "yaw": 0.0
+    },
+    {
+      "flies": false,
+      "gun": false,
+      "position": [
+        1.3,
+        5.2,
+        -4.8
+      ],
+      "station": "turret",
+      "yaw": 0.0
+    },
+    {
+      "flies": false,
+      "gun": false,
+      "position": [
+        0.0,
+        5.2,
+        -4.8
+      ],
+      "station": "turret",
+      "yaw": 0.0
+    },
+    {
+      "flies": false,
+      "gun": false,
+      "position": [
+        -1.3,
+        5.2,
+        -4.8
+      ],
+      "station": "turret",
+      "yaw": 3.14159274101257
+    }
+  ],
+  "simulation_contract": "d986d5338812f22f7a85ba54ecb4fb0374a562b66dfc3935e04077ef20dca1fb",
+  "station_hashes": {
+    "0": "15f5546e9e9e1c943dd715d7901e6b31c1ceac929146d55bad6db091bc442150",
+    "1": "cf96c005f9eb83c56529458c4f734ea9dc91bb04abd6338be0b9b0766946dae4",
+    "2": "327bb76447c5c1870f93667dfce6addee5ce9e8acb227a767aa49b675f2dce1b",
+    "3": "4cb4424661d55220f2fcca791f5744310c6ff9542b83c600044a660292c96cb0",
+    "4": "ba5e96f2ecb23902ed90854d6e2ff1497fdbe4cb029d94c64f0b3f4399eb2b69"
+  },
+  "stations": {
+    "0": "stations/seat0.json",
+    "1": "stations/seat1.json",
+    "2": "stations/seat2.json",
+    "3": "stations/seat3.json",
+    "4": "stations/seat4.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1
+}

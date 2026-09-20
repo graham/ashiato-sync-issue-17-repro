@@ -1,0 +1,30 @@
+{
+ "name": "Cape International, runway 18/36",
+ "summary": "The crossing runway of the island's airliner airport, down the flat east shore of the north-east cape. Landed on northward (36) from its southern threshold: a final into 18 would begin 21.7 km out, past the world's edge. It crosses runway 09/27 2,850 m from 36's threshold.",
+ "world": "island",
+ "runway": {
+  "centre": [6100.0, 0.0, -5300.0],
+  "bearing_degrees": 0.0,
+  "length_m": 3500.0,
+  "width_m": 45.72,
+  "protection": {
+   "ofa_half_width": 121.92,
+   "ofa_beyond_end": 304.8,
+   "rpz_from_end": 60.96,
+   "rpz_length": 762.0,
+   "rpz_outer_half": 266.7
+  }
+ },
+ "ends": {
+  "threshold": {"pattern": "right"},
+  "far_end": {"pattern": "left"}
+ },
+ "in_use": "threshold",
+ "sources": {
+  "length_m": "As runway 09/27's: the 747-400 at its maximum weight on a hot day, Boeing D6-58326-1 rev F 3.3.4, rounded up to 3,500 m.",
+  "width_m": "FAA AC 150/5300-13B change 1, table G-11: 150 ft.",
+  "protection": "The same table as runway 09/27's.",
+  "place": "Moved 200 m east of first sketch (x 5,900) so the final into 36 keeps 600 m either side clear of the mountain ring's east flank under its glide path. The island's east band, x 6,100 and beyond, is clear of rock from z -7,100 to +1,900 (lane/airport's rock map, 2026-09-19), so the final into 36 comes up the shore from the south over flat ground.",
+  "pattern": "The sea side at each end (AIM 4-3-3 b): landing north on 36 the sea is to the right, landing south on 18 it is to the left."
+ }
+}

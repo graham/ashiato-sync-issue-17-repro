@@ -1,0 +1,273 @@
+{
+  "controls": [
+    {
+      "at": [
+        0.0,
+        0.94,
+        -0.17
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat0/Yoke",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "YOKE / PITCH / ROLL",
+      "name": "Yoke",
+      "part": "ControlYoke",
+      "range": 255,
+      "scope": "seat"
+    },
+    {
+      "at": [
+        -0.34,
+        1.1,
+        -0.02
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat0/Button",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "CABIN LIGHT",
+      "name": "Button",
+      "part": "CrewButton",
+      "range": 255,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        0.38,
+        0.84,
+        -0.38
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat0/MapScreen",
+      "facing": [
+        -17.189,
+        -10.313,
+        0.0
+      ],
+      "label": "MAP / CREW",
+      "name": "MapScreen",
+      "part": "MapScreen",
+      "range": 255,
+      "scope": "pilot"
+    },
+    {
+      "at": [
+        0.3,
+        0.62,
+        -0.1
+      ],
+      "binding": {
+        "channel": 2,
+        "id": "bus.2",
+        "range": 255,
+        "type": "bus_channel",
+        "version": 1
+      },
+      "channel": 2,
+      "channel_name": "trim",
+      "device_id": "seat0/Trim",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "TRIM / NOSE UP / DOWN",
+      "name": "Trim",
+      "part": "TrimWheel",
+      "range": 255,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        0.0,
+        0.04,
+        -0.29
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat0/Pedals",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "RUDDER PEDALS / SHOW THE RUDDER",
+      "name": "Pedals",
+      "part": "RudderPedals",
+      "range": 255,
+      "scope": "seat"
+    }
+  ],
+  "craft": "cessna",
+  "fitted_controls": [
+    {
+      "at": [
+        0.0,
+        0.94,
+        -0.17
+      ],
+      "channel": -1,
+      "class": "ControlYoke",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Yoke",
+      "range": 255,
+      "scope": "seat"
+    },
+    {
+      "at": [
+        -0.34,
+        1.1,
+        -0.02
+      ],
+      "channel": -1,
+      "class": "CrewButton",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Button",
+      "range": 255,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        0.38,
+        0.84,
+        -0.38
+      ],
+      "channel": -1,
+      "class": "MapScreen",
+      "facing": [
+        -17.189,
+        -10.313,
+        0.0
+      ],
+      "name": "MapScreen",
+      "range": 255,
+      "scope": "pilot"
+    },
+    {
+      "at": [
+        0.3,
+        0.62,
+        -0.1
+      ],
+      "channel": 2,
+      "class": "TrimWheel",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Trim",
+      "range": 255,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        0.0,
+        0.04,
+        -0.29
+      ],
+      "channel": -1,
+      "class": "RudderPedals",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Pedals",
+      "range": 255,
+      "scope": "seat"
+    }
+  ],
+  "furniture": [
+    {
+      "at": [
+        0.0,
+        0.81,
+        -0.36
+      ],
+      "class": "RudderIndicator",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Rudder"
+    },
+    {
+      "at": [
+        0.26,
+        0.86,
+        -0.12
+      ],
+      "class": "CrewBoard",
+      "facing": [
+        -60.161,
+        -51.566,
+        0.0
+      ],
+      "name": "Crew"
+    },
+    {
+      "at": [
+        -0.02,
+        1.14,
+        -0.36
+      ],
+      "class": "CraftDisplay",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Display",
+      "page": "res://objects/seats/flight_page.tscn"
+    }
+  ],
+  "kind": 10,
+  "seat": 0,
+  "shell": {
+    "at": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "depth": 0.92,
+    "facing": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "name": "Shell",
+    "tint": [
+      0.140000000596046,
+      0.150000005960464,
+      0.170000001788139,
+      1.0
+    ],
+    "width": 1.05
+  },
+  "source_scene": "res://objects/seats/seat_cessna.tscn",
+  "units": "metres and degrees, in the seat's own frame; -Z is forward, +Y is up"
+}

@@ -1,0 +1,7 @@
+{
+	"name": "Bad ground",
+	"summary": "A generated world wider than the wire.",
+	"world": "alpine",
+	"ground": {"world_half": 99999, "peak_height": 3000, "seed": 0},
+	"spawn": {"at": [0, 3000, 0], "yaw_degrees": 0}
+}

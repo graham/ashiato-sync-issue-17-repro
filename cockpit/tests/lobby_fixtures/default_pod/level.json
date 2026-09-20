@@ -1,0 +1,6 @@
+{
+	"name": "Default pod",
+	"summary": "A level that says nothing about arrivals, so they come in a pod.",
+	"world": "island",
+	"spawn": {"at": [-21, 30, 0], "yaw_degrees": 0}
+}

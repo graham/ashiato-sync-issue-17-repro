@@ -1,0 +1,285 @@
+{
+  "controls": [
+    {
+      "at": [
+        0.0,
+        0.72,
+        -0.26
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat1/Stick",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "STICK / PITCH / ROLL",
+      "name": "Stick",
+      "part": "FlightStick",
+      "range": 255,
+      "scope": "seat"
+    },
+    {
+      "at": [
+        -0.28,
+        0.86,
+        -0.02
+      ],
+      "binding": {
+        "channel": 4,
+        "id": "bus.4",
+        "range": 1,
+        "type": "bus_channel",
+        "version": 1
+      },
+      "channel": 4,
+      "channel_name": "spoilers",
+      "device_id": "seat1/Airbrakes",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "AIRBRAKES",
+      "name": "Airbrakes",
+      "part": "AirbrakeLever",
+      "range": 1,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        -0.28,
+        0.9,
+        -0.42
+      ],
+      "binding": {
+        "channel": 2,
+        "id": "bus.2",
+        "range": 255,
+        "type": "bus_channel",
+        "version": 1
+      },
+      "channel": 2,
+      "channel_name": "trim",
+      "device_id": "seat1/Trim",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "TRIM / NOSE UP / DOWN",
+      "name": "Trim",
+      "part": "TrimWheel",
+      "range": 255,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        0.18,
+        0.95,
+        -0.54
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat1/MapScreen",
+      "facing": [
+        -25.783,
+        28.648,
+        0.0
+      ],
+      "label": "MAP / CREW",
+      "name": "MapScreen",
+      "part": "MapScreen",
+      "range": 255,
+      "scope": "pilot"
+    },
+    {
+      "at": [
+        0.0,
+        0.74,
+        -0.6
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat1/Pedals",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "RUDDER PEDALS / SHOW THE RUDDER",
+      "name": "Pedals",
+      "part": "RudderPedals",
+      "range": 255,
+      "scope": "seat"
+    }
+  ],
+  "craft": "glider",
+  "fitted_controls": [
+    {
+      "at": [
+        0.0,
+        0.72,
+        -0.26
+      ],
+      "channel": -1,
+      "class": "FlightStick",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Stick",
+      "range": 255,
+      "scope": "seat"
+    },
+    {
+      "at": [
+        -0.28,
+        0.86,
+        -0.02
+      ],
+      "channel": 4,
+      "class": "AirbrakeLever",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Airbrakes",
+      "range": 1,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        -0.28,
+        0.9,
+        -0.42
+      ],
+      "channel": 2,
+      "class": "TrimWheel",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Trim",
+      "range": 255,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        0.18,
+        0.95,
+        -0.54
+      ],
+      "channel": -1,
+      "class": "MapScreen",
+      "facing": [
+        -25.783,
+        28.648,
+        0.0
+      ],
+      "name": "MapScreen",
+      "range": 255,
+      "scope": "pilot"
+    },
+    {
+      "at": [
+        0.0,
+        0.74,
+        -0.6
+      ],
+      "channel": -1,
+      "class": "RudderPedals",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Pedals",
+      "range": 255,
+      "scope": "seat"
+    }
+  ],
+  "furniture": [
+    {
+      "at": [
+        0.0,
+        0.81,
+        -0.36
+      ],
+      "class": "RudderIndicator",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Rudder"
+    },
+    {
+      "at": [
+        0.26,
+        0.86,
+        -0.12
+      ],
+      "class": "CrewBoard",
+      "facing": [
+        -60.161,
+        -51.566,
+        0.0
+      ],
+      "name": "Crew"
+    },
+    {
+      "at": [
+        -0.16,
+        0.95,
+        -0.54
+      ],
+      "class": "CraftDisplay",
+      "facing": [
+        -25.783,
+        -28.648,
+        0.0
+      ],
+      "name": "Display",
+      "page": "res://objects/seats/flight_page.tscn"
+    }
+  ],
+  "kind": 17,
+  "seat": 1,
+  "shell": {
+    "at": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "depth": 0.92,
+    "facing": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "footwell": {
+      "bar_width": 0.2,
+      "floor_width": 0.3,
+      "raise": 0.7,
+      "reclined": true
+    },
+    "name": "Shell",
+    "tint": [
+      0.140000000596046,
+      0.150000005960464,
+      0.170000001788139,
+      1.0
+    ],
+    "width": 0.86
+  },
+  "source_scene": "res://objects/seats/seat_glider.tscn",
+  "units": "metres and degrees, in the seat's own frame; -Z is forward, +Y is up"
+}

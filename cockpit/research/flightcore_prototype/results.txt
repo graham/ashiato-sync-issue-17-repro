@@ -1,0 +1,20 @@
+weight 13793 N, vh(W) 10.14 m/s, disc 54.8 m^2
+hover lever at skids 0 m: 0.322  power 172 kW  phase ground
+hover lever at skids 1 m: 0.392  power 181 kW  phase ige_hover
+hover lever at skids 3 m: 0.439  power 187 kW  phase oge_hover
+hover lever at skids 40 m: 0.473  power 192 kW  phase oge_hover
+lever 1.0 vertical climb after 30 s: 53.2 m/s  thrust 20689 N  power 109 kW (max 317)  honest power T(Vc+vi) 1209 kW
+lever 0.8 vertical climb after 30 s: 41.1 m/s  thrust 18069 N  power 107 kW (max 317)  honest power T(Vc+vi) 850 kW
+lever 0.6 vertical climb after 30 s: 22.9 m/s  thrust 15448 N  power 118 kW (max 317)  honest power T(Vc+vi) 472 kW
+nose 5 deg down, level: 42.3 m/s (82 kt) vz -0.13 lever 0.33 power 126 kW
+nose 10 deg down, level: 64.7 m/s (126 kt) vz -0.04 lever 0.35 power 211 kW
+nose 15 deg down, level: 72.0 m/s (140 kt) vz -32.57 lever 1.00 power 317 kW
+nose 20 deg down, level: 59.5 m/s (116 kt) vz -67.28 lever 1.00 power 317 kW
+lever 0.079 hover at 40 m: T 0 N
+lever 0.080 hover at 40 m: T 8639 N
+lever 0.100 hover at 40 m: T 8902 N
+autorotation at 0 m/s forward: steady sink 11.9 m/s
+autorotation at 15 m/s forward: steady sink 11.9 m/s
+autorotation at 30 m/s forward: steady sink 11.9 m/s
+---
+rotor_cost (measured 2026-09-19 with another lane's MEASUREMENT slot up: an upper bound): rotor::fly median 111.8 ns a call (min 109.9, max 114.2)

@@ -1,0 +1,19 @@
+{
+	"summary": "Airport life on the test field. `basic` flies by default: a 747 from West to East (09) and back, and a Cessna flying circuits at the small field. The fighter is in the stress list only: it reaches its gate 5.4 m/s too fast and goes around (todo/testfield--traffic-ai-faults.md). `stress` is flown instead with `--traffic=stress` after the bare `--`.",
+	"basic": [
+		{"kind": "JUMBO", "from": "testfield_west_36l", "spot": "west_remote.1", "to": "testfield_east_09_27"},
+		{"kind": "CESSNA", "from": "testfield_ga_09_27", "to": "testfield_ga_09_27"}
+	],
+	"stress": [
+		{"kind": "JUMBO", "from": "testfield_west_36l", "spot": "west_remote.1", "to": "testfield_east_09_27", "count": 3},
+		{"kind": "JUMBO", "from": "testfield_east_09_27", "spot": "remote.1", "to": "testfield_west_36r", "count": 3},
+		{"kind": "AIRLINER", "from": "testfield_west_36l", "spot": "west_remote_north.1", "to": "testfield_east_09_27", "count": 3},
+		{"kind": "AIRLINER", "from": "testfield_east_09_27", "spot": "remote.2", "to": "testfield_west_36r", "count": 3},
+		{"kind": "TRANSPORT", "from": "testfield_base_09_27", "spot": "apron.1", "to": "testfield_east_09_27", "count": 2},
+		{"kind": "HAWKEYE", "from": "testfield_base_09_27", "spot": "apron.2", "to": "testfield_west_36r", "count": 2},
+		{"kind": "FIGHTER", "from": "testfield_base_09_27", "spot": "north.3", "to": "testfield_west_36r", "count": 2},
+		{"kind": "FIGHTER", "from": "testfield_base_09_27", "spot": "north.4", "to": "testfield_east_09_27", "count": 2},
+		{"kind": "CESSNA", "from": "testfield_ga_09_27", "to": "testfield_ga_09_27", "count": 3},
+		{"kind": "CESSNA", "from": "testfield_ga_09_27", "to": "testfield_west_36r", "count": 2}
+	]
+}

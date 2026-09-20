@@ -1,0 +1,65 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "TimeOfDayDial",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "segway",
+  "kind": 21,
+  "manifest_hash": "c103f605b620be398b1b21eca4af5ecf592c0a519c83a4669c2196df2a9a8189",
+  "model": {
+    "native_model": "segway",
+    "presentation_body": "PLAIN"
+  },
+  "presentation": {
+    "drawn": false,
+    "helm": "glazed",
+    "paint": [
+      1.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_plane.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.0,
+        -0.35,
+        0.0
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "e5079d8b55eb599ceed4ee41b7f2d4c8e1b86ece0c23af411e7b1807b5aa8e0d",
+  "station_hashes": {
+    "0": "781eedc697ecbc2043a2103c66b17ab098a4c89f84c11923fcf6e0b90a5c9900"
+  },
+  "stations": {
+    "0": "stations/seat0.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1
+}

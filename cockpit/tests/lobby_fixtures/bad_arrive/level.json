@@ -1,0 +1,7 @@
+{
+	"name": "Bad arrival",
+	"summary": "It seats its arrivals in something the simulation has never heard of.",
+	"world": "island",
+	"arrive": "unicycle",
+	"spawn": {"at": [-21, 30, 0], "yaw_degrees": 0}
+}

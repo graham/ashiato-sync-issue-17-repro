@@ -1,0 +1,6 @@
+{
+	"name": "The island",
+	"summary": "Fourteen kilometres of island: a massif, a city, towns, a runway and the sea round it.",
+	"world": "island",
+	"spawn": {"at": [-21, 30, 0], "yaw_degrees": 0}
+}

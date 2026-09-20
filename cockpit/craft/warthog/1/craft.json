@@ -1,0 +1,71 @@
+{
+  "allowed_devices": [
+    "FlightStick",
+    "ControlYoke",
+    "SteeringWheel",
+    "ThrottleLever",
+    "PlungerThrottle",
+    "CollectiveLever",
+    "BrakeLever",
+    "FlapsLever",
+    "GearLever",
+    "TrimWheel",
+    "AirbrakeLever",
+    "GearHandle",
+    "GunTrigger",
+    "RudderPedals",
+    "CrewButton",
+    "CommandButton",
+    "ToggleSwitch",
+    "GuardedToggleSwitch",
+    "RotaryKnob",
+    "TimeOfDayDial",
+    "MfdPanel",
+    "MapScreen",
+    "DirectorCamera",
+    "SignalLamp"
+  ],
+  "craft": "warthog",
+  "kind": 33,
+  "manifest_hash": "4ab27412cfde29beaf2931b1bc624f6b7d127d8ffc82afb359cda55d37c77b40",
+  "model": {
+    "native_model": "airplane",
+    "presentation_body": "WARTHOG"
+  },
+  "presentation": {
+    "drawn": true,
+    "helm": "glazed",
+    "paint": [
+      0.360000014305115,
+      0.379999995231628,
+      0.389999985694885,
+      1.0
+    ],
+    "plunger": false,
+    "seat_scene": "res://objects/seats/seat_warthog.tscn",
+    "shared_throttle": false
+  },
+  "revision": "1",
+  "seat_poses": [
+    {
+      "flies": true,
+      "gun": false,
+      "position": [
+        0.0,
+        0.17,
+        -4.8
+      ],
+      "station": "pilot",
+      "yaw": 0.0
+    }
+  ],
+  "simulation_contract": "386a449ded7d36e3d3323c4d6362a5f031419b818da64e4e2ae7962475eb5f92",
+  "station_hashes": {
+    "0": "293986baad2e7dbc895cd8589097d87c671230fa3d2bb1cf113aa1d4153972f7"
+  },
+  "stations": {
+    "0": "stations/seat0.json"
+  },
+  "units": "metres; seat poses are relative to the craft model origin; -Z is forward, +Y is up",
+  "version": 1
+}

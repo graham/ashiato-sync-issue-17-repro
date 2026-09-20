@@ -1,0 +1,39 @@
+{
+ "name": "West International, runway 36L/18R",
+ "summary": "The western of the test field's two parallel airliner runways, 1,310 m west of 36R. Landed on northward (36L) from its southern threshold; every end takes a 10 NM final.",
+ "world": "testfield",
+ "runway": {
+  "centre": [
+   -18655.0,
+   0.0,
+   0.0
+  ],
+  "bearing_degrees": 0.0,
+  "length_m": 3500.0,
+  "width_m": 45.72,
+  "protection": {
+   "ofa_half_width": 121.92,
+   "ofa_beyond_end": 304.8,
+   "rpz_from_end": 60.96,
+   "rpz_length": 762.0,
+   "rpz_outer_half": 266.7
+  }
+ },
+ "ends": {
+  "threshold": {
+   "pattern": "left"
+  },
+  "far_end": {
+   "pattern": "right"
+  }
+ },
+ "in_use": "threshold",
+ "sources": {
+  "length_m": "As Cape International's: the 747-400 at its maximum weight on a hot day, Boeing D6-58326-1 rev F 3.3.4, rounded up to 3,500 m.",
+  "width_m": "FAA AC 150/5300-13B change 1, table G-11 (C/D/E-V): 150 ft.",
+  "protection": "The same table as Cape International's, approach visibility below 3/4 mile; the test field's ground also keeps a 34:1 funnel clear 10 NM off each end (Airfield.pads_for).",
+  "place": "The test field's west side, x -18 km (lane/testfield step 0): a north-south runway so both of its 10 NM finals end at z +-20.3 km, inside the edge band at 24.5 km. An east-west one this far out could take no final from outside the map.",
+  "parallel": "FAA Order JO 7110.65 5-9-7: simultaneous independent ILS approaches to parallel runways 4,300 ft (1,310 m) apart or more.",
+  "pattern": "The outer side at each end (AC 90-66C 11.1): landing north on 36L the pattern is to the west, the left; landing south on 18R it is to the west, the right."
+ }
+}

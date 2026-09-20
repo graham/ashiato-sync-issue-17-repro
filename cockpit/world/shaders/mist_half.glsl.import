@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://yje5gtc34je2"
+path="res://.godot/imported/mist_half.glsl-a11411589a36c445ed9f3cea734cf21a.res"
+
+[deps]
+
+source_file="res://world/shaders/mist_half.glsl"
+dest_files=["res://.godot/imported/mist_half.glsl-a11411589a36c445ed9f3cea734cf21a.res"]
+
+[params]
+

@@ -1,0 +1,7 @@
+{
+	"name": "The lobby",
+	"summary": "A briefing room: stand at a desk, get ready, and wait for the host to launch.",
+	"world": "room",
+	"arrive": "segway",
+	"spawn": {"at": [-2.7, 0.5, -0.9], "yaw_degrees": 0, "apart": 1.8}
+}

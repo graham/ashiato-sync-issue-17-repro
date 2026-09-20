@@ -1,0 +1,30 @@
+{
+	"name": "The gorge",
+	"summary": "A river through a mountain pass, in a canyon deep enough to hide a fighter.",
+	"world": "alpine",
+	"ground": {"world_half": 16384, "peak_height": 900, "seed": 41, "coast": 96, "sites_within": 6000},
+	"reach": 26000,
+	"haze": 0.35,
+	"fires": false,
+	"rock_spacing": 32,
+	"spawn": {"at": [-12600, 420, -5600], "yaw_degrees": 0},
+	"rivers": [
+		{
+			"points": [
+				[-13600, -7200],
+				[-13150, -6100],
+				[-12400, -4200],
+				[-12150, -2700],
+				[-11800, -1000],
+				[-12050, 500],
+				[-12200, 2200],
+				[-11750, 3800],
+				[-11200, 5300],
+				[-10400, 6700],
+				[-9400, 8000]
+			],
+			"width": 50,
+			"depth": 260
+		}
+	]
+}

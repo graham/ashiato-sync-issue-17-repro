@@ -1,0 +1,8 @@
+# THE LIBRARIES ARE BUILT, NOT COMMITTED. ../../../../kokoro-gd/scripts/build.ps1 (and -Double)
+# copies them here. VOICE needs the 325 MB model as well, which a script fetches, so a
+# committed library would buy a fresh clone nothing and put 17 MB of third-party binary in the
+# history at every ONNX Runtime release. Decided 2026-09-13; see agents.md, "A VOICE ON THE RADIO".
+*.dll
+*.so
+*.so.*
+*.pdb

@@ -1,0 +1,149 @@
+{
+	"name": "The archipelago",
+	"summary": "Pine islands and limestone stacks in a warm sea, a cove to take off from.",
+	"world": "alpine",
+	"ground": {"world_half": 16384, "peak_height": 600, "seed": 80, "coast": 16},
+	"reach": 22000,
+	"haze": 0.22,
+	"fleet": false,
+	"water": {
+		"deep": [0.017, 0.086, 0.099],
+		"crest": [0.043, 0.171, 0.148],
+		"foam": [0.88, 0.93, 0.93]
+	},
+	"cloud_cover": 2.2,
+	"arrive": "savoia",
+	"spawn": {"at": [4158, 1, 3489], "yaw_degrees": 230},
+	"craft": {
+		"kinds": ["savoia", "tanker", "boat", "gunboat", "cb90"],
+		"why": "it is for low flying in a seaplane"
+	},
+	"mountains": [
+		{
+			"salt": 5300,
+			"peak": 110,
+			"saddle": 35,
+			"points": [
+				[12800, -800, 80, 520],
+				[13200, 400, 95, 580],
+				[13000, 1600, 70, 480]
+			]
+		},
+		{
+			"salt": 5301,
+			"peak": 100,
+			"saddle": 30,
+			"points": [
+				[800, 12800, 75, 560],
+				[2200, 13300, 85, 620],
+				[3200, 12900, 65, 500]
+			]
+		},
+		{
+			"salt": 5302,
+			"peak": 95,
+			"saddle": 30,
+			"points": [
+				[-13200, 800, 80, 540]
+			]
+		},
+		{
+			"salt": 5303,
+			"peak": 105,
+			"saddle": 35,
+			"points": [
+				[1200, -13200, 70, 500],
+				[2800, -12800, 90, 560]
+			]
+		},
+		{
+			"salt": 5304,
+			"peak": 100,
+			"saddle": 30,
+			"points": [
+				[-10500, 10500, 70, 520],
+				[-9800, 11200, 80, 560]
+			]
+		},
+		{
+			"salt": 5310,
+			"peak": 220,
+			"saddle": 150,
+			"points": [
+				[10000, 8200, 200, 50]
+			]
+		},
+		{
+			"salt": 5311,
+			"peak": 280,
+			"saddle": 200,
+			"points": [
+				[10000, 8335, 260, 50]
+			]
+		},
+		{
+			"salt": 5312,
+			"peak": 240,
+			"saddle": 160,
+			"points": [
+				[-13500, -2800, 220, 42]
+			]
+		},
+		{
+			"salt": 5313,
+			"peak": 200,
+			"saddle": 140,
+			"points": [
+				[-13500, -2907, 180, 42]
+			]
+		},
+		{
+			"salt": 5314,
+			"peak": 260,
+			"saddle": 180,
+			"points": [
+				[-7200, 12200, 240, 48]
+			]
+		},
+		{
+			"salt": 5315,
+			"peak": 220,
+			"saddle": 150,
+			"points": [
+				[-7200, 12318, 200, 48]
+			]
+		},
+		{
+			"salt": 5316,
+			"peak": 240,
+			"saddle": 160,
+			"points": [
+				[-7200, 12455, 220, 52]
+			]
+		},
+		{
+			"salt": 5320,
+			"peak": 220,
+			"saddle": 150,
+			"points": [
+				[3500, -14200, 200, 48]
+			]
+		},
+		{
+			"salt": 5321,
+			"peak": 200,
+			"saddle": 130,
+			"points": [
+				[14500, -5500, 180, 56]
+			]
+		},
+		{
+			"salt": 5322,
+			"peak": 200,
+			"saddle": 130,
+			"points": [
+				[5500, 14500, 180, 48]
+			]
+		}
+	]
+}

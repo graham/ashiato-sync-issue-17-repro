@@ -1,0 +1,294 @@
+{
+  "controls": [
+    {
+      "at": [
+        0.38,
+        0.76,
+        -0.12
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat1/Throttle",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "THROTTLE",
+      "name": "Throttle",
+      "part": "ThrottleLever",
+      "range": 255,
+      "scope": "seat"
+    },
+    {
+      "at": [
+        0.0,
+        0.69,
+        -0.27
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat1/Stick",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "STICK / PITCH / ROLL",
+      "name": "Stick",
+      "part": "FlightStick",
+      "range": 255,
+      "scope": "seat"
+    },
+    {
+      "at": [
+        0.18,
+        1.01,
+        -0.43
+      ],
+      "binding": {
+        "channel": 10,
+        "id": "bus.10",
+        "range": 17,
+        "type": "bus_channel",
+        "version": 1
+      },
+      "channel": 10,
+      "channel_name": "display",
+      "device_id": "seat1/MfdLeft",
+      "facing": [
+        -20.054,
+        -6.875,
+        0.0
+      ],
+      "label": "MFD / DISPLAY",
+      "name": "MfdLeft",
+      "part": "MfdPanel",
+      "range": 17,
+      "scope": "pilot"
+    },
+    {
+      "at": [
+        -0.18,
+        1.01,
+        -0.43
+      ],
+      "binding": {
+        "channel": 10,
+        "id": "bus.10",
+        "range": 17,
+        "type": "bus_channel",
+        "version": 1
+      },
+      "channel": 10,
+      "channel_name": "display",
+      "device_id": "seat1/MfdRight",
+      "facing": [
+        -20.054,
+        6.875,
+        0.0
+      ],
+      "label": "MFD / DISPLAY",
+      "name": "MfdRight",
+      "part": "MfdPanel",
+      "range": 17,
+      "scope": "pilot"
+    },
+    {
+      "at": [
+        -0.3,
+        0.62,
+        -0.1
+      ],
+      "binding": {
+        "channel": 2,
+        "id": "bus.2",
+        "range": 255,
+        "type": "bus_channel",
+        "version": 1
+      },
+      "channel": 2,
+      "channel_name": "trim",
+      "device_id": "seat1/Trim",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "TRIM / NOSE UP / DOWN",
+      "name": "Trim",
+      "part": "TrimWheel",
+      "range": 255,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        0.0,
+        0.04,
+        -0.39
+      ],
+      "binding": {},
+      "channel": -1,
+      "channel_name": "unwired",
+      "device_id": "seat1/Pedals",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "RUDDER PEDALS / SHOW THE RUDDER",
+      "name": "Pedals",
+      "part": "RudderPedals",
+      "range": 255,
+      "scope": "seat"
+    }
+  ],
+  "craft": "prowler",
+  "fitted_controls": [
+    {
+      "at": [
+        0.38,
+        0.76,
+        -0.12
+      ],
+      "channel": -1,
+      "class": "ThrottleLever",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Throttle",
+      "range": 255,
+      "scope": "seat"
+    },
+    {
+      "at": [
+        0.0,
+        0.69,
+        -0.27
+      ],
+      "channel": -1,
+      "class": "FlightStick",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Stick",
+      "range": 255,
+      "scope": "seat"
+    },
+    {
+      "at": [
+        0.18,
+        1.01,
+        -0.43
+      ],
+      "channel": 10,
+      "class": "MfdPanel",
+      "facing": [
+        -20.054,
+        -6.875,
+        0.0
+      ],
+      "name": "MfdLeft",
+      "range": 17,
+      "scope": "pilot"
+    },
+    {
+      "at": [
+        -0.18,
+        1.01,
+        -0.43
+      ],
+      "channel": 10,
+      "class": "MfdPanel",
+      "facing": [
+        -20.054,
+        6.875,
+        0.0
+      ],
+      "name": "MfdRight",
+      "range": 17,
+      "scope": "pilot"
+    },
+    {
+      "at": [
+        -0.3,
+        0.62,
+        -0.1
+      ],
+      "channel": 2,
+      "class": "TrimWheel",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Trim",
+      "range": 255,
+      "scope": "craft"
+    },
+    {
+      "at": [
+        0.0,
+        0.04,
+        -0.39
+      ],
+      "channel": -1,
+      "class": "RudderPedals",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Pedals",
+      "range": 255,
+      "scope": "seat"
+    }
+  ],
+  "furniture": [
+    {
+      "at": [
+        0.0,
+        0.79,
+        -0.35
+      ],
+      "class": "RudderIndicator",
+      "facing": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Rudder"
+    }
+  ],
+  "kind": 29,
+  "seat": 1,
+  "shell": {
+    "at": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "depth": 0.92,
+    "facing": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "name": "Shell",
+    "tint": [
+      0.140000000596046,
+      0.150000005960464,
+      0.170000001788139,
+      1.0
+    ],
+    "width": 0.88
+  },
+  "source_scene": "res://objects/seats/seat_prowler.tscn",
+  "units": "metres and degrees, in the seat's own frame; -Z is forward, +Y is up"
+}
