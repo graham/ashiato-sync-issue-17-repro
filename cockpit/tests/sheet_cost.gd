@@ -24,6 +24,7 @@ const FIRST_MOST_MS: float = 900.0
 const AGAIN_MOST_MS: float = 60.0
 
 var _failures: PackedStringArray = []
+var _checks: int = 0
 
 
 func _ready() -> void:
@@ -36,11 +37,42 @@ func _ready() -> void:
 	# second dress reads like the first; shared, it is the cost of the mesh alone.
 	_check("and_the_next_one_of_that_kind_is_nearly_free", again <= AGAIN_MOST_MS,
 		"%.1f ms, most %.1f" % [again, AGAIN_MOST_MS])
+	_the_sheet_is_sampled_with_a_mip_chain()
 	if _failures.is_empty():
-		print("RESULT=PASS 2 checks")
+		print("RESULT=PASS %d checks" % [_checks])
 	else:
 		print("RESULT=FAIL %s" % [_failures])
 	get_tree().quit(0 if _failures.is_empty() else 1)
+
+
+## THE OTHER HALF OF WHAT A SHEET COSTS, and the one no build timer can see: what it costs to SAMPLE.
+##
+## `lane/phantomfast`. The sheet was baked without a mip chain, so a pixel covering many texels took one of them
+## near enough at random. `panel_line_dirt` is fourteen hard bands about four texels wide across a 512-texel sheet,
+## and with no mip chain those aliased into a moving speckle over the whole airframe at any distance -- reported by
+## the user as the Phantom's "dithering", though there is no dither anywhere in this project and every
+## `visibility_range_fade_mode` in the repository is explicitly DISABLED. Every one of those samples is also a
+## texture-cache miss, so the artefact and the cost are the same fault.
+##
+## THIS ASKS THE DRAWN MATERIAL, NOT THE BAKER. A check written against `StainSheet.image()` would pass on a sheet
+## whose mipmaps were thrown away between the bake and the material, which is precisely where they were missing.
+func _the_sheet_is_sampled_with_a_mip_chain() -> void:
+	var frame := PhantomAirframe.new()
+	frame.dress()
+	var sampled: int = 0
+	var flat: PackedStringArray = []
+	for found in frame.find_children("*", "MeshInstance3D", true, false):
+		var part := found as MeshInstance3D
+		var standard := part.material_override as StandardMaterial3D
+		if standard == null or not standard.detail_enabled or standard.detail_albedo == null:
+			continue
+		sampled += 1
+		var image: Image = standard.detail_albedo.get_image()
+		if image == null or not image.has_mipmaps():
+			flat.append(String(frame.get_path_to(part)))
+	_check("the_weathering_is_sampled_with_a_mip_chain", sampled > 0 and flat.is_empty(),
+		"%d parts sample the sheet, %d of them without mipmaps" % [sampled, flat.size()])
+	frame.queue_free()
 
 
 ## HOW LONG ONE F-4E TAKES TO BUILD, in milliseconds, through the real `dress` a level calls.
@@ -54,6 +86,7 @@ func _dress() -> float:
 
 
 func _check(label: String, held: bool, said: String) -> void:
+	_checks += 1
 	print("[sheet_cost] %s %s (%s)" % ["PASS" if held else "FAIL", label, said])
 	if not held:
 		_failures.append(label)

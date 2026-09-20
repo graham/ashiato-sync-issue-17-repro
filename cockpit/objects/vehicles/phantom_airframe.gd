@@ -521,9 +521,23 @@ func exhaust_ports() -> Array:
 static var _baked: ImageTexture = null
 
 
+## AND IT CARRIES A MIP CHAIN, which is the difference between a weathered aeroplane and a speckled one.
+##
+## THE SHEET IS HIGH-FREQUENCY ON PURPOSE. `panel_line_dirt` is a 0.22 m band every 1.35 m, so across a
+## 512-texel sheet cut for a 19.2 m aeroplane it is about fourteen hard bands roughly four texels wide.
+## Sampled with no mip chain, a pixel covering many texels takes ONE of them, near enough at random --
+## so at any distance the panel lines stop being panel lines and become a moving speckle over the whole
+## airframe, and every one of those samples is a texture-cache miss as well. It is an aliasing artefact
+## that reads exactly like dithering, which is what it was reported as.
+##
+## `Image.create` in `StainSheet.image` asks for no mipmaps and `ImageTexture.create_from_image` adds
+## none, so before this line the F-4 -- the only textured aircraft in the project -- was the only thing
+## here sampling a texture without one. `world/wind_sea.gd` had already learnt this for the sea.
 func _baked_sheet() -> ImageTexture:
 	if _baked == null:
-		_baked = ImageTexture.create_from_image(_sheet().image())
+		var sheet: Image = _sheet().image()
+		sheet.generate_mipmaps()
+		_baked = ImageTexture.create_from_image(sheet)
 	return _baked
 
 
