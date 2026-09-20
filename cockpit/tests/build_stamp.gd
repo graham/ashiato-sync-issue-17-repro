@@ -68,6 +68,7 @@ func _run() -> void:
 	_the_release_script_bakes_what_the_plate_reads()
 	_the_lane_and_the_worktree()
 	_a_dirty_tree_says_so()
+	_the_scan_reads_code_and_not_comments()
 	await _no_probe_photographs_a_stage_without_the_stamp()
 	await _the_corner_at_every_size()
 	await _a_click_goes_through()
@@ -178,13 +179,53 @@ const STAGES_WITHOUT_THE_STAMP: Dictionary = {
 	"phantom_wear_shot.gd": "brightness at two projected places on the airframe, wear on against wear off; a stamp in either picture would be measured as paint",
 }
 
+## A SCRIPT'S SOURCE WITH EVERY COMMENT TAKEN OUT: from a `#` that is not inside a quoted string to the end of its line.
+## Quotes are tracked with their backslash escapes; a triple-quoted string reads as an empty string and then a string,
+## which puts a `#` on the right side of it anyway.
+static func code_of(source: String) -> String:
+	var out: PackedStringArray = []
+	for line in source.replace("\r", "").split("\n"):
+		var quote: String = ""
+		var keep: int = line.length()
+		var i: int = 0
+		while i < line.length():
+			var c: String = line[i]
+			if quote != "":
+				if c == "\\":
+					i += 1
+				elif c == quote:
+					quote = ""
+			elif c == "\"" or c == "'":
+				quote = c
+			elif c == "#":
+				keep = i
+				break
+			i += 1
+		out.append(line.substr(0, keep))
+	return "\n".join(out)
+
+
+## THE SCAN'S OWN FIXTURES: a commented-out call is no call, a `#` inside a string is no comment, a real call stays.
+func _the_scan_reads_code_and_not_comments() -> void:
+	var commented: String = code_of("\t# BuildStamp.attach_to(glass)\n\t## BuildStamp.attach_to(glass)")
+	var real: String = code_of("\tBuildStamp.attach_to(glass) # stamped")
+	var quoted: String = code_of("\tprint(\"# not a comment\"); BuildStamp.attach_to(glass)")
+	_check("a_commented_out_attach_to_is_not_a_call", not commented.contains("attach_to(") and real.contains("BuildStamp.attach_to(")
+		and quoted.contains("BuildStamp.attach_to("), "commented '%s', real '%s', after a quoted #: '%s'" % [commented, real, quoted])
+
+
 func _no_probe_photographs_a_stage_without_the_stamp() -> void:
 	var missing: PackedStringArray = []
 	for name in DirAccess.get_files_at("res://tests"):
 		if not name.ends_with(".gd") or name == "build_stamp.gd":
 			continue
-		var source: String = FileAccess.get_file_as_string("res://tests/" + name)
-		if source.contains("SubViewport.new()") and source.contains(".get_texture().get_image()") and not source.contains("attach_to(") 				and not STAGES_WITHOUT_THE_STAMP.has(name):
+		# THE CODE, NOT THE COMMENTS (lane/shiplegs, 2026-09-20): a commented-out `BuildStamp.attach_to(` -- what somebody does
+		# while debugging and forgets to put back -- satisfied a plain substring scan and left the pictures unstamped. The line
+		# is drawn at comments: a call under `if false:` or in a function nothing calls still counts, as it would for any
+		# text scan, and parsing GDScript to catch those would be a second copy of the language.
+		var source: String = code_of(FileAccess.get_file_as_string("res://tests/" + name))
+		if source.contains("SubViewport.new()") and source.contains(".get_texture().get_image()") and not source.contains("BuildStamp.attach_to(") \
+				and not STAGES_WITHOUT_THE_STAMP.has(name):
 			missing.append(name)
 	_check("every_probe_that_photographs_a_stage_puts_the_stamp_in_it", missing.is_empty(), "without it: %s" % [missing])
 

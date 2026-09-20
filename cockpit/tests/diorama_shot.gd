@@ -114,6 +114,11 @@ func _ready() -> void:
 	glass.transparent_bg = false
 	glass.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	add_child(glass)
+	# THE BUILD STAMP, as in every picture the game takes (`BuildStamp`, 2026-09-18): this stage is a viewport of its
+	# own, so the root's stamp is not drawn into it, and these shots go in blog posts where the build has to be
+	# traceable. It is safe beside `_differs`, which counts pixels that MOVED between two shots of this same stage:
+	# the stamp is baked at build time and identical in both, so it contributes nothing to that count.
+	BuildStamp.attach_to(glass)
 	var station := ControlStation.new()
 	station.size = Vector2(WIDTH, HEIGHT)
 	station.level_map = map
